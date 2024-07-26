@@ -1,0 +1,60 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #E9E9E9;
+    margin: 0;
+}
+nav {
+    background-color: #242424;
+    color: #fff;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #242424;
+}
+
+nav .logo img {
+    height: 55px;
+    margin-left: 90px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.search input[type="text"] {
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.3em;
+    margin-right: 0.5em;
+    width: 724px;
+}
+
+.search button {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.3em;
+    background-color: gray;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.search button:hover {
+    transition: background-color 1s ease;
+    background-color: #333333;
+}
+
+.nav-kiri {
+    display: flex;
+    gap: 40px;
+    margin-right: 90px;
+}
+
+.nav-kiri i {
+    color: #fff;
+    font-size: 24px;
+}

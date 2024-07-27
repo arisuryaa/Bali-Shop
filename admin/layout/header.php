@@ -47,28 +47,39 @@ $namaFile = pathinfo($namaFilePenuh, PATHINFO_FILENAME);
     <link rel="stylesheet" href="assets-adminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="assets-adminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="assets-adminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+    <style>
+    #order {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    #orderan {
+        height: 80%;
+    }
+    </style>
+
+
 </head>
+
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="assets-adminLTE/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60"
-                width="60">
+            <img class="animation__shake" src="assets/img/logo.png" alt="AdminLTELogo" height="auto" width="60">
+            <h1 class="animation__shake font-weight-bold">BALI SHOP</h1>
         </div>
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
             <div class="container-fluid">
-
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                <div class="d-flex">
-
-
-                </div>
-                </ul>
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>q
             </div>
 
 
@@ -91,36 +102,40 @@ $namaFile = pathinfo($namaFilePenuh, PATHINFO_FILENAME);
                         <img src="assets/img/dummyimg.webp" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">ijat</a>
+                        <a href="#"
+                            class="d-block"><?= isset($_COOKIE["username"]) ? $_COOKIE["username"] : $_SESSION["username"] ?></a>
                     </div>
                 </div>
 
                 <!-- SidebarSearch Form -->
 
                 <!-- Sidebar Menu -->
-                <nav class="mt-2">
+                <nav class="mt-2" id="orderan">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                        data-accordion="false" id="order">
+                        <div class="">
+                            <li class="nav-item">
+                                <a href="index.php" class="nav-link">
+                                    <i class="nav-icon fas fa-shopping-bag"></i>
+                                    <p>
+                                        Jumlah Orderan
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.php" class="nav-link">
+                                    <i class="nav-icon fas fa-laptop"></i>
+                                    <p>
+                                        Data Barang
+                                    </p>
+                                </a>
+                            </li>
+                        </div>
                         <li class="nav-item">
-                            <a href="index.php" class="nav-link">
-                                <i class="nav-icon fas fa-shopping-bag"></i>
-                                <p>
-                                    Jumlah Orderan
-                                </p>
+                            <a href="logout.php" class="nav-link">
+                                <button type="button" class="btn btn-danger w-100">Logout</button>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="index.php" class="nav-link">
-                                <i class="nav-icon fas fa-laptop"></i>
-                                <p>
-                                    Data Barang
-                                </p>
-                            </a>
-                        </li>
-                        <a href="logout.php">
-                            <button type="button" class="btn btn-danger "
-                                style="width:100%; position:absolute;">Logout</button>
-                        </a>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -134,8 +149,3 @@ $namaFile = pathinfo($namaFilePenuh, PATHINFO_FILENAME);
         <!-- AdminLTE App -->
         <script src="assets-adminLTE/dist/js/adminlte.min.js"></script>
         <!-- Custom script to initialize PushMenu -->
-        <script>
-        $(document).ready(function() {
-            $('[data-widget="pushmenu"]').PushMenu();
-        });
-        </script>

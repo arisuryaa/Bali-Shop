@@ -59,7 +59,7 @@ function select($query) {
       echo "
       <script>
         alert('format file tidak sesuai');
-        document.location.href = 'edit-barang.php';
+        document.location.href = 'index.php';
       </script>
       ";
       die();

@@ -80,7 +80,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class=" mb-3">
                     <label for="foto" class="form-label">foto</label>
-                    <input type="file" class="form-control" id="foto" placeholder="foto" name="foto"
+                    <input type="file" class="form-control" id="foto" placeholder="foto" name="foto_barang"
                         onchange="preview()">
                     <img src="" alt="" class="img-thumbnail img-preview" width="100px">
                 </div>

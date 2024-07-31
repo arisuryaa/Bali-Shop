@@ -27,7 +27,7 @@ $jumlahBarang = count($data_barang);
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">DASHBOARD ADMIN 📈</h1>
+                    <h1 class="fs-6 fw-bold">DASHBOARD ADMIN</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -65,10 +65,10 @@ $jumlahBarang = count($data_barang);
                         <div class="inner">
                             <h3>2</h3>
 
-                            <p>Jumlah Mahasiswa</p>
+                            <p>Jumlah Orderan</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-person-add"></i>
+                            <i class="ion ion-bag"></i>
                         </div>
                         <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
                     </div>
@@ -94,7 +94,7 @@ $jumlahBarang = count($data_barang);
 
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
+                <div class="">
                     <div class="row">
                         <div class="col-12">
                             <div class="card">

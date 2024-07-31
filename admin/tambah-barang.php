@@ -4,7 +4,8 @@ include "layout/header.php";
 include 'config/app.php';
 
 if (isset($_POST['submit'])) {
- 
+    // addBarang($_POST);
+    // var_dump($_FILES);
     if ($_POST > 0) {
         addBarang($_POST);
         echo "<script>
@@ -78,18 +79,39 @@ if (isset($_POST['submit'])) {
                         <option value="Es Teh">Es Teh</option>
                     </select>
                 </div>
-                <div class=" mb-3">
-                    <label for="foto" class="form-label">foto</label>
-                    <input type="file" class="form-control" id="foto" placeholder="foto" name="foto_barang"
-                        onchange="preview()">
-                    <img src="" alt="" class="img-thumbnail img-preview" width="100px">
+                <div class="mb-3">
+                    <label for="foto" class="form-label">Foto (masukkan 5 foto)</label>
+                    <input type="file" multiple class="form-control" id="foto" name="foto_barang[]">
+                    <div id="preview-container">
+                        <!-- Thumbnails akan ditampilkan di sini -->
+                    </div>
                 </div>
-
                 <button type="submit" name="submit" class="btn btn-primary">submit</button>
             </form>
 
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
+        <script>
+        document.getElementById('foto').addEventListener('change', function() {
+            var previewContainer = document.getElementById('preview-container');
+            previewContainer.innerHTML = ''; // Kosongkan kontainer pratinjau
+            var files = this.files;
+
+            for (var i = 0; i < files.length; i++) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    var img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'img-thumbnail';
+                    img.style.width = '100px';
+                    previewContainer.appendChild(img);
+                }
+
+                reader.readAsDataURL(files[i]);
+            }
+        });
+        </script>
 
         <?php include "layout/footer.php";?>

@@ -78,8 +78,9 @@ $namaFile = pathinfo($namaFilePenuh, PATHINFO_FILENAME);
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
-            <div class="container-fluid">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>q
+            <div class="d-flex justify-content-between align-items-center container-fluid ">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                <h5 class="pt-1 pr-2"><?= date("d-m-Y") ?></h5>
             </div>
 
 
@@ -89,7 +90,7 @@ $namaFile = pathinfo($namaFilePenuh, PATHINFO_FILENAME);
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="index.html" class="brand-link">
                 <img src="assets/img/logo.png" alt="AdminLTE Logo" class="brand-image">
                 <span class=" brand-text font-weight-bold">BALI-SHOP</span>
             </a>
@@ -116,17 +117,17 @@ $namaFile = pathinfo($namaFilePenuh, PATHINFO_FILENAME);
                         <div class="">
                             <li class="nav-item">
                                 <a href="index.php" class="nav-link">
-                                    <i class="nav-icon fas fa-shopping-bag"></i>
+                                    <i class="nav-icon fas fa-laptop"></i>
                                     <p>
-                                        Jumlah Orderan
+                                        Data Barang
                                     </p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="index.php" class="nav-link">
-                                    <i class="nav-icon fas fa-laptop"></i>
+                                    <i class="nav-icon fas fa-shopping-bag"></i>
                                     <p>
-                                        Data Barang
+                                        Jumlah Orderan
                                     </p>
                                 </a>
                             </li>

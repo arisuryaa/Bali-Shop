@@ -45,8 +45,7 @@ $dataBarang = select("SELECT * FROM barang");
     <section class="hero" id="hr">
         <div class="hero-left">
             <h1>LAPTOP GAMING <br> TERKUAT</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum itaque consequatur, <br> quaerat cumque
-                quo impedit laborum odio deserunt officiis, consectetur</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             <a href="">Beli Sekarang</a>
         </div>
 
@@ -87,9 +86,9 @@ $dataBarang = select("SELECT * FROM barang");
                 <h3>MONITOR ASUS 240HZ</h3>
                 <a href="" class="beli-sekarang">Beli Sekarang</a>
             </div>
-        </div>    
-    </div>
-</section>
+        </div>
+        </div>
+    </section>
 
     <!--produk unggulan-->
 
@@ -109,82 +108,6 @@ $dataBarang = select("SELECT * FROM barang");
                 <a href="#" class="beli">+KERANJANG</a>
             </div>
 
-            <div class="pro">
-                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
-                <div class="deskripsi">
-                    <span><?= $barang["kategori_barang"] ?></span>
-                    <h5><?= $barang["nama_barang"] ?></h5>
-                    <p><?= $barang["deskripsi_barang"] ?></p>
-                    <h4>Rp.<?= $barang["harga_barang"] ?></h4>
-                </div>
-                <a href="#" class="beli">+KERANJANG</a>
-            </div>
-
-            <div class="pro">
-                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
-                <div class="deskripsi">
-                    <span><?= $barang["kategori_barang"] ?></span>
-                    <h5><?= $barang["nama_barang"] ?></h5>
-                    <p><?= $barang["deskripsi_barang"] ?></p>
-                    <h4>Rp.<?= $barang["harga_barang"] ?></h4>
-                </div>
-                <a href="#" class="beli">+KERANJANG</a>
-            </div>
-
-            <div class="pro">
-                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
-                <div class="deskripsi">
-                    <span><?= $barang["kategori_barang"] ?></span>
-                    <h5><?= $barang["nama_barang"] ?></h5>
-                    <p><?= $barang["deskripsi_barang"] ?></p>
-                    <h4>Rp.<?= $barang["harga_barang"] ?></h4>
-                </div>
-                <a href="#" class="beli">+KERANJANG</a>
-            </div>
-
-            <div class="pro">
-                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
-                <div class="deskripsi">
-                    <span><?= $barang["kategori_barang"] ?></span>
-                    <h5><?= $barang["nama_barang"] ?></h5>
-                    <p><?= $barang["deskripsi_barang"] ?></p>
-                    <h4>Rp.<?= $barang["harga_barang"] ?></h4>
-                </div>
-                <a href="#" class="beli">+KERANJANG</a>
-            </div>
-
-            <div class="pro">
-                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
-                <div class="deskripsi">
-                    <span><?= $barang["kategori_barang"] ?></span>
-                    <h5><?= $barang["nama_barang"] ?></h5>
-                    <p><?= $barang["deskripsi_barang"] ?></p>
-                    <h4>Rp.<?= $barang["harga_barang"] ?></h4>
-                </div>
-                <a href="#" class="beli">+KERANJANG</a>
-            </div>
-
-            <div class="pro">
-                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
-                <div class="deskripsi">
-                    <span><?= $barang["kategori_barang"] ?></span>
-                    <h5><?= $barang["nama_barang"] ?></h5>
-                    <p><?= $barang["deskripsi_barang"] ?></p>
-                    <h4>Rp.<?= $barang["harga_barang"] ?></h4>
-                </div>
-                <a href="#" class="beli">+KERANJANG</a>
-            </div>
-
-            <div class="pro">
-                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
-                <div class="deskripsi">
-                    <span><?= $barang["kategori_barang"] ?></span>
-                    <h5><?= $barang["nama_barang"] ?></h5>
-                    <p><?= $barang["deskripsi_barang"] ?></p>
-                    <h4>Rp.<?= $barang["harga_barang"] ?></h4>
-                </div>
-                <a href="#" class="beli">+KERANJANG</a>
-            </div>
 
             <?php endforeach; ?>
         </div>

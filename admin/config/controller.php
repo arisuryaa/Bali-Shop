@@ -179,4 +179,13 @@ function login($post) {
 
 }
 
+//fuction cari
+
+function submit($cari) {
+
+  $query = "SELECT * FROM barang WHERE nama_barang = '$cari'";
+
+  return select($query);
+}
+
 ?>

@@ -74,13 +74,30 @@ $dataBarang = select("SELECT * FROM barang");
         </div>
     </section>
 
-    <!--koleksi terbaik-->
+    <!--discount-->
 
+    <section id="discount" class="disc">
+        <div class="disc-container">
+            <div class="gambar">
+                <img src="asset/img/monitor.svg">
+            </div>
 
-    <section class="produk1">
+            <div class="disc-des">
+                <h1>50% OFF</h1>
+                <h3>MONITOR ASUS 240HZ</h3>
+                <a href="" class="beli-sekarang">Beli Sekarang</a>
+            </div>
+        </div>    
+    </div>
+</section>
+
+    <!--produk unggulan-->
+
+    <section id="produk1" class="prd">
         <h1>PRODUK UNGGULAN</h1>
         <?php foreach($dataBarang as $barang) :?>
         <div class="pro-container">
+
             <div class="pro">
                 <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
                 <div class="deskripsi">
@@ -91,8 +108,93 @@ $dataBarang = select("SELECT * FROM barang");
                 </div>
                 <a href="#" class="beli">+KERANJANG</a>
             </div>
-            <?php endforeach; ?>
 
+            <div class="pro">
+                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
+                <div class="deskripsi">
+                    <span><?= $barang["kategori_barang"] ?></span>
+                    <h5><?= $barang["nama_barang"] ?></h5>
+                    <p><?= $barang["deskripsi_barang"] ?></p>
+                    <h4>Rp.<?= $barang["harga_barang"] ?></h4>
+                </div>
+                <a href="#" class="beli">+KERANJANG</a>
+            </div>
+
+            <div class="pro">
+                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
+                <div class="deskripsi">
+                    <span><?= $barang["kategori_barang"] ?></span>
+                    <h5><?= $barang["nama_barang"] ?></h5>
+                    <p><?= $barang["deskripsi_barang"] ?></p>
+                    <h4>Rp.<?= $barang["harga_barang"] ?></h4>
+                </div>
+                <a href="#" class="beli">+KERANJANG</a>
+            </div>
+
+            <div class="pro">
+                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
+                <div class="deskripsi">
+                    <span><?= $barang["kategori_barang"] ?></span>
+                    <h5><?= $barang["nama_barang"] ?></h5>
+                    <p><?= $barang["deskripsi_barang"] ?></p>
+                    <h4>Rp.<?= $barang["harga_barang"] ?></h4>
+                </div>
+                <a href="#" class="beli">+KERANJANG</a>
+            </div>
+
+            <div class="pro">
+                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
+                <div class="deskripsi">
+                    <span><?= $barang["kategori_barang"] ?></span>
+                    <h5><?= $barang["nama_barang"] ?></h5>
+                    <p><?= $barang["deskripsi_barang"] ?></p>
+                    <h4>Rp.<?= $barang["harga_barang"] ?></h4>
+                </div>
+                <a href="#" class="beli">+KERANJANG</a>
+            </div>
+
+            <div class="pro">
+                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
+                <div class="deskripsi">
+                    <span><?= $barang["kategori_barang"] ?></span>
+                    <h5><?= $barang["nama_barang"] ?></h5>
+                    <p><?= $barang["deskripsi_barang"] ?></p>
+                    <h4>Rp.<?= $barang["harga_barang"] ?></h4>
+                </div>
+                <a href="#" class="beli">+KERANJANG</a>
+            </div>
+
+            <div class="pro">
+                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
+                <div class="deskripsi">
+                    <span><?= $barang["kategori_barang"] ?></span>
+                    <h5><?= $barang["nama_barang"] ?></h5>
+                    <p><?= $barang["deskripsi_barang"] ?></p>
+                    <h4>Rp.<?= $barang["harga_barang"] ?></h4>
+                </div>
+                <a href="#" class="beli">+KERANJANG</a>
+            </div>
+
+            <div class="pro">
+                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
+                <div class="deskripsi">
+                    <span><?= $barang["kategori_barang"] ?></span>
+                    <h5><?= $barang["nama_barang"] ?></h5>
+                    <p><?= $barang["deskripsi_barang"] ?></p>
+                    <h4>Rp.<?= $barang["harga_barang"] ?></h4>
+                </div>
+                <a href="#" class="beli">+KERANJANG</a>
+            </div>
+
+            <?php endforeach; ?>
+        </div>
+    </section>
+
+    <!--service-->
+
+    <section id="service" class="srvc">
+        <div class="ser-container">
+            <img src="asset/img/service.svg">
         </div>
     </section>
 

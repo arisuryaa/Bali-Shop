@@ -7,7 +7,15 @@ $namaFilePenuh = basename($_SERVER['PHP_SELF']);
 
 // Hilangkan ekstensi .php
 $namaFile = pathinfo($namaFilePenuh, PATHINFO_FILENAME);
-
+if(isset($_COOKIE["login"]) || isset($_SESSION["Login"])) {
+    
+} else {
+    echo "
+    <script>
+      document.location.href = 'login.php';
+    </script>
+  ";
+}
 // Ubah judul halaman
 
 
@@ -100,7 +108,7 @@ $namaFile = pathinfo($namaFilePenuh, PATHINFO_FILENAME);
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="assets/img/dummyimg.webp" class="img-circle elevation-2" alt="User Image">
+                        <img src="assets/img/logo.png" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#"

@@ -102,10 +102,11 @@ $dataBarang = select("SELECT * FROM barang");
                 <div class="deskripsi">
                     <span><?= $barang["kategori_barang"] ?></span>
                     <h5><?= $barang["nama_barang"] ?></h5>
-                    <p><?= $barang["deskripsi_barang"] ?></p>
+                    <p><?= (str_word_count($barang["deskripsi_barang"]) > 5 ? substr($barang["deskripsi_barang"],0,50)."..." : $barang["deskripsi_barang"])?>
+                    </p>
                     <h4>Rp.<?= $barang["harga_barang"] ?></h4>
                 </div>
-                <a href="#" class="beli">+KERANJANG</a>
+                <a href="singgle-produk.php?id_barang=<?= $barang["id_barang"] ?>" class="beli">+KERANJANG</a>
             </div>
 
 

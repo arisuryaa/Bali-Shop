@@ -6,7 +6,6 @@ $id_barang =(int)$_GET["id_barang"];
 
 $detailBarang = SELECT("SELECT * FROM barang WHERE id_barang = $id_barang")[0];
 
-
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -16,8 +15,8 @@ $detailBarang = SELECT("SELECT * FROM barang WHERE id_barang = $id_barang")[0];
             <div class="row mb-2 ">
                 <div class="col-sm-6">
                     <ol class="breadcrumb ">
-                        <li class="breadcrumb-item"><a href="mahasiswa.php">Data Mahasiswa</a></li>
-                        <li class="breadcrumb-item active">Detail Mahasiswa</li>
+                        <li class="breadcrumb-item"><a href="index.php">Data Barang</a></li>
+                        <li class="breadcrumb-item active">Detail Barang <?= $detailBarang["nama_barang"] ?></li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -55,8 +54,17 @@ $detailBarang = SELECT("SELECT * FROM barang WHERE id_barang = $id_barang")[0];
                     </tr>
                     <tr>
                         <td>Foto</td>
-                        <td><img src="assets/img/<?= $detailBarang["foto_barang"] ?>"
+                        <td>
+                            <img src="assets/img/<?= $detailBarang["foto_barang"] ?>"
                                 alt="<?= $detailBarang["foto_barang"] ?>" class="w-25 h-auto">
+                            <img src="assets/img/<?= $detailBarang["foto_barang2"] ?>"
+                                alt="<?= $detailBarang["foto_barang2"] ?>" class="w-25 h-auto">
+                            <img src="assets/img/<?= $detailBarang["foto_barang3"] ?>"
+                                alt="<?= $detailBarang["foto_barang3"] ?>" class="w-25 h-auto">
+                            <img src="assets/img/<?= $detailBarang["foto_barang4"] ?>"
+                                alt="<?= $detailBarang["foto_barang4"] ?>" class="w-25 h-auto">
+                            <img src="assets/img/<?= $detailBarang["foto_barang5"] ?>"
+                                alt="<?= $detailBarang["foto_barang5"] ?>" class="w-25 h-auto">
                         </td>
                     </tr>
                 </table>

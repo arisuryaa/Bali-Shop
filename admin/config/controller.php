@@ -37,7 +37,9 @@ function select($query) {
     $deskripsi = $post["deskripsiBarang"];
     $kategori = $post["kategori"];
 
-    $query = "INSERT INTO barang VALUES (null, '$nama', '$harga', '$foto', '$stock', '$deskripsi', '$kategori')";
+
+    var_dump($foto);
+    $query = "INSERT INTO barang VALUES (null, '$nama', '$harga', '$foto[0]','$foto[1]','$foto[2]','$foto[3]','$foto[4]', '$stock', '$deskripsi', '$kategori')";
 
     mysqli_query($db,$query);
     return mysqli_affected_rows($db);
@@ -45,45 +47,52 @@ function select($query) {
 
   function uploadFile() {
     $namaFile = $_FILES['foto_barang'] ['name'];
-    $ukuranFile = $_FILES['foto_barang'] ['size'];
-    $error = $_FILES['foto_barang'] ['error'];
-    $tmpName = $_FILES['foto_barang'] ['tmp_name'];
+
+    $totalFiles = count($namaFile);
   
-    // Check File
-    $extensiFileValid = ['jpg','png','jpeg'];
-    $extensiFile = explode('.',$namaFile);
-    $extensiFile = strtolower(end($extensiFile));
-  
-    // Check Extensi File
-    if(!in_array($extensiFile,$extensiFileValid)) {
-      echo "
-      <script>
-        alert('format file tidak sesuai');
-        document.location.href = 'index.php';
-      </script>
-      ";
-      die();
-    } 
-  
-    // Check File Size (2MB)
-    if($ukuranFile > 2048000) {
-      echo "
+    $fileFoto = [];
+
+
+    for($i = 0; $i < $totalFiles; $i++) {
+      $ukuranFile = $_FILES['foto_barang'] ['size'][$i];
+      $nama = $_FILES['foto_barang'] ['name'][$i];
+      $error = $_FILES['foto_barang'] ['error'][$i];
+      $tmpName = $_FILES['foto_barang'] ['tmp_name'][$i];
+      
+      $extensiFileValid = ['jpg','png','jpeg'];
+      $extensiFile = explode('.',$nama);
+      $extensiFile = strtolower(end($extensiFile));
+
+      if(!in_array($extensiFile,$extensiFileValid)) {
+        echo "
         <script>
-          alert('ukuran file terlalu besar, maximal 2MB')
+          alert('format file tidak sesuai');
           document.location.href = 'index.php';
         </script>
-      ";
-      die();
-    }
-  
-    // Mengacak Nama File 
-    $namaFileBaru = uniqid();
-    $namaFileBaru .= ".";
-    $namaFileBaru .= $extensiFile;
+        ";
+        die();
+      } 
+    
+      // Check File Size (2MB)
+      if($ukuranFile > 2048000) {
+        echo "
+          <script>
+            alert('ukuran file terlalu besar, maximal 2MB')
+            document.location.href = 'index.php';
+          </script>
+        ";
+        die();
+      }
+      $namaFileBaru = uniqid();
+      $namaFileBaru .= ".";
+      $namaFileBaru .= $extensiFile;
   
     // pindahkan ke folder local untuk ditampilkan
-    move_uploaded_file($tmpName,'assets/img/'.$namaFileBaru);  
-    return $namaFileBaru;
+    move_uploaded_file($tmpName,'assets/img/'.$namaFileBaru); 
+    array_push($fileFoto,$namaFileBaru); 
+  }
+
+    return $fileFoto;
   
   }
 

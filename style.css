@@ -1,272 +1,273 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-  }
-  
-  nav {
-    background-color: #242424;
-    color: #fff;
-    padding: 1em 2em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  nav .logo img {
-    height: 55px;
-    margin-left: 1.4rem;
-  }
-  
-  .search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-  }
-  
-  .search input[type="text"] {
-    padding: 0.5em;
-    border: none;
-    border-radius: 0.3em;
-    margin-right: 0.5em;
-    width: 724px;
-    height: 1.3rem;
-    transition: box-shadow 0.3s ease, border 0.3s ease, transform 0.3s ease;
-  }
-  
-  .search input[type="text"]:focus {
-    box-shadow: 0px 0px 15px 5px rgba(64, 64, 64, 0.7);
-    border: 1px solid #333333;
-    outline: none;
-    transform: scale(1.01);
-  }
-  
-  .search button {
-    padding: 0.5em 1em;
-    border: none;
-    border-radius: 0.3em;
-    background-color: gray;
-    color: #fff;
-    cursor: pointer;
-    margin-right: 20px;
-    height: 2.2rem;
-  }
-  
-  .search button:hover {
-    transition: background-color 1s ease;
-    background-color: #333333;
-  }
-  
-  .nav-kiri {
-    display: flex;
-    gap: 35px;
-    margin-right: 100px;
-  }
-  
-  .nav-kiri i {
-    color: #fff;
-    font-size: 24px;
-  }
-  
-  .hero {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 5rem;
-    padding-left: 5rem;
-    padding-top: 5.5rem;
-    padding-bottom: 5rem;
-    align-items: center;
-    background-color: #e9e9e9;
-    margin-left: 3rem;
-    margin-right: 3rem;
-    margin-top: 9rem;
-  }
-  
-  .hero .hero-left {
-    width: 45%;
-    flex-direction: column;
-  }
-  
-  .hero .hero-left h1 {
-    font-weight: 700;
-    font-size: 62px;
-    margin-bottom: 5px;
-  }
-  
-  .hero .hero-left p {
-    font-size: 15px;
-    font-weight: light;
-    margin-bottom: 35px;
-  }
-  
-  .hero .hero-left a {
-    background-color: #242424;
-    color: #fff;
-    padding: 15px 25px;
-    text-decoration: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  }
-  
-  .hero .hero-left a:hover {
-    transition: background-color 3s ease;
-    background-color: #333333;
-  }
-  
-  .hero .hero-right {
-    width: 45%;
-    overflow: hidden;
-    position: relative;
-  }
+  margin: 0;
+  padding: 0;
+}
 
-  .slides {
-    display: flex;
-    transition: transform 1s ease;
-    width: 100%;
-  }
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
 
-  .hero .hero-right img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .box {
-    padding: 5rem 3rem;
-    margin-bottom: 22.7%;
-  }
-  
-  .box-left {
-    width: 500px;
-    background-color: #e9e9e9;
-    float: left;
-    padding: 5%;
-    justify-content: center;
-    border-radius: 10px;
-  }
-  
-  .box-left img {
-    float: right;
-    width: 211px;
-    height: 211px;
-  }
-  
-  .box-left h1 {
-    margin-top: 3rem;
-    margin-bottom: 15px;
-    font-size: 32px;
-    font-weight: bold;
-  }
-  
-  .box-left p {
-    font-size: 15px;
-    font-weight: light;
-  }
-  
-  .box-right {
-    width: 500px;
-    background-color: #e9e9e9;
-    float: right;
-    padding: 5%;
-    justify-content: center;
-    border-radius: 10px;
-  }
-  
-  .box-right img {
-    float: right;
-    width: 211px;
-    height: 211px;
-  }
-  
-  .box-right h1 {
-    margin-top: 3rem;
-    margin-bottom: 15px;
-    font-size: 32px;
-    font-weight: bold;
-  }
-  
-  .box-right p {
-    font-size: 15px;
-    font-weight: light;
-  }
+nav {
+  background-color: #242424;
+  color: #fff;
+  padding: 1em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
 
-  .prd {
-   padding: 0 3%;
-  }
+nav .logo img {
+  height: 55px;
+  margin-left: 1.4rem;
+}
 
-  .prd h1 {
-    text-align: center;
-    font-size: 50px;
-    font-weight: 1000;
-    padding-bottom: 40px;
-  }
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
 
-  .prd .isi-produk {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-  }
+.search input[type="text"] {
+  padding: 0.5em;
+  border: none;
+  border-radius: 0.3em;
+  margin-right: 0.5em;
+  width: 724px;
+  height: 1.3rem;
+  transition: box-shadow 0.3s ease, border 0.3s ease, transform 0.3s ease;
+}
 
-  .prd .isi-produk .pro-container{
-    background-color: #e9e9e9;
-    border-radius: 0.3em;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    width: 23.5%;
-    height: 25rem;
-  
-  }
+.search input[type="text"]:focus {
+  box-shadow: 0px 0px 15px 5px rgba(64, 64, 64, 0.7);
+  border: 1px solid #333333;
+  outline: none;
+  transform: scale(1.01);
+}
 
-  .prd .isi-produk .pro-container .pro img{
-    width: 50%;
-    height: 50%;
-  }
+.search button {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0.3em;
+  background-color: gray;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 20px;
+  height: 2.2rem;
+}
 
-  .prd .isi-produk .pro-container .pro {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-  }
+.search button:hover {
+  transition: background-color 1s ease;
+  background-color: #333333;
+}
 
-  .prd .isi-produk .deskripsi {
-    padding: 10px;
-  }
+.nav-kiri {
+  display: flex;
+  gap: 35px;
+  margin-right: 100px;
+}
 
-  .prd .isi-produk .deskripsi span {
-    padding: 2px;
-  }
+.nav-kiri i {
+  color: #fff;
+  font-size: 24px;
+}
 
-  .prd .isi-produk .deskripsi h5 {
-    font-size: 25px;
-    padding: 1px;
-  }
+.hero {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 5rem;
+  padding-left: 5rem;
+  padding-top: 5.5rem;
+  padding-bottom: 5rem;
+  align-items: center;
+  background-color: #e9e9e9;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 9rem;
+}
 
-  .prd .isi-produk .deskripsi h4 {
-    padding: 1px;
-    padding-bottom: 20px;
-  }
+.hero .hero-left {
+  width: 45%;
+  flex-direction: column;
+}
 
-  .prd .isi-produk .beli {
-    background-color: #242424;
-    color: #fff;
-    padding: 10px 114px;
-    text-decoration: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    font-size: 13px;
-    text-align: center;
-  }
-  
-  /*#produk1 {
+.hero .hero-left h1 {
+  font-weight: 700;
+  font-size: 62px;
+  margin-bottom: 5px;
+}
+
+.hero .hero-left p {
+  font-size: 15px;
+  font-weight: light;
+  margin-bottom: 35px;
+}
+
+.hero .hero-left a {
+  background-color: #242424;
+  color: #fff;
+  padding: 15px 25px;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.hero .hero-left a:hover {
+  transition: background-color 3s ease;
+  background-color: #333333;
+}
+
+.hero .hero-right {
+  width: 45%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  transition: transform 1s ease;
+  width: 100%;
+}
+
+.hero .hero-right img {
+  width: 100%;
+  height: auto;
+}
+
+.box {
+  padding: 5rem 3rem;
+  margin-bottom: 22.7%;
+}
+
+.box-left {
+  width: 500px;
+  background-color: #e9e9e9;
+  float: left;
+  padding: 5%;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.box-left img {
+  float: right;
+  width: 211px;
+  height: 211px;
+}
+
+.box-left h1 {
+  margin-top: 3rem;
+  margin-bottom: 15px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.box-left p {
+  font-size: 15px;
+  font-weight: light;
+}
+
+.box-right {
+  width: 500px;
+  background-color: #e9e9e9;
+  float: right;
+  padding: 5%;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.box-right img {
+  float: right;
+  width: 211px;
+  height: 211px;
+}
+
+.box-right h1 {
+  margin-top: 3rem;
+  margin-bottom: 15px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.box-right p {
+  font-size: 15px;
+  font-weight: light;
+}
+
+.prd {
+  padding: 0 3%;
+}
+
+.prd h1 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 1000;
+  padding-bottom: 40px;
+}
+
+.prd .isi-produk {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.prd .isi-produk .pro-container {
+  background-color: #e9e9e9;
+  border-radius: 0.3em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 23.5%;
+  height: auto;
+  padding-bottom: 2rem;
+}
+
+.prd .isi-produk .pro-container .pro img {
+  width: 100%;
+  height: 100%;
+}
+
+.prd .isi-produk .pro-container .pro {
+  /* margin: 0 sauto; */
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.prd .isi-produk .deskripsi {
+  padding: 0 1rem;
+}
+
+.prd .isi-produk .deskripsi span {
+  padding: 2px;
+}
+
+.prd .isi-produk .deskripsi h5 {
+  font-size: 25px;
+  padding: 1px;
+}
+
+.prd .isi-produk .deskripsi h4 {
+  padding: 1px;
+  padding-bottom: 20px;
+}
+
+.prd .isi-produk .deskripsi a {
+  background-color: #242424;
+  color: #fff;
+  padding: 8px 28px;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+  text-align: center;
+}
+
+/*#produk1 {
     padding-right: 0;
     padding-left: 0;
     padding-bottom: 8rem;
@@ -386,128 +387,128 @@
 }
 
 #discount {
-    background-color: #f0f0f0;
-    padding-bottom: 2rem;
-    padding-top: 0;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    min-height: 200px;
-    margin-bottom: 5rem;
-    justify-content: center;
-    margin-top: 22.5rem
+  background-color: #f0f0f0;
+  padding-bottom: 2rem;
+  padding-top: 0;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  min-height: 200px;
+  margin-bottom: 5rem;
+  justify-content: center;
+  margin-top: 22.5rem;
+}
+
+#discount .disc-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+#discount .gambar {
+  flex: 1;
+}
+
+#discount .gambar img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  padding-left: 50px;
+}
+
+#discount .disc-des {
+  flex: 1;
+  text-align: left;
+  padding: 10px;
+}
+
+#discount .disc-des h1 {
+  font-size: 98px;
+  font-weight: 1000;
+  color: #242424;
+  margin: 0;
+}
+
+#discount .disc-des h3 {
+  font-size: 35px;
+  color: #242424;
+  margin: 0.5rem 0;
+}
+
+#discount .disc-des .beli-sekarang {
+  display: block;
+  background-color: #242424;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1rem;
+  margin-top: 1rem;
+  max-width: fit-content;
+  margin-left: 0;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+#discount .disc-des .beli-sekarang:hover {
+  background-color: gray;
+  transition: background-color 0.3s ease;
+}
+
+#service {
+  background-color: #e9e9e9;
+  padding: 3rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 9.5rem;
+}
+
+#service .ser-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#service img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1280px) {
+  .search input[type="text"] {
+    width: 724px;
   }
-  
-  #discount .disc-container {
-    display: flex;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 2rem;
+
+  .hero {
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 6.3rem;
+    padding-bottom: 5rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 10rem;
   }
-  
-  #discount .gambar {
-    flex: 1;
-  }
-  
-  #discount .gambar img {
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    padding-left: 50px;
-  }
-  
-  #discount .disc-des {
-    flex: 1;
-    text-align: left;
-    padding: 10px
-  }
-  
-  #discount .disc-des h1 {
-    font-size: 98px;
-    font-weight: 1000;
-    color: #242424;
-    margin: 0;
-  }
-  
-  #discount .disc-des h3 {
-    font-size: 35px;
-    color: #242424;
-    margin: 0.5rem 0;
-  }
-  
-  #discount .disc-des .beli-sekarang {
-    display: block;
-    background-color: #242424;
-    color: #fff;
-    padding: 15px 25px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 1rem;
-    margin-top: 1rem;
-    max-width: fit-content;
-    margin-left: 0;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  }
-  
-  #discount .disc-des .beli-sekarang:hover {
-    background-color: gray;
-    transition: background-color 0.3s ease;
-  }
-  
-  #service {
-    background-color: #e9e9e9;
-    padding: 3rem 0rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    margin-bottom: 9.5rem;
-  }
-  
-  #service .ser-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #service img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  @media (max-width: 1280px) {
-    .search input[type="text"] {
-        width: 724px;
-    }
-    
-    .hero {
-      padding-right: 5rem;
-      padding-left: 5rem;
-      padding-top: 6.3rem;
-      padding-bottom: 5rem;
-      margin-left: 3rem;
-      margin-right: 3rem;
-      margin-top: 10rem;
-    }
 
   .hero .hero-right {
-      width: 50%;
-      overflow: hidden;
-      position: relative;
+    width: 50%;
+    overflow: hidden;
+    position: relative;
   }
 
   .slides {
-      display: flex;
-      transition: transform 1s ease;
-      width: 100%;
+    display: flex;
+    transition: transform 1s ease;
+    width: 100%;
   }
 
   .hero .hero-right img {
-      width: 100%;
-      height: auto;
+    width: 100%;
+    height: auto;
   }
 
-  .hero .hero-left h1{
+  .hero .hero-left h1 {
     font-size: 54px;
   }
 
@@ -548,8 +549,8 @@
   }
 
   .box-left p {
-      font-size: 15px;
-      font-weight: light;
+    font-size: 15px;
+    font-weight: light;
   }
 
   .box-right {
@@ -574,83 +575,83 @@
     margin-bottom: 15px;
   }
 
-    .box-right p {
-        font-size: 15px;
-        font-weight: light;
-    }
-    
-     #produk1 .pro-container {
-        gap: 20px;
-    }
-    
-    #produk1 .pro {
-        width: 16.7rem;
-    }
-    
-    #discount {
-        padding: 2rem 1rem;
-        margin-top: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: left;
-        flex-direction: row;
-    }
-    
-    #discount .disc-container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-        max-width: 1200px;
-        width: 100%;
-    }
-    
-    #discount .gambar {
-        flex: 1;
-        text-align: left;
-    }
-    
-    #discount .gambar img {
-        max-width: 250px;
-        width: 100%;
-        padding-left: 150px;
-    }
-    
-    #discount .disc-des {
-        flex: 2;
-        padding: 1rem;
-        text-align: left;
-        margin-left: 19rem;
-    }
-    
-    #discount .disc-des h1 {
-        font-size: 72px;
-    }
-    
-    #discount .disc-des h3 {
-        font-size: 28px;
-    }
-    
-    #discount .disc-des a {
-        display: inline-block;
-        background-color: #242424;
-        color: #fff;
-        padding: 15px 25px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-size: 1rem;
-        margin-top: 1rem;
-        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    }
-    
-    #discount .disc-des a:hover {
-        background-color: gray;
-        transition: background-color 0.3s ease;
-    }
-    
-    #service {
-        padding: 3rem 0;
-        height: 50px;
-    }
+  .box-right p {
+    font-size: 15px;
+    font-weight: light;
+  }
+
+  #produk1 .pro-container {
+    gap: 20px;
+  }
+
+  #produk1 .pro {
+    width: 16.7rem;
+  }
+
+  #discount {
+    padding: 2rem 1rem;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    flex-direction: row;
+  }
+
+  #discount .disc-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+  }
+
+  #discount .gambar {
+    flex: 1;
+    text-align: left;
+  }
+
+  #discount .gambar img {
+    max-width: 250px;
+    width: 100%;
+    padding-left: 150px;
+  }
+
+  #discount .disc-des {
+    flex: 2;
+    padding: 1rem;
+    text-align: left;
+    margin-left: 19rem;
+  }
+
+  #discount .disc-des h1 {
+    font-size: 72px;
+  }
+
+  #discount .disc-des h3 {
+    font-size: 28px;
+  }
+
+  #discount .disc-des a {
+    display: inline-block;
+    background-color: #242424;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 1rem;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  #discount .disc-des a:hover {
+    background-color: gray;
+    transition: background-color 0.3s ease;
+  }
+
+  #service {
+    padding: 3rem 0;
+    height: 50px;
+  }
 }

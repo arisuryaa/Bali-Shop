@@ -47,17 +47,9 @@ if (isset($_POST["submit"]) ) {
     <!--hero-->
 
     <section class="hero" id="hr">
-        <div class="hero-left">
-            <h1>LAPTOP GAMING <br> TERKUAT</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ducimus ea non culpa, incidunt cupiditate itaque, optio hic voluptates architecto</p>
-            <a href="">Beli Sekarang</a>
-        </div>
-
-        <div class="hero-right">
-            <div class="slides">
-                <img src="asset/img/mockup.svg" alt="Mockup">
-                <img src="asset/img/mouse-mockup1.svg" alt="Mouse">
-            </div>
+        <div class="slides">    
+            <img src="asset/img/scroll2.jpg" alt="Scroll1">
+            <img src="asset/img/scroll1.jpg" alt="Scroll2">
         </div>
     </section>
 
@@ -149,13 +141,13 @@ if (isset($_POST["submit"]) ) {
         var totalImages = images.length;
 
         function showNextImage() {
-        
+          
             currentIndex = (currentIndex + 1) % totalImages;
 
             slides.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
         }
 
-        setInterval(showNextImage, 4000);
+        setInterval(showNextImage, 5000);
     </script>
 
 </body>

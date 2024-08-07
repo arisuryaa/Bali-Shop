@@ -4,8 +4,14 @@ include "config/app.php";
 
 $idBarang = $_GET["id_barang"];
 $dataBarang = select("SELECT * FROM barang WHERE id_barang = $idBarang")[0];
+$fotoLama = [$dataBarang["foto_barang"],$dataBarang["foto_barang2"],$dataBarang["foto_barang3"],$dataBarang["foto_barang4"],$dataBarang["foto_barang5"]];
+$jsonArray = json_encode($fotoLama);
+
 
 if(isset($_POST["submit"])) {
+
+// var_dump($_POST);
+// var_dump($_FILES);
 
     if(editBarang($_POST) > 0 ) {
         echo "<script>
@@ -13,7 +19,10 @@ if(isset($_POST["submit"])) {
             document.location.href = 'index.php';
         </script>";
     } else {
-        echo "kontol";
+        "<script>
+            alert('data gagal diubah');
+            document.location.href = 'index.php';
+        </script>";
     }
 }
 
@@ -49,7 +58,8 @@ if(isset($_POST["submit"])) {
             <form action="" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <input type="hidden" name="id_barang" value="<?= $dataBarang["id_barang"]; ?>">
-                    <input type="hidden" name="foto_barang" value="<?= $dataBarang["foto_barang"]; ?>">
+                    <input type="hidden" name="foto_barang_lama" value='<?= $jsonArray ?>'>
+
                     <label for="nama" class="form-label">Nama Barang</label>
                     <input required type="text" class="form-control" id="nama" placeholder="Nama Barang"
                         name="nama_barang" value="<?= $dataBarang["nama_barang"] ?>">
@@ -84,11 +94,12 @@ if(isset($_POST["submit"])) {
                             Teh</option>
                     </select>
                 </div>
-                <div class=" mb-3">
-                    <label for="foto" class="form-label">foto</label>
-                    <input type="file" class="form-control" id="foto" placeholder="foto" name="foto_barang"
-                        onchange="preview()">
-                    <img src="" alt="" class="img-thumbnail img-preview" width="100px">
+                <div class="mb-3">
+                    <label for="foto" class="form-label">Foto (masukkan 5 foto)</label>
+                    <input type="file" multiple class="form-control" id="foto" name="foto_barang[]">
+                    <div id="preview-container">
+                        <!-- Thumbnails akan ditampilkan di sini -->
+                    </div>
                 </div>
 
                 <button type="submit" name="submit" class="btn btn-primary">submit</button>
@@ -97,5 +108,25 @@ if(isset($_POST["submit"])) {
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
+        <script>
+        document.getElementById('foto').addEventListener('change', function() {
+            var previewContainer = document.getElementById('preview-container');
+            previewContainer.innerHTML = ''; // Kosongkan kontainer pratinjau
+            var files = this.files;
 
+            for (var i = 0; i < files.length; i++) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    var img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'img-thumbnail';
+                    img.style.width = '100px';
+                    previewContainer.appendChild(img);
+                }
+
+                reader.readAsDataURL(files[i]);
+            }
+        });
+        </script>
         <?php include "layout/footer.php";?>

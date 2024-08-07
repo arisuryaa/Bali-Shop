@@ -49,7 +49,7 @@ if (isset($_POST["submit"]) ) {
     <section class="hero" id="hr">
         <div class="slides">    
             <img src="asset/img/scroll2.jpg" alt="Scroll1">
-            <img src="asset/img/scroll1.jpg" alt="Scroll2">
+            <img src="asset/img/scroll3.jpg" alt="Scroll2">
         </div>
     </section>
 

@@ -4,7 +4,9 @@ include "admin/config/app.php";
 
 $dataBarang = select("SELECT * FROM barang");
 
-
+if (isset($_POST["submit"]) ) {
+    $dataBarang = submit($_POST["cari"]);
+}
 
 ?>
 
@@ -30,8 +32,10 @@ $dataBarang = select("SELECT * FROM barang");
         </div>
 
         <div class="search">
-            <input type="text" placeholder="Cari Produk...">
-            <button type="submit"><i class="fas fa-search"></i></button>
+            <form action="" method="post">
+                <input type="text" name="cari" placeholder="Cari Produk...">
+                <button type="submit" name="submit"><i class="fas fa-search"></i></button>
+            </form>
         </div>
 
         <div class="nav-kiri">
@@ -43,14 +47,9 @@ $dataBarang = select("SELECT * FROM barang");
     <!--hero-->
 
     <section class="hero" id="hr">
-        <div class="hero-left">
-            <h1>LAPTOP GAMING <br> TERKUAT</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <a href="">Beli Sekarang</a>
-        </div>
-
-        <div class="hero-right">
-            <img src="asset/img/mockup.svg">
+        <div class="slides">    
+            <img src="asset/img/scroll2.jpg" alt="Scroll1">
+            <img src="asset/img/scroll3.jpg" alt="Scroll2">
         </div>
     </section>
 
@@ -94,22 +93,21 @@ $dataBarang = select("SELECT * FROM barang");
 
     <section id="produk1" class="prd">
         <h1>PRODUK UNGGULAN</h1>
-        <?php foreach($dataBarang as $barang) :?>
-        <div class="pro-container">
+        <div class="isi-produk">
+            <?php foreach($dataBarang as $barang) :?>
+                <div class="pro-container">
+                    <div class="pro">
+                        <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
+                    </div>
 
-            <div class="pro">
-                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
                 <div class="deskripsi">
                     <span><?= $barang["kategori_barang"] ?></span>
                     <h5><?= $barang["nama_barang"] ?></h5>
-                    <p><?= (str_word_count($barang["deskripsi_barang"]) > 5 ? substr($barang["deskripsi_barang"],0,50)."..." : $barang["deskripsi_barang"])?>
-                    </p>
+                    <p><?= $barang["deskripsi_barang"] ?></p>
                     <h4>Rp.<?= $barang["harga_barang"] ?></h4>
-                </div>
-                <a href="singgle-produk.php?id_barang=<?= $barang["id_barang"] ?>" class="beli">+KERANJANG</a>
+                <a href="#" class="beli">+KERANJANG</a>
             </div>
-
-
+        </div>
             <?php endforeach; ?>
         </div>
     </section>
@@ -136,6 +134,21 @@ $dataBarang = select("SELECT * FROM barang");
         </div>
     </section>
 
-</body>
+    <script>
+        var currentIndex = 0;
+        var slides = document.querySelector('.slides');
+        var images = document.querySelectorAll('.slides img');
+        var totalImages = images.length;
 
+        function showNextImage() {
+          
+            currentIndex = (currentIndex + 1) % totalImages;
+
+            slides.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+        }
+
+        setInterval(showNextImage, 5000);
+    </script>
+
+</body>
 </html>

@@ -52,7 +52,13 @@ function select($query) {
   
     $fileFoto = [];
 
-
+  if (count($namaFile) !== 5 ) {
+    echo " <script>
+          alert('Foto Kurang/Lebih dari 5!');
+          document.location.href = 'index.php';
+        </script>";
+        die();
+  } else {
     for($i = 0; $i < $totalFiles; $i++) {
       $ukuranFile = $_FILES['foto_barang'] ['size'][$i];
       $nama = $_FILES['foto_barang'] ['name'][$i];
@@ -72,6 +78,7 @@ function select($query) {
         ";
         die();
       } 
+    } 
     
       // Check File Size (2MB)
       if($ukuranFile > 2048000) {
@@ -102,21 +109,30 @@ function select($query) {
     $id = $post["id_barang"];
     $nama = $post["nama_barang"];
     $harga = $post["harga_barang"];
-    $fotoLama = $post["foto_barang"];
+    $jsonArray = $_POST['foto_barang_lama'];
+    $fotoBarangLama = json_decode($jsonArray, true);
     $stock = $post["stock_barang"];
     $deskripsi = $post["deskripsi_barang"];
     $kategori = $post["kategori_barang"];
 
-    if($_FILES['foto_barang']['error'] == 4) {
-      $foto = $fotoLama;
+    // var_dump($fotoBarangLama);
+    // var_dump($fotoBarangLama[0]);
+    // var_dump($fotoBarangLama[1]);
+    
+    if($_FILES['foto_barang']['error'][0] == 4) {
+      $foto = $fotoBarangLama;
     } else {
       $foto = uploadFile();
     }
-  
+
     $query = "UPDATE barang SET 
     nama_barang = '$nama',
     harga_barang = '$harga',
-    foto_barang = '$foto',
+    foto_barang = '$foto[0]',
+    foto_barang2 = '$foto[1]',
+    foto_barang3 = '$foto[2]',
+    foto_barang4 = '$foto[3]',
+    foto_barang5 = '$foto[4]',
     stock_barang = '$stock',
     deskripsi_barang = '$deskripsi',
     kategori_barang = '$kategori'

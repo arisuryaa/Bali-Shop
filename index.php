@@ -26,30 +26,39 @@ if (isset($_POST["submit"]) ) {
 
     <!--navbar-->
 
-    <nav>
+    <nav class="navbar">
+    <div class="top-section">
         <div class="logo">
-            <img src="asset/img/logo.svg">
+            <img src="asset/img/logo.svg" alt="Logo">
         </div>
-
         <div class="search">
             <form action="" method="post">
                 <input type="text" name="cari" placeholder="Cari Produk...">
                 <button type="submit" name="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>
-
         <div class="nav-kiri">
             <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
             <a href=""><i class="fa-solid fa-user"></i></a>
         </div>
-    </nav>
+    </div>
+    
+    <div class="bottom-section">
+        <div class="left-nav">
+            <a href="produk.php">SEMUA PRODUK</a>
+        </div>
+        <div class="right-nav">
+            <p>Hubungi Kami: +62 877 5081 7501</p>
+        </div>
+    </div>
+</nav>
 
     <!--hero-->
 
     <section class="hero" id="hr">
         <div class="slides">    
-            <img src="asset/img/scroll2.jpg" alt="Scroll1">
-            <img src="asset/img/scroll3.jpg" alt="Scroll2">
+            <img src="asset/img/frame 2.svg" alt="Frame1">
+            <img src="asset/img/frame 3.svg" alt="Frame2">
         </div>
     </section>
 
@@ -57,17 +66,18 @@ if (isset($_POST["submit"]) ) {
 
     <section class="box" id="tipe">
         <div class="box-left">
-            <img src="asset/img/mouse-mockup1.svg">
-            <h1>MOUSE</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro vero ab laborum harum. Nobis quia</p>
+            <img src="asset/img/monitor.svg">
+            <h1>MONITOR</h1>
+            <p>Monitor kami menghadirkan visual tajam dan performa optimal untuk pengalaman tampilan yang menakjubkan.</p>
+            <a href="" class="tombol-box">Lihat Semua</a>
         </div>
 
         <div class="box-right">
-            <img src="asset/img/mouse-mockup1.svg">
+            <img src="asset/img/vr-mockup.svg">
             <div class="text">
-                <h1>MOUSE</h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem quod error, ullam magni neque dolores
-                    blanditiis</p>
+                <h1>VR</h1>
+                <p>VR kami menawarkan pengalaman imersif yang mendalam dengan grafis yang memukau dan interaksi yang intuitif.</p>
+                <a href="" class="tombol-box">Lihat Semua</a>
             </div>
         </div>
     </section>
@@ -104,8 +114,8 @@ if (isset($_POST["submit"]) ) {
                     <span><?= $barang["kategori_barang"] ?></span>
                     <h5><?= $barang["nama_barang"] ?></h5>
                     <p><?= $barang["deskripsi_barang"] ?></p>
-                    <h4>Rp.<?= $barang["harga_barang"] ?></h4>
-                <a href="#" class="beli">+KERANJANG</a>
+                    <h4>Rp. <?= number_format($barang['harga_barang'],0,',','.') ?></h4>
+                <a href="singgle-produk.php ?id_barang=<?= $barang["id_barang"]; ?>" class="beli">BELI SEKARANG</a>
             </div>
         </div>
             <?php endforeach; ?>
@@ -126,9 +136,9 @@ if (isset($_POST["submit"]) ) {
         <h1>BALI SHOP</h1>
         <div class="foot-container">
             <ul>
-                <li><a href="#hr">HOME</a></li>
-                <li><a href="#tipe">TIPE</a></li>
-                <li><a href="#produk1">KOLEKSI</a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
             </ul>
             <p>© 2024 BALI SHOP. All Rights Reserved.</p>
         </div>

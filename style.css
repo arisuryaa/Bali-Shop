@@ -12,7 +12,6 @@ body {
 nav {
   background-color: #242424;
   color: #fff;
-  padding: 1em 2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,11 +19,65 @@ nav {
   width: 100%;
   top: 0;
   z-index: 1000;
+  flex-direction: column;
+}
+
+.navbar .top-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 0;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.navbar .top-section1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 1.7rem;
+  padding-bottom: 1.7rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.navbar .bottom-section {
+  display: flex;
+  margin-top: 2rem;
+  background-color: #e9e9e9;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  justify-content: space-between;
+}
+
+.navbar .bottom-section a {
+  color: #242424;
+  text-decoration: none;
+  padding-left: 5rem;
+  font-weight: 700;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar .bottom-section a:hover {
+  color: gray;
+}
+
+.navbar .bottom-section p {
+  color: #242424;
+  text-decoration: none;
+  padding-right: 5rem;
+  font-weight: 700;
+  font-size: 15px;
 }
 
 nav .logo img {
   height: 55px;
-  margin-left: 1.4rem;
+  padding-left: 5rem;
 }
 
 .search {
@@ -70,7 +123,7 @@ nav .logo img {
 .nav-kiri {
   display: flex;
   gap: 35px;
-  margin-right: 100px;
+  padding-right: 5rem;
 }
 
 .nav-kiri i {
@@ -79,7 +132,7 @@ nav .logo img {
 }
 
 .hero {
-  margin-top: 9.7rem;
+  margin-top: 14.3rem;
   margin-bottom: 0rem;
   margin-right: 3rem;
   margin-left: 3rem;
@@ -90,7 +143,7 @@ nav .logo img {
 .slides {
   display: flex;
   width: 100%;
-  height: 70vh;
+  height: 60vh;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -110,7 +163,10 @@ nav .logo img {
   width: 500px;
   background-color: #e9e9e9;
   float: left;
-  padding: 5%;
+  padding-top: 3%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
   justify-content: center;
   border-radius: 10px;
 }
@@ -130,14 +186,17 @@ nav .logo img {
 
 .box-left p {
   font-size: 15px;
-  font-weight: light;
+  margin-bottom: 25px;
 }
 
 .box-right {
   width: 500px;
   background-color: #e9e9e9;
   float: right;
-  padding: 5%;
+  padding-top: 3%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
   justify-content: center;
   border-radius: 10px;
 }
@@ -157,7 +216,7 @@ nav .logo img {
 
 .box-right p {
   font-size: 15px;
-  font-weight: light;
+  margin-bottom: 25px;
 }
 
 .prd {
@@ -221,12 +280,17 @@ nav .logo img {
 .prd .isi-produk .deskripsi a {
   background-color: #242424;
   color: #fff;
-  padding: 8px 106px;
+  padding: 8px 95px;
   text-decoration: none;
   border-radius: 10px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   font-size: 14px;
   text-align: center;
+}
+
+.prd .isi-produk .deskripsi a:hover {
+  background-color: gray;
+  transition: background-color 0.3s ease;
 }
 
 #footer {
@@ -264,7 +328,7 @@ nav .logo img {
 .foot-container ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 20px;
   transition: color 0.3s;
 }
 
@@ -378,7 +442,7 @@ nav .logo img {
   .hero {
     margin-left: 3rem;
     margin-right: 3rem;
-    margin-top: 10rem;
+    margin-top: 14.3rem;
   }
 
   .hero .hero-right {
@@ -481,7 +545,7 @@ nav .logo img {
   .prd .isi-produk .deskripsi a {
     background-color: #242424;
     color: #fff;
-    padding: 8px 80px;
+    padding: 8px 69px;
     text-decoration: none;
     border-radius: 10px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
@@ -538,7 +602,7 @@ nav .logo img {
     display: inline-block;
     background-color: #242424;
     color: #fff;
-    padding: 15px 25px;
+    padding: 5px 15px;
     border-radius: 10px;
     text-decoration: none;
     font-size: 1rem;
@@ -555,4 +619,141 @@ nav .logo img {
     padding: 3rem 0;
     height: 50px;
   }
+}
+
+.tombol-box {
+  background-color: #242424;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+  text-align: center;
+}
+
+.tombol-box:hover {
+  background-color: gray;
+  transition: background-color 0.3s ease;
+}
+
+.all-prduk {
+  margin-top: 13rem;
+  margin-bottom: 7.8rem;
+  margin-right: 3rem;
+  margin-left: 3rem;
+}
+
+.all-prduk .isi-produk {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.all-prduk .isi-produk .pro-container {
+  background-color: #e9e9e9;
+  border-radius: 0.3em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 23.5%;
+  height: auto;
+  padding-bottom: 2rem;
+}
+
+.all-prduk .isi-produk .pro-container .pro img {
+  width: 100%;
+  height: 100%;
+}
+
+.all-prduk .isi-produk .pro-container .pro {
+  /* margin: 0 sauto; */
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.all-prduk .isi-produk .deskripsi {
+  padding: 0 1rem;
+}
+
+.all-prduk .isi-produk .deskripsi span {
+  padding: 2px;
+}
+
+.all-prduk .isi-produk .deskripsi h5 {
+  font-size: 25px;
+  padding: 1px;
+}
+
+.all-prduk .isi-produk .deskripsi h4 {
+  padding: 1px;
+  padding-bottom: 20px;
+}
+
+.all-prduk .isi-produk .deskripsi a {
+  background-color: #242424;
+  color: #fff;
+  padding: 8px 106px;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  font-size: 14px;
+  text-align: center;
+}
+
+.all-prduk .isi-produk .deskripsi a:hover {
+  background-color: gray;
+  transition: background-color 0.3s ease;
+}
+
+#footer-prd {
+  background-color: #242424;
+  color: #fff;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#footer-prd h1 {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.foot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foot ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.foot ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.foot ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.foot ul li a:hover {
+  color: gray;
+}
+
+.foot p {
+  margin-top: 10px;
+  font-size: 12px;
+  border-top: 1px solid #fff;
+  padding: 15px;
 }

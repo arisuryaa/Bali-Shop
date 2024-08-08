@@ -47,9 +47,9 @@ if (isset($_POST["submit"]) ) {
     <!--hero-->
 
     <section class="hero" id="hr">
-        <div class="slides">    
-            <img src="asset/img/scroll2.jpg" alt="Scroll1">
-            <img src="asset/img/scroll3.jpg" alt="Scroll2">
+        <div class="slides">
+            <img src="asset/img/Frame 2.png" alt="Scroll1">
+            <img src="asset/img/Frame 3 .png" alt="Scroll2">
         </div>
     </section>
 
@@ -95,19 +95,19 @@ if (isset($_POST["submit"]) ) {
         <h1>PRODUK UNGGULAN</h1>
         <div class="isi-produk">
             <?php foreach($dataBarang as $barang) :?>
-                <div class="pro-container">
-                    <div class="pro">
-                        <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
-                    </div>
+            <div class="pro-container">
+                <div class="pro">
+                    <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
+                </div>
 
                 <div class="deskripsi">
                     <span><?= $barang["kategori_barang"] ?></span>
                     <h5><?= $barang["nama_barang"] ?></h5>
                     <p><?= $barang["deskripsi_barang"] ?></p>
                     <h4>Rp.<?= $barang["harga_barang"] ?></h4>
-                <a href="#" class="beli">+KERANJANG</a>
+                    <a href="#" class="beli">+KERANJANG</a>
+                </div>
             </div>
-        </div>
             <?php endforeach; ?>
         </div>
     </section>
@@ -135,20 +135,21 @@ if (isset($_POST["submit"]) ) {
     </section>
 
     <script>
-        var currentIndex = 0;
-        var slides = document.querySelector('.slides');
-        var images = document.querySelectorAll('.slides img');
-        var totalImages = images.length;
+    var currentIndex = 0;
+    var slides = document.querySelector('.slides');
+    var images = document.querySelectorAll('.slides img');
+    var totalImages = images.length;
 
-        function showNextImage() {
-          
-            currentIndex = (currentIndex + 1) % totalImages;
+    function showNextImage() {
 
-            slides.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
-        }
+        currentIndex = (currentIndex + 1) % totalImages;
 
-        setInterval(showNextImage, 5000);
+        slides.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+    }
+
+    setInterval(showNextImage, 5000);
     </script>
 
 </body>
+
 </html>

@@ -64,21 +64,22 @@ $barangLain =select("SELECT * FROM barang");
 
     <section id="produk" class="produk1">
         <h1>PRODUK LAINNYA</h1>
-        <?php foreach($barangLain as $barang) : ?>
         <div class="pro-container">
+            <?php foreach($barangLain as $barang) : ?>
             <div class="pro">
                 <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
                 <div class="deskripsi">
                     <span><?= $barang["kategori_barang"] ?></span>
                     <h5><?= $barang["nama_barang"] ?></h5>
-                    <p><?= (str_word_count($barang["deskripsi_barang"]) > 5 ? substr($barang["deskripsi_barang"],0,50)."..." : $barang["deskripsi_barang"]) ?>
+                    <p><?= (str_word_count($barang["deskripsi_barang"]) > 5 ? substr($barang["deskripsi_barang"],0,30)."..." : $barang["deskripsi_barang"]) ?>
                     </p>
                     <h4>Rp.<?= $barang["harga_barang"] ?></h4>
                 </div>
-                <a href="singgle-produk.php?id_barang=<?= $barang["id_barang"] ?>" class="beli">+KERANJANG</a>
+                <a href="singgle-produk.php?id_barang=<?= $barang["id_barang"] ?>" class="beli">BELI SEKARANG</a>
             </div>
             <?php endforeach; ?>
         </div>
+
     </section>
 </body>
 

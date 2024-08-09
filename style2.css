@@ -72,7 +72,7 @@ nav .logo img {
   padding-right: 3rem;
   padding-left: 3rem;
   align-items: center;
-  margin-top: 7rem;
+  margin-top: 10rem;
   height: 75vh;
 }
 
@@ -96,7 +96,7 @@ nav .logo img {
 
 .container2 .foto img {
   width: 75%;
-  height: auto;
+  height: 100%;
 }
 
 .container2 .foto .fotoDetail img {
@@ -140,6 +140,7 @@ nav .logo img {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+  /* border: 1px solid black; */
 }
 
 #produk .pro {
@@ -151,6 +152,7 @@ nav .logo img {
   margin: 1rem;
   border-radius: 0.3em;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* border: 1px solid black; */
 }
 
 #produk .pro .deskripsi {

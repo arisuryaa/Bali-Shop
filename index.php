@@ -56,9 +56,15 @@ if (isset($_POST["submit"]) ) {
     <!--hero-->
 
     <section class="hero" id="hr">
+<<<<<<< HEAD
+        <div class="slides">
+            <img src="asset/img/Frame 2.png" alt="Scroll1">
+            <img src="asset/img/Frame 3 .png" alt="Scroll2">
+=======
         <div class="slides">    
             <img src="asset/img/frame 2.svg" alt="Frame1">
             <img src="asset/img/frame 3.svg" alt="Frame2">
+>>>>>>> 88e7689f1ec4e5c3dde2d1da4f71a8cadf5d379e
         </div>
     </section>
 
@@ -105,19 +111,24 @@ if (isset($_POST["submit"]) ) {
         <h1>PRODUK UNGGULAN</h1>
         <div class="isi-produk">
             <?php foreach($dataBarang as $barang) :?>
-                <div class="pro-container">
-                    <div class="pro">
-                        <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
-                    </div>
+            <div class="pro-container">
+                <div class="pro">
+                    <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
+                </div>
 
                 <div class="deskripsi">
                     <span><?= $barang["kategori_barang"] ?></span>
                     <h5><?= $barang["nama_barang"] ?></h5>
                     <p><?= $barang["deskripsi_barang"] ?></p>
+<<<<<<< HEAD
+                    <h4>Rp.<?= $barang["harga_barang"] ?></h4>
+                    <a href="#" class="beli">+KERANJANG</a>
+                </div>
+=======
                     <h4>Rp. <?= number_format($barang['harga_barang'],0,',','.') ?></h4>
                 <a href="singgle-produk.php ?id_barang=<?= $barang["id_barang"]; ?>" class="beli">BELI SEKARANG</a>
+>>>>>>> 88e7689f1ec4e5c3dde2d1da4f71a8cadf5d379e
             </div>
-        </div>
             <?php endforeach; ?>
         </div>
     </section>
@@ -145,20 +156,21 @@ if (isset($_POST["submit"]) ) {
     </section>
 
     <script>
-        var currentIndex = 0;
-        var slides = document.querySelector('.slides');
-        var images = document.querySelectorAll('.slides img');
-        var totalImages = images.length;
+    var currentIndex = 0;
+    var slides = document.querySelector('.slides');
+    var images = document.querySelectorAll('.slides img');
+    var totalImages = images.length;
 
-        function showNextImage() {
-          
-            currentIndex = (currentIndex + 1) % totalImages;
+    function showNextImage() {
 
-            slides.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
-        }
+        currentIndex = (currentIndex + 1) % totalImages;
 
-        setInterval(showNextImage, 5000);
+        slides.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+    }
+
+    setInterval(showNextImage, 5000);
     </script>
 
 </body>
+
 </html>

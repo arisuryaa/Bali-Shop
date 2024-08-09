@@ -4,7 +4,6 @@ include "layout/header.php";
 include 'config/app.php';
 
 if (isset($_POST['submit'])) {
-    // addBarang($_POST);
     // var_dump($_FILES);
     if ($_POST > 0) {
         addBarang($_POST);

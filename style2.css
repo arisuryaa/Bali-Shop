@@ -72,7 +72,7 @@ nav .logo img {
   padding-right: 3rem;
   padding-left: 3rem;
   align-items: center;
-  margin-top: 10rem;
+  margin-top: 7rem;
   height: 75vh;
 }
 
@@ -112,12 +112,64 @@ nav .logo img {
   justify-content: center;
   padding-left: 3rem;
   flex-direction: column;
+  /* border: 1px solid black; */
 }
 
-.container2 .deskripsi h1 {
-  font-size: 42px;
+.container2 .deskripsi .quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 15%;
+  border: 2px solid black;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.7rem;
+  margin-bottom: 2rem;
+}
+
+.container2 .deskripsi .quantity h1 {
+  font-size: 20px;
+}
+
+.container2 .deskripsi .quantity button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  height: auto;
+}
+
+.container2 .deskripsi .quantity button i {
+  width: 20px;
+  height: auto;
+}
+
+.container2 .deskripsi .judulBarang h1 {
+  font-size: 48px;
   font-weight: 800;
   text-transform: uppercase;
+}
+
+.container2 .deskripsi .judulBarang h2 {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(84, 84, 84);
+  padding-bottom: 0.5rem;
+}
+
+.container2 .deskripsi .deskripsiBarang {
+  padding-right: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 1rem;
+}
+
+.container2 .deskripsi .button a {
+  background-color: #242424;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 0.3em;
+  font-weight: bold;
 }
 
 #produk {

@@ -66,6 +66,28 @@ nav .logo img {
   font-size: 24px;
 }
 
+.swiper {
+  width: 35%;
+  height: auto;
+  padding-right: 5rem;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
 .container2 {
   display: flex;
   justify-content: space-between;
@@ -130,16 +152,23 @@ nav .logo img {
   font-size: 20px;
 }
 
+.container2 .deskripsi form button {
+  border: none;
+  cursor: pointer;
+  height: auto;
+  background-color: #242424;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.6rem;
+  font-size: 16px;
+}
+
 .container2 .deskripsi .quantity button {
+  width: 20px;
+  height: auto;
   border: none;
   background-color: transparent;
   cursor: pointer;
-  height: auto;
-}
-
-.container2 .deskripsi .quantity button i {
-  width: 20px;
-  height: auto;
 }
 
 .container2 .deskripsi .judulBarang h1 {
@@ -204,10 +233,19 @@ nav .logo img {
   margin: 1rem;
   border-radius: 0.3em;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 20%;
   /* border: 1px solid black; */
 }
 
 #produk .pro .deskripsi {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+  height: 100%;
+}
+
+#produk .pro .deskripsi .harga {
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -241,4 +279,54 @@ nav .logo img {
   font-size: 13px;
   text-align: center;
   margin-top: 10px;
+}
+
+#footer {
+  background-color: #242424;
+  color: #fff;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+#footer h1 {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.foot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foot-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.foot-container ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.foot-container ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.foot-container ul li a:hover {
+  color: gray;
+}
+
+.foot-container p {
+  margin-top: 10px;
+  font-size: 12px;
+  border-top: 1px solid #fff;
+  padding: 15px;
 }

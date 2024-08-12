@@ -19,6 +19,7 @@ if (isset($_POST["submit"]) ) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>Bali Shop</title>
 </head>
 
@@ -29,7 +30,7 @@ if (isset($_POST["submit"]) ) {
     <nav class="navbar">
         <div class="top-section">
             <div class="logo">
-                <img src="asset/img/logo.svg" alt="Logo">
+                <a href="index.php"><img src="asset/img/logo.svg" alt="Logo"></a>
             </div>
             <div class="search">
                 <form action="" method="post">
@@ -162,6 +163,7 @@ if (isset($_POST["submit"]) ) {
     setInterval(showNextImage, 5000);
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 
 </html>

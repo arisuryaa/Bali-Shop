@@ -104,21 +104,25 @@ if (isset($_POST["submit"]) ) {
 
     <!--produk unggulan-->
 
-    <section id="produk1" class="prd">
-        <h1>PRODUK UNGGULAN</h1>
-        <div class="isi-produk">
-            <?php foreach($dataBarang as $barang) :?>
-            <div class="pro-container">
-                <div class="pro">
-                    <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
-                </div>
 
+    <section id="produk" class="produk1">
+        <h1>PRODUK LAINNYA</h1>
+        <div class="pro-container">
+            <?php foreach($dataBarang as $barang) : ?>
+            <div class="pro">
+                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
                 <div class="deskripsi">
-                    <span><?= $barang["kategori_barang"] ?></span>
-                    <h5><?= $barang["nama_barang"] ?></h5>
-                    <p><?= $barang["deskripsi_barang"] ?></p>
-                    <h4>Rp. <?= number_format($barang['harga_barang'],0,',','.') ?></h4>
-                    <a href="singgle-produk.php?id_barang=<?= $barang["id_barang"]; ?>" class="beli">BELI SEKARANG</a>
+                    <div class="">
+                        <span><?= $barang["kategori_barang"] ?></span>
+                        <h5><?= $barang["nama_barang"] ?></h5>
+                    </div>
+                    <p><?= (str_word_count($barang["deskripsi_barang"]) > 5 ? substr($barang["deskripsi_barang"],0,30)."..." : $barang["deskripsi_barang"]) ?>
+                    </p>
+                    <div class="harga">
+                        <h4>Rp.<?= number_format($barang['harga_barang'],0,',','.') ?></h4>
+                        <a href="singgle-produk.php?id_barang=<?= $barang["id_barang"] ?>" class="beli">BELI
+                            SEKARANG</a>
+                    </div>
                 </div>
             </div>
             <?php endforeach; ?>

@@ -10,7 +10,7 @@ if (isset($_POST["submit"])) {
     var_dump($_POST);
 }
 
-var_dump($dataBarang["foto_barang"])
+// var_dump($dataBarang["foto_barang"])
 
 ?>
 
@@ -113,8 +113,9 @@ var_dump($dataBarang["foto_barang"])
             </div>
             <?php endforeach; ?>
         </div>
-
     </section>
+
+
     <section id="footer" class="ft">
         <h1>BALI SHOP</h1>
         <div class="foot-container">

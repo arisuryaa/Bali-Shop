@@ -8,6 +8,11 @@ $data_barang = $_POST;
 //     var_dump($_POST);
 // }
 
+$harga = (int)$data_barang['harga_barang'];
+$quantity = (int)$data_barang['quantity_barang'];
+
+$subtotal = $harga * $quantity; 
+
 ?>
 
 
@@ -95,8 +100,11 @@ $data_barang = $_POST;
                             </div>
                         </div>
                         <div class="totalProduk">
-                            <div class="totalProduk">
+                            <div class="total">
                                 <h1>Subtotal</h1>
+                            </div>
+                            <div class="dataTotal">
+                                <h1>Rp. <?= $subtotal ?></h1>
                             </div>
                         </div>
                     </div>
@@ -112,109 +120,3 @@ $data_barang = $_POST;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-
-
-
-
-    <!-- <section id="home">
-        <div class="container-utama">
-            <div class="container-kiri">
-                <h1>Detail Tagihan</h1>
-                <div class="form-kiri">
-                    <form action="#">
-                        <div class="row">
-                            <div class="mb-3 col-6">
-                                <label for="jurusan" class="form-label">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="firstname" name="firstname"
-                                    placeholder="....">
-                            </div>
-
-                            <div class="mb-3 col-6">
-                                <label for="jk" class="form-label">Telepon</label>
-                                <input type="text" class="form-control" id="firstname" name="firstname"
-                                    placeholder="....">
-                            </div>
-                        </div>
-                        <h1>Informasi Tambahan</h1>
-                        <input class="catatan" type="text" placeholder="catatan">
-                    </form>
-                </div>
-            </div>
-            <div class="container-kanan">
-                <h1>Pesanan Anda</h1>
-            </div>
-        </div>
-    </section> -->
-
-
-
-
-
-
-    <!--detail tagihan-->
-
-    <!-- <div class="detailtagihan">
-        <div class="dt">
-             <h1>
-                 Detail Tagihan
-             </h1>
-        </div>
-    </div>
-
-    <div class="kotak">
-        <div class="kiri">
-        <form action="#">
-            <div class="row">
-                    <div class="mb-3 col-6">
-                        <label for="jurusan" class="form-label">Nama Lengkap</label>
-                        <input type="text" 
-                        class="form-control"
-                        id="firstname" name="firstname" placeholder="....">
-                    </div>
-
-                    <div class="mb-3 col-6">
-                        <label for="jk" class="form-label">Telepon</label>
-                        <input type="text" 
-                        class="form-control"
-                        id="firstname" name="firstname" placeholder="....">
-                    </div>
-            </div>
-
-            <div class="it">
-            <h1>
-            Informasi Tambahan
-            </h1>
-            </div>
-            
-            <div class="cp">
-            <label for="catatan pesanan">Catatan Pesanan (opsional)</label>
-            <input type="text" 
-            class="form-control"
-            id="catatanpesanan" 
-            name="catatanpesanan" 
-            placeholder="....">
-            </div>
-        </form>
-    </div>
-
-    <div class="kanan">
-        <h1>
-            Pesanan Anda
-        </h1>
-        <div class="garis">
-            <div class="linekotak">
-                <div class="linekotak1">Produk</div>
-                <div class="linekotak2">Subtotal</div>
-            </div>
-            <div class="linebottom">
-                <button>
-                    Buat Nomor Pesanan
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <section id="kanan" class="prd">
-    </div>
-
-</div> -->

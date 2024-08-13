@@ -185,7 +185,7 @@ nav .search button {
 }
 
 .container-utama .container-kanan .pesananAnda {
-  height: 10%;
+  height: 15%;
 }
 
 .container-utama .container-kanan .dataPesanan {
@@ -201,13 +201,19 @@ nav .search button {
   gap: 10px;
 }
 
-.container-utama .container-kanan .dataPesanan .namaProduk .titleProduk h1 {
-  font-size: 20px;
-}
-
 .container-utama .container-kanan .dataPesanan .namaProduk .dataProduk {
   display: flex;
   gap: 4px;
+}
+
+.container-utama .container-kanan .dataPesanan .namaProduk .titleProduk h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.container-utama .container-kanan .dataPesanan .totalProduk .total h1 {
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .container-utama .container-kanan .dataPesanan .namaProduk .dataProduk h1 {
@@ -217,6 +223,30 @@ nav .search button {
 
 .container-utama .container-kanan .dataPesanan .totalProduk {
   width: 50%;
+}
+
+.container-utama .container-kanan .dataPesanan .totalProduk .dataTotal h1 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.container-utama .container-kanan .dataPesanan .totalProduk {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container-utama .container-kanan button {
+  border: none;
+  background-color: #0075ff;
+  padding: 0.5rem;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+  font-family: "Poppins", sans-serif;
 }
 
 /* .detailtagihan {

@@ -4,8 +4,13 @@ include "admin/config/app.php";
 
 $dataBarang = select("SELECT * FROM barang");
 
-if (isset($_POST["submit"]) ) {
-    $dataBarang = submit($_POST["cari"]);
+if (isset($_GET['submit'])) {
+    $keyword = $_GET['cari'];
+    $dataBarang = searchBarang($keyword);
+    $noResults = empty($dataBarang);
+} else {
+    $dataBarang = select("SELECT * FROM barang");
+    $noResults = false;
 }
 
 ?>
@@ -33,7 +38,7 @@ if (isset($_POST["submit"]) ) {
                 <a href="index.php"><img src="asset/img/logo.svg" alt="Logo"></a>
             </div>
             <div class="search">
-                <form action="" method="post">
+                <form action="produk.php" method="get">
                     <input type="text" name="cari" placeholder="Cari Produk...">
                     <button type="submit" name="submit"><i class="fas fa-search"></i></button>
                 </form>
@@ -103,7 +108,6 @@ if (isset($_POST["submit"]) ) {
     </section>
 
     <!--produk unggulan-->
-
 
     <section id="produk" class="produk1">
         <h1>PRODUK LAINNYA</h1>

@@ -69,7 +69,7 @@ nav .logo img {
 
 .swiper {
   width: 35%;
-  height: auto;
+  height: 100%;
   padding-right: 5rem;
 }
 
@@ -266,8 +266,8 @@ nav .logo img {
 }
 
 #produk .pro img {
-  width: 16.7rem;
-  height: 16.7rem;
+  width: 100%;
+  height: 100%;
 }
 
 #produk .pro .beli {

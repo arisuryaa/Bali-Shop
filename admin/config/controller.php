@@ -38,7 +38,6 @@ function select($query) {
     $kategori = $post["kategori"];
 
 
-    var_dump($foto);
     $query = "INSERT INTO barang VALUES (null, '$nama', '$harga', '$foto[0]','$foto[1]','$foto[2]','$foto[3]','$foto[4]', '$stock', '$deskripsi', '$kategori')";
 
     mysqli_query($db,$query);
@@ -46,62 +45,65 @@ function select($query) {
   }
 
   function uploadFile() {
-    $namaFile = $_FILES['foto_barang'] ['name'];
-
+    $namaFile = $_FILES['foto_barang']['name'];
     $totalFiles = count($namaFile);
-  
     $fileFoto = [];
 
-  if (count($namaFile) !== 5 ) {
-    echo " <script>
-          alert('Foto Kurang/Lebih dari 5!');
-          document.location.href = 'index.php';
-        </script>";
-        die();
-  } else {
-    for($i = 0; $i < $totalFiles; $i++) {
-      $ukuranFile = $_FILES['foto_barang'] ['size'][$i];
-      $nama = $_FILES['foto_barang'] ['name'][$i];
-      $error = $_FILES['foto_barang'] ['error'][$i];
-      $tmpName = $_FILES['foto_barang'] ['tmp_name'][$i];
-      
-      $extensiFileValid = ['jpg','png','jpeg'];
-      $extensiFile = explode('.',$nama);
-      $extensiFile = strtolower(end($extensiFile));
+    if ($totalFiles == 5) {
+        for($i = 0; $i < $totalFiles; $i++) {
+            $ukuranFile = $_FILES['foto_barang']['size'][$i];
+            $nama = $_FILES['foto_barang']['name'][$i];
+            $error = $_FILES['foto_barang']['error'][$i];
+            $tmpName = $_FILES['foto_barang']['tmp_name'][$i];
 
-      if(!in_array($extensiFile,$extensiFileValid)) {
+            $extensiFileValid = ['jpg', 'png', 'jpeg'];
+            $extensiFile = explode('.', $nama);
+            $extensiFile = strtolower(end($extensiFile));
+
+            if (!in_array($extensiFile, $extensiFileValid)) {
+                echo "
+                <script>
+                    alert('Format file tidak sesuai');
+                    document.location.href = 'index.php';
+                </script>
+                ";
+                die();
+            }
+
+            // Check File Size (2MB)
+            if ($ukuranFile > 2048000) {
+                echo "
+                <script>
+                    alert('Ukuran file terlalu besar, maksimal 2MB');
+                    document.location.href = 'index.php';
+                </script>
+                ";
+                die();
+            }
+
+            $namaFileBaru = uniqid();
+            $namaFileBaru .= ".";
+            $namaFileBaru .= $extensiFile;
+
+            // Pindahkan ke folder local untuk ditampilkan
+            move_uploaded_file($tmpName, 'assets/img/' . $namaFileBaru);
+            array_push($fileFoto, $namaFileBaru);
+        }
+
+
+    } else {
         echo "
         <script>
-          alert('format file tidak sesuai');
-          document.location.href = 'index.php';
+            alert('Foto harus tepat 5!');
+            document.location.href = 'index.php';
         </script>
         ";
         die();
-      } 
-    } 
-    
-      // Check File Size (2MB)
-      if($ukuranFile > 2048000) {
-        echo "
-          <script>
-            alert('ukuran file terlalu besar, maximal 2MB')
-            document.location.href = 'index.php';
-          </script>
-        ";
-        die();
-      }
-      $namaFileBaru = uniqid();
-      $namaFileBaru .= ".";
-      $namaFileBaru .= $extensiFile;
-  
-    // pindahkan ke folder local untuk ditampilkan
-    move_uploaded_file($tmpName,'assets/img/'.$namaFileBaru); 
-    array_push($fileFoto,$namaFileBaru); 
-  }
+    }
 
     return $fileFoto;
-  
-  }
+}
+
 
   function editBarang($post) {
     global $db;
@@ -116,8 +118,7 @@ function select($query) {
     $kategori = $post["kategori_barang"];
 
     // var_dump($fotoBarangLama);
-    // var_dump($fotoBarangLama[0]);
-    // var_dump($fotoBarangLama[1]);
+    // var_dump($jsonArray);
     
     if($_FILES['foto_barang']['error'][0] == 4) {
       $foto = $fotoBarangLama;
@@ -150,7 +151,7 @@ function select($query) {
     $password = $post["password"];
     $password2 = $post["password2"];
 
-$usernameSama = select("SELECT username FROM akun WHERE username = '$username' ");
+    $usernameSama = select("SELECT username FROM akun WHERE username = '$username' ");
     if ($usernameSama) {
       echo "<script>alert('username sudah terdaftar!');
       document.location.href = 'register.php';
@@ -165,12 +166,12 @@ $usernameSama = select("SELECT username FROM akun WHERE username = '$username' "
       die();
     } 
 
-  $hashPassword = password_hash($password,PASSWORD_DEFAULT);
+   $hashPassword = password_hash($password,PASSWORD_DEFAULT);
 
 
-$query = "INSERT INTO akun VALUES(null, '$username', '$hashPassword')";
-mysqli_query($db, $query);
-return mysqli_affected_rows($db);
+    $query = "INSERT INTO akun VALUES(null, '$username', '$hashPassword')";
+    mysqli_query($db, $query);
+    return mysqli_affected_rows($db);
 }
 
 function login($post) {

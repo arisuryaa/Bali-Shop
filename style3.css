@@ -1,0 +1,341 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+nav {
+  background-color: #242424;
+  color: #fff;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .logo img {
+  height: 40px;
+}
+
+nav .search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+nav .search input[type="text"] {
+  padding: 0.5em;
+  border: none;
+  border-radius: 0.3em;
+  margin-right: 0.5em;
+  width: 724px;
+  height: 1.3rem;
+}
+
+nav .search button {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0.3em;
+  background-color: gray;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 30px;
+  height: 2.2rem;
+}
+
+.search button:hover {
+  transition: background-color 1s ease;
+  background-color: #333333;
+}
+
+.nav-kiri {
+  display: flex;
+  gap: 40px;
+  margin-right: 90px;
+}
+
+.nav-kiri i {
+  color: #fff;
+  font-size: 24px;
+}
+
+.hero {
+  margin-top: 4.5rem;
+  background-image: url(asset/img/bg2.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: white;
+  flex-direction: column;
+}
+
+.hero h1 {
+  color: white;
+  font-weight: 400;
+  font-size: 50px;
+  margin-bottom: 5px;
+}
+
+.hero .tombol a {
+  color: white;
+  text-decoration: none;
+}
+
+.container-utama {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-utama .container-kiri {
+  width: 55%;
+  padding: 1rem 3rem;
+}
+
+.container-utama .container-kiri h1 {
+  font-size: 28px;
+}
+
+.container-utama .container-kiri .data-customer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.container-utama .container-kiri .namaCust {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.container-utama .container-kiri .namaCust label {
+  display: block;
+  font-size: 18px;
+}
+
+.container-utama .container-kiri .namaCust input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #333333;
+  color: white;
+}
+
+.container-utama .container-kiri .nomorCust {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.container-utama .container-kiri .nomorCust label {
+  display: block;
+  font-size: 18px;
+}
+
+.container-utama .container-kiri .nomorCust input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #333333;
+  color: white;
+}
+
+.container-utama .container-kiri .catatan .catatanCust label {
+  display: block;
+  font-size: 18px;
+}
+
+.container-utama .container-kiri .catatan .catatanCust {
+  padding-top: 1rem;
+}
+
+.container-utama .container-kiri .catatan .catatanCust input {
+  width: 100%;
+  padding: 3rem 0;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #333333;
+  color: white;
+}
+
+.container-utama .container-kanan {
+  width: 45%;
+  margin: 1rem 3rem;
+  padding: 1rem;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container-utama .container-kanan .pesananAnda {
+  height: 15%;
+}
+
+.container-utama .container-kanan .dataPesanan {
+  display: flex;
+  justify-content: space-between;
+  height: 75%;
+}
+
+.container-utama .container-kanan .dataPesanan .namaProduk {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container-utama .container-kanan .dataPesanan .namaProduk .dataProduk {
+  display: flex;
+  gap: 4px;
+}
+
+.container-utama .container-kanan .dataPesanan .namaProduk .titleProduk h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.container-utama .container-kanan .dataPesanan .totalProduk .total h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.container-utama .container-kanan .dataPesanan .namaProduk .dataProduk h1 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.container-utama .container-kanan .dataPesanan .totalProduk {
+  width: 50%;
+}
+
+.container-utama .container-kanan .dataPesanan .totalProduk .dataTotal h1 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.container-utama .container-kanan .dataPesanan .totalProduk {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container-utama .container-kanan button {
+  border: none;
+  background-color: #0075ff;
+  padding: 0.5rem;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+  font-family: "Poppins", sans-serif;
+}
+
+/* .detailtagihan {
+    margin: 10px;
+    padding-left: 20px;
+  }
+
+  .detailtagihan .kotak {
+    border: 1px solid black;
+    justify-content: space-between;
+    display: flex;
+
+  }
+
+  .detailtagihan .kotak .kiri{
+    width: 60%;
+  }
+
+  .detailtagihan .dt h1{
+    font-size: 30px;
+  }
+
+  .detailtagihan .it h1{
+    font-size: 30px;
+  }
+
+  .detailtagihan .kotak .kiri .cp input{
+    width: 100%;
+    padding: 30px;
+  }
+
+  .kanan{
+    border: 1px solid grey;
+    width: 40%;
+    padding: 20px;
+  }
+
+  .kanan h1{
+    font-size: 30px;
+  }
+
+  .kanan .linekotak{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .kanan button{
+    margin: 20px;
+    padding: 30px;
+  } */
+
+/* .container-kiri .form-kiri {
+  border: 1px solid black;
+  justify-content: space-between;
+  display: flex;
+}
+
+.container-utama .container-kiri {
+  width: 60%;
+}
+
+.container-utama .container-kiri h1 {
+  font-size: 30px;
+}
+
+.container-utama .container-kiri .form-kiri h1 {
+  font-size: 30px;
+}
+
+input.catatan {
+  width: 500px;
+  height: 100px;
+}
+
+.container-kiri {
+  padding-left: 20px;
+}
+
+.container-kanan h1 {
+  border: 1px solid grey;
+  font-size: 30px;
+}
+
+.container-utama {
+  justify-content: space-between;
+  display: flex;
+  padding-top: 20px;
+}
+
+.container-utama .container-kanan {
+  width: 40%;
+} */

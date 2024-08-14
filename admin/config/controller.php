@@ -231,4 +231,26 @@ function searchBarang($keyword) {
   
 }
 
+function pesanan($post) {
+  global $db;
+
+  // var_dump(count($post["catatan"]));
+
+  $namaPemesan = $post["nama"];
+  $nomorTelpon = $post["telpon"];
+  $catatan = $post["catatan"] ;
+  $namaBarang = $post["namaBarang"];
+  $quantity = $post["quantityBarang"];
+  $hargaBarang = $post["hargaBarang"];
+  $subtotal = $post["subtotal"];
+
+
+  $query = "INSERT INTO pesanan VALUES (null, '$namaPemesan', '$nomorTelpon', '$catatan','$namaBarang','$quantity','$hargaBarang','$subtotal')";
+
+  mysqli_query($db,$query);
+  return mysqli_affected_rows($db);
+}
+
+
+
 ?>

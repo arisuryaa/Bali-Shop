@@ -1,17 +1,33 @@
 <?php
 
+include "admin/config/app.php";
+
 $data_barang = $_POST;
 
-// var_dump($data_barang);
-
-// if(isset($_POST["submit"])) {
-//     var_dump($_POST);
-// }
+if(count($data_barang) <= 0) {
+    echo "<script>
+        document.location.href = 'index.php';
+    </script>";
+}
 
 $harga = (int)$data_barang['harga_barang'];
 $quantity = (int)$data_barang['quantity_barang'];
 
 $subtotal = $harga * $quantity; 
+
+if(isset($_POST["pesan"])) {
+    if(pesanan($_POST) > 0 ) {
+        echo "<script>
+            alert('pesanan akan segera diproses');
+            document.location.href = 'index.php';
+        </script>";
+    } else {
+        "<script>
+            alert('gagal');
+            document.location.href = 'index.php';
+        </script>";
+    }
+}
 
 ?>
 
@@ -63,17 +79,16 @@ $subtotal = $harga * $quantity;
     <section>
         <form action="" method="POST">
             <div class="container-utama">
-
                 <div class="container-kiri">
                     <h1>Detail Tagihan</h1>
                     <div class="data-customer">
                         <div class="namaCust">
                             <label for="nama">Nama Lengkap</label>
-                            <input type="text" name="nama" id="nama">
+                            <input type="text" name="nama" id="nama" required>
                         </div>
                         <div class="nomorCust">
                             <label for="nomor">Nomor Telpon</label>
-                            <input type="number" name="telpon" id="nomor">
+                            <input type="number" name="telpon" id="nomor" required>
                         </div>
                     </div>
                     <div class="catatan">
@@ -104,11 +119,15 @@ $subtotal = $harga * $quantity;
                                 <h1>Subtotal</h1>
                             </div>
                             <div class="dataTotal">
-                                <h1>Rp. <?= $subtotal ?></h1>
+                                <h1>Rp. <?=  number_format($subtotal,0,',','.') ?></h1>
                             </div>
                         </div>
                     </div>
-                    <button>Buat Nomor Pesanan</button>
+                    <input type="hidden" name="namaBarang" value="<?= $data_barang["judul_barang"] ?>">
+                    <input type="hidden" name="quantityBarang" value="<?= $data_barang["quantity_barang"] ?>">
+                    <input type="hidden" name="hargaBarang" value="<?= $data_barang["harga_barang"] ?>">
+                    <input type="hidden" name="subtotal" value="<?= $subtotal ?>">
+                    <button type="submit" name="pesan">Buat Nomor Pesanan</button>
                 </div>
 
             </div>

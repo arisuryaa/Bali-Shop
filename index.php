@@ -110,7 +110,7 @@ if (isset($_GET['submit'])) {
     <!--produk unggulan-->
 
     <section id="produk" class="produk1">
-        <h1>PRODUK LAINNYA</h1>
+        <h1>PRODUK UNGGULAN</h1>
         <div class="pro-container">
             <?php foreach($dataBarang as $barang) : ?>
             <div class="pro">

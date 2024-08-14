@@ -132,7 +132,7 @@ nav .logo img {
 }
 
 .hero {
-  margin-top: 14.3rem;
+  margin-top: 13.8rem;
   margin-bottom: 0rem;
   margin-right: 3rem;
   margin-left: 3rem;
@@ -156,7 +156,8 @@ nav .logo img {
 
 .box {
   padding: 5rem 3rem;
-  margin-bottom: 22.7%;
+  margin-bottom: 22%;
+  flex: 1;
 }
 
 .box-left {
@@ -164,7 +165,7 @@ nav .logo img {
   background-color: #e9e9e9;
   float: left;
   padding-top: 3%;
-  padding-bottom: 5%;
+  padding-bottom: 3%;
   padding-left: 5%;
   padding-right: 5%;
   justify-content: center;
@@ -186,7 +187,7 @@ nav .logo img {
 
 .box-left p {
   font-size: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
 }
 
 .box-right {
@@ -194,7 +195,7 @@ nav .logo img {
   background-color: #e9e9e9;
   float: right;
   padding-top: 3%;
-  padding-bottom: 5%;
+  padding-bottom: 3%;
   padding-left: 5%;
   padding-right: 5%;
   justify-content: center;
@@ -216,82 +217,75 @@ nav .logo img {
 
 .box-right p {
   font-size: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
 }
 
-.prd {
-  padding: 0 3%;
+#produk {
+  padding: 0; 
 }
 
-.prd h1 {
+#produk h1 {
   text-align: center;
-  font-size: 50px;
-  font-weight: 1000;
+  font-size: 44.5px;
+  margin-top: 0;
   padding-bottom: 40px;
+  font-weight: 1000;
 }
 
-.prd .isi-produk {
+#produk .pro-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.prd .isi-produk .pro-container {
+#produk .pro {
+  display: flex;
+  flex-direction: column;
   background-color: #e9e9e9;
+  gap: 10px;
+  padding: 1.5rem 1.5rem;
+  margin: 1rem;
   border-radius: 0.3em;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  width: 23.5%;
-  height: auto;
-  padding-bottom: 2rem;
 }
 
-.prd .isi-produk .pro-container .pro img {
-  width: 100%;
-  height: 100%;
-}
-
-.prd .isi-produk .pro-container .pro {
-  /* margin: 0 sauto; */
+#produk .pro .deskripsi {
   display: flex;
-  justify-content: center;
-  padding: 1rem;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.prd .isi-produk .deskripsi {
-  padding: 0 1rem;
-}
-
-.prd .isi-produk .deskripsi span {
-  padding: 2px;
-}
-
-.prd .isi-produk .deskripsi h5 {
+#produk .pro .deskripsi h5 {
   font-size: 25px;
   padding: 1px;
 }
 
-.prd .isi-produk .deskripsi h4 {
+#produk .pro .deskripsi h4 {
   padding: 1px;
-  padding-bottom: 20px;
 }
 
-.prd .isi-produk .deskripsi a {
+#produk .pro .deskripsi span {
+  padding: 2px;
+}
+
+#produk .pro img {
+  width: 16.7rem;
+  height: 16.7rem;
+}
+
+#produk .pro .beli {
   background-color: #242424;
   color: #fff;
-  padding: 8px 95px;
+  padding: 10px 60px;
   text-decoration: none;
   border-radius: 10px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  font-size: 14px;
+  font-size: 13px;
   text-align: center;
+  margin-top: 10px;
 }
 
-.prd .isi-produk .deskripsi a:hover {
-  background-color: gray;
-  transition: background-color 0.3s ease;
-}
 
 #footer {
   background-color: #242424;
@@ -434,7 +428,7 @@ nav .logo img {
   height: auto;
 }
 
-@media (max-width: 1280px) {
+@media (min-width: 992px) {
   .search input[type="text"] {
     width: 724px;
   }
@@ -478,12 +472,16 @@ nav .logo img {
     margin-right: 1rem;
     margin-left: 1rem;
     margin-bottom: 0;
+    flex: 1;
   }
 
   .box-left {
     flex: 1;
     background-color: #e9e9e9;
-    padding: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 1%;
+    padding-bottom: 4.7%;
     border-radius: 10px;
     text-align: left;
   }
@@ -510,7 +508,10 @@ nav .logo img {
   .box-right {
     flex: 1;
     background-color: #e9e9e9;
-    padding: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 1%;
+    padding-bottom: 4.7%;
     border-radius: 10px;
     text-align: left;
   }
@@ -637,74 +638,80 @@ nav .logo img {
   transition: background-color 0.3s ease;
 }
 
-.all-prduk {
-  margin-top: 13rem;
-  margin-bottom: 7.8rem;
-  margin-right: 3rem;
-  margin-left: 3rem;
+#all {
+  padding-top: 11.5rem;
+  padding-bottom: 5rem;
+  padding-right: 0;
+  padding-left: 0;
 }
 
-.all-prduk .isi-produk {
+#all h1 {
+  text-align: center;
+  font-size: 44.5px;
+  margin-top: 0;
+  padding-bottom: 40px;
+  font-weight: 1000;
+}
+
+#all .pro-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.all-prduk .isi-produk .pro-container {
+#all .pro {
+  display: flex;
+  flex-direction: column;
   background-color: #e9e9e9;
+  gap: 10px;
+  padding: 1.5rem 1.5rem;
+  margin: 1rem;
   border-radius: 0.3em;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-  width: 23.5%;
-  height: auto;
-  padding-bottom: 2rem;
 }
 
-.all-prduk .isi-produk .pro-container .pro img {
-  width: 100%;
-  height: 100%;
-}
-
-.all-prduk .isi-produk .pro-container .pro {
-  /* margin: 0 sauto; */
+#all .pro .deskripsi {
   display: flex;
-  justify-content: center;
-  padding: 1rem;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.all-prduk .isi-produk .deskripsi {
-  padding: 0 1rem;
-}
-
-.all-prduk .isi-produk .deskripsi span {
-  padding: 2px;
-}
-
-.all-prduk .isi-produk .deskripsi h5 {
+#all .pro .deskripsi h5 {
   font-size: 25px;
   padding: 1px;
 }
 
-.all-prduk .isi-produk .deskripsi h4 {
+#all .pro .deskripsi h4 {
   padding: 1px;
-  padding-bottom: 20px;
 }
 
-.all-prduk .isi-produk .deskripsi a {
+#all .pro .deskripsi span {
+  padding: 2px;
+}
+
+#all .pro img {
+  width: 16.7rem;
+  height: 16.7rem;
+}
+
+#all .pro .beli {
   background-color: #242424;
   color: #fff;
-  padding: 8px 106px;
+  padding: 10px 60px;
   text-decoration: none;
   border-radius: 10px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  font-size: 14px;
+  font-size: 13px;
   text-align: center;
+  margin-top: 10px;
 }
 
-.all-prduk .isi-produk .deskripsi a:hover {
-  background-color: gray;
-  transition: background-color 0.3s ease;
+#all .tidak-ada-hasil {
+  text-align: center;
+  justify-content: center;
+  margin-top: 13rem;
+  margin-bottom: 16rem;
 }
 
 #footer-prd {

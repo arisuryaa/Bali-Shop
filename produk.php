@@ -5,6 +5,15 @@ include "admin/config/app.php";
 
 $dataBarang = select("SELECT * FROM barang");
 
+if (isset($_GET['submit'])) {
+    $keyword = $_GET['cari'];
+    $dataBarang = searchBarang($keyword);
+    $noResults = empty($dataBarang);
+} else {
+    $dataBarang = select("SELECT * FROM barang");
+    $noResults = false;
+}
+
 ?>
 
 
@@ -15,17 +24,17 @@ $dataBarang = select("SELECT * FROM barang");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Search</title>
+    <title>Semua Produk</title>
 </head>
 <body>
 
 <nav class="navbar">
     <div class="top-section1">
         <div class="logo">
-            <img src="asset/img/logo.svg" alt="Logo">
+            <a href="index.php"><img src="asset/img/logo.svg" alt="Logo"></a>
         </div>
         <div class="search">
-            <form action="" method="post">
+            <form action="produk.php" method="get">
                 <input type="text" name="cari" placeholder="Cari Produk...">
                 <button type="submit" name="submit"><i class="fas fa-search"></i></button>
             </form>
@@ -37,23 +46,29 @@ $dataBarang = select("SELECT * FROM barang");
     </div>
 </nav>
 
-<section id="all" class="all-prduk">
-        <div class="isi-produk">
-            <?php foreach($dataBarang as $barang) :?>
-                <div class="pro-container">
-                    <div class="pro">
-                        <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
-                    </div>
+    <section id="all" class="all-prduk">
+
+        <?php if ($noResults): ?>
+                <p class="tidak-ada-hasil">Tidak ada produk yang ditemukan.</p>
+        <?php else: ?>
+
+        <?php foreach($dataBarang as $barang) : ?>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
 
                 <div class="deskripsi">
                     <span><?= $barang["kategori_barang"] ?></span>
                     <h5><?= $barang["nama_barang"] ?></h5>
-                    <p><?= $barang["deskripsi_barang"] ?></p>
+                    <p><?= (str_word_count($barang["deskripsi_barang"]) > 5 ? substr($barang["deskripsi_barang"],0,50)."..." : $barang["deskripsi_barang"]) ?>
+                    </p>
                     <h4>Rp. <?= number_format($barang['harga_barang'],0,',','.') ?></h4>
-                <a href="singgle-produk.php ?id_barang=<?= $barang["id_barang"]; ?>" class="beli">+KERANJANG</a>
+                </div>
+                <a href="singgle-produk.php?id_barang=<?= $barang["id_barang"] ?>" class="beli">+KERANJANG</a>
             </div>
-        </div>
             <?php endforeach; ?>
+
+            <?php endif; ?>
         </div>
     </section>
 

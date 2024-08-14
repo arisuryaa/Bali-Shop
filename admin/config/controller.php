@@ -204,4 +204,30 @@ function login($post) {
 
 }
 
+function searchBarang($keyword) {
+  global $db;
+
+  $query = "SELECT * FROM barang WHERE nama_barang LIKE ? OR deskripsi_barang LIKE ? OR kategori_barang LIKE ?";
+  
+  $stmt = $db->prepare($query);
+  
+  $keywordParam = "%$keyword%";
+  
+  $stmt->bind_param("sss", $keywordParam, $keywordParam, $keywordParam);
+  
+  $stmt->execute();
+  
+  $result = $stmt->get_result();
+  
+  $rows = [];
+  while ($row = $result->fetch_assoc()) {
+      $rows[] = $row;
+  }
+  
+  $stmt->close();
+  
+  return $rows;
+  
+}
+
 ?>

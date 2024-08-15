@@ -2,6 +2,18 @@
 
 include "admin/config/app.php";
 
+session_start();
+
+if(!isset($_COOKIE["login"]) || !isset($_SESSION["Login"])) {
+    echo "
+    <script>
+      document.location.href = 'login.php';
+    </script>
+  ";   
+  die();
+} else {
+ 
+}
 $data_barang = $_POST;
 
 if(count($data_barang) <= 0) {

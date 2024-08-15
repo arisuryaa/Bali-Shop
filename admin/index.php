@@ -14,6 +14,7 @@ if(isset($_COOKIE["login"]) || isset($_SESSION["Login"])) {
 }
 
 $data_barang = select("SELECT * FROM barang");
+$jumlah_pesanan = count(select("SELECT * FROM pesanan"));
 $jumlahBarang = count($data_barang);
 
 
@@ -63,7 +64,7 @@ $jumlahBarang = count($data_barang);
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>2</h3>
+                            <h3><?= $jumlah_pesanan ?></h3>
 
                             <p>Jumlah Orderan</p>
                         </div>

@@ -134,10 +134,10 @@ if(isset($_COOKIE["login"]) || isset($_SESSION["Login"])) {
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="index.php" class="nav-link">
+                                <a href="pesanan.php" class="nav-link">
                                     <i class="nav-icon fas fa-shopping-bag"></i>
                                     <p>
-                                        Jumlah Orderan
+                                        Orderan
                                     </p>
                                 </a>
                             </li>

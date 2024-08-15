@@ -245,7 +245,7 @@ function pesanan($post) {
   $subtotal = $post["subtotal"];
 
 
-  $query = "INSERT INTO pesanan VALUES (null, '$namaPemesan', '$nomorTelpon', '$catatan','$namaBarang','$quantity','$hargaBarang','$subtotal')";
+  $query = "INSERT INTO pesanan VALUES (null, '$namaPemesan', '$nomorTelpon', '$catatan','$namaBarang','$quantity','$hargaBarang','$subtotal','Diproses')";
 
   mysqli_query($db,$query);
   return mysqli_affected_rows($db);
@@ -293,12 +293,10 @@ function loginUser($post) {
   if(mysqli_num_rows($data) === 1) {
       $row = mysqli_fetch_assoc($data);
       if (password_verify($password,  $row["password"])) {
-             $_SESSION["Login"] = true;
-             $_SESSION["nama"] = $row["nama"];
+             $_SESSION["loginUser"] = true;
              
-             if(isset($post["remember"]) == "on") {
-            setcookie("nama",$row["nama"], time() + 60 * 60 * 24 * 7);
-            setcookie("login","sukarya", time() + 60 * 60 * 24 * 7);
+             if(isset($post["remember"]) == "on") { 
+            setcookie("cokie","ok", time() + 60 * 60 * 24 * 7);
           }
           echo "<script>
           document.location.href = 'index.php';
@@ -311,6 +309,18 @@ function loginUser($post) {
   }  
 
 
+}
+
+
+function hapusPesanan($get) {
+  global $db;
+
+  $idPesanan = $get;
+
+  $query = "DELETE FROM pesanan WHERE id_pesanan = $idPesanan";
+
+  mysqli_query($db,$query);
+  return mysqli_affected_rows($db);
 }
 
 ?>

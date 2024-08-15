@@ -251,6 +251,35 @@ function pesanan($post) {
   return mysqli_affected_rows($db);
 }
 
+function registerUser($post) {
+  global $db;
 
+  $email = $post["email"];
+  $nama = $post["nama"];
+  $password = $post["password"];
+  $password2 = $post["password2"];
+
+  $emailSama = select("SELECT email FROM user WHERE email = '$email' ");
+  if ($emailSama) {
+    echo "<script>alert('email sudah terdaftar!');
+    document.location.href = 'register.php';
+  </script>";
+  die();
+  }
+
+  if ($password != $password2) {
+    echo "<script>alert('konfirmasi password anda tidak sesuai!');
+      document.location.href = 'register.php';
+    </script>";
+    die();
+  } 
+
+ $hashPassword = password_hash($password,PASSWORD_DEFAULT);
+
+
+  $query = "INSERT INTO user VALUES(null, '$email', '$nama', '$hashPassword')";
+  mysqli_query($db, $query);
+  return mysqli_affected_rows($db);
+}
 
 ?>

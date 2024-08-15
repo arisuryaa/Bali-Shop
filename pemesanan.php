@@ -4,7 +4,7 @@ include "admin/config/app.php";
 
 session_start();
 
-if(!isset($_COOKIE["login"]) || !isset($_SESSION["Login"])) {
+if(!isset($_COOKIE["cokie"]) || !isset($_SESSION["loginUser"])) {
     echo "
     <script>
       document.location.href = 'login.php';

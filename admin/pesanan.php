@@ -75,7 +75,7 @@ $data_pesanan = select("SELECT * FROM pesanan");
                                                     <td>
                                                         <a href="detail-barang.php?id_barang=<?= $pesanan['id_pesanan']; ?>"
                                                             class="btn btn-success ">Selesai</a>
-                                                        <a href="detail-barang.php?id_barang=<?= $pesanan['id_pesanan']; ?>"
+                                                        <a href="delete-pesanan.php?id_pesanans=<?= $pesanan['id_pesanan']; ?>"
                                                             class="btn btn-danger ">Hapus</a>
                                                         <a href="detail-pesanan.php?id_pesanan=<?= $pesanan['id_pesanan']; ?>"
                                                             class="btn btn-secondary ">Detail</a>

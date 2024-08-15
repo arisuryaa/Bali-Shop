@@ -295,7 +295,7 @@ function loginUser($post) {
       if (password_verify($password,  $row["password"])) {
              $_SESSION["loginUser"] = true;
              
-             if(isset($post["remember"]) == "on") {
+             if(isset($post["remember"]) == "on") { 
             setcookie("cokie","ok", time() + 60 * 60 * 24 * 7);
           }
           echo "<script>
@@ -309,6 +309,18 @@ function loginUser($post) {
   }  
 
 
+}
+
+
+function hapusPesanan($get) {
+  global $db;
+
+  $idPesanan = $get;
+
+  $query = "DELETE FROM pesanan WHERE id_pesanan = $idPesanan";
+
+  mysqli_query($db,$query);
+  return mysqli_affected_rows($db);
 }
 
 ?>

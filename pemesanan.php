@@ -10,6 +10,7 @@ if(!isset($_COOKIE["login"]) || !isset($_SESSION["Login"])) {
       document.location.href = 'login.php';
     </script>
   ";   
+  die();
 } else {
  
 }

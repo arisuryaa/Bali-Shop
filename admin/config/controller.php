@@ -282,4 +282,35 @@ function registerUser($post) {
   return mysqli_affected_rows($db);
 }
 
+function loginUser($post) {
+  global $db;
+  $email = $post["email"];
+  $password = $post["password"];
+
+  // echo $post["remember"];
+  $data = mysqli_query($db, "SELECT * FROM user WHERE email = '$email' ");
+
+  if(mysqli_num_rows($data) === 1) {
+      $row = mysqli_fetch_assoc($data);
+      if (password_verify($password,  $row["password"])) {
+             $_SESSION["Login"] = true;
+             $_SESSION["nama"] = $row["nama"];
+             
+             if(isset($post["remember"]) == "on") {
+            setcookie("nama",$row["nama"], time() + 60 * 60 * 24 * 7);
+            setcookie("login","sukarya", time() + 60 * 60 * 24 * 7);
+          }
+          echo "<script>
+          document.location.href = 'index.php';
+      </script>";
+      }  
+  } else {
+    echo "<script>alert('Password/Username Salah');
+    document.location.href = 'login.php';
+  </script>";
+  }  
+
+
+}
+
 ?>

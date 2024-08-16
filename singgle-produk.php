@@ -1,10 +1,11 @@
 <?php
 include "admin/config/app.php";
 
+
 $idBarang = $_GET["id_barang"];
 
 $dataBarang = select("SELECT * FROM barang WHERE id_barang = $idBarang")[0];
-$barangLain =select("SELECT * FROM barang");
+$barangLain =select("SELECT * FROM barang LIMIT 6");
 
 if (isset($_POST["submit"])) {
     var_dump($_POST);

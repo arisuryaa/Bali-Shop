@@ -2,6 +2,18 @@
 
 include "admin/config/app.php";
 
+session_start();
+
+if(!isset($_COOKIE["cokie"]) || !isset($_SESSION["loginUser"])) {
+    echo "
+    <script>
+      document.location.href = 'login.php';
+    </script>
+  ";   
+  die();
+} else {
+ 
+}
 $data_barang = $_POST;
 
 if(count($data_barang) <= 0) {
@@ -92,6 +104,10 @@ if(isset($_POST["pesan"])) {
                             <label for="nomor">Nomor Telpon</label>
                             <input type="number" name="telpon" id="nomor" required>
                         </div>
+                    </div>
+                    <div class="emailCust">
+                        <label for="nama">Email</label>
+                        <input type="email" name="email" id="email" required>
                     </div>
                     <div class="catatan">
                         <h1>Informasi Tambahan</h1>

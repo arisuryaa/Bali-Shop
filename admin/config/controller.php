@@ -238,6 +238,7 @@ function pesanan($post) {
 
   $namaPemesan = $post["nama"];
   $nomorTelpon = $post["telpon"];
+  $emailPemesan = $post["email"];
   $catatan = $post["catatan"] ;
   $namaBarang = $post["namaBarang"];
   $quantity = $post["quantityBarang"];
@@ -245,7 +246,7 @@ function pesanan($post) {
   $subtotal = $post["subtotal"];
 
 
-  $query = "INSERT INTO pesanan VALUES (null, '$namaPemesan', '$nomorTelpon', '$catatan','$namaBarang','$quantity','$hargaBarang','$subtotal','Diproses')";
+  $query = "INSERT INTO pesanan VALUES (null, '$namaPemesan', '$nomorTelpon', '$emailPemesan' ,'$catatan','$namaBarang','$quantity','$hargaBarang','$subtotal','Diproses')";
 
   mysqli_query($db,$query);
   return mysqli_affected_rows($db);
@@ -318,6 +319,37 @@ function hapusPesanan($get) {
   $idPesanan = $get;
 
   $query = "DELETE FROM pesanan WHERE id_pesanan = $idPesanan";
+
+  mysqli_query($db,$query);
+  return mysqli_affected_rows($db);
+}
+
+function konfirmasiPesanan($data) {
+  global $db;
+
+  // var_dump(count($post["catatan"]));
+
+  $idPesanan = $data["id_pesanan"];
+  $namaPemesan = $data["nama_pemesan"];
+  $nomorTelpon = $data["nomor_telpon"];
+  $emailPemesan = $data["email"];
+  $catatan = $data["catatan_pesanan"] ;
+  $namaBarang = $data["nama_barang"];
+  $quantity = $data["quantity_barang"];
+  $hargaBarang = $data["harga_barang"];
+  $subtotal = $data["subtotal"];
+
+  $query = "UPDATE pesanan SET 
+  nama_pemesan = '$namaPemesan',
+  nomor_telpon = '$nomorTelpon',
+  email = '$emailPemesan',
+  catatan_pesanan = '$catatan',
+  nama_barang = '$namaBarang',
+  quantity_barang = '$quantity',
+  harga_barang = '$hargaBarang',
+  subtotal = '$subtotal',
+  status = 'Selesai'
+  WHERE id_pesanan = '$idPesanan' ";
 
   mysqli_query($db,$query);
   return mysqli_affected_rows($db);

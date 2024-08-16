@@ -103,6 +103,10 @@ if(isset($_POST["pesan"])) {
                             <input type="number" name="telpon" id="nomor" required>
                         </div>
                     </div>
+                    <div class="emailCust">
+                        <label for="nama">Email</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
                     <div class="catatan">
                         <h1>Informasi Tambahan</h1>
                         <div class="catatanCust">

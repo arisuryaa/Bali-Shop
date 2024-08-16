@@ -15,6 +15,7 @@ if(isset($_COOKIE["login"]) || isset($_SESSION["Login"])) {
 
 $data_barang = select("SELECT * FROM barang");
 $jumlah_pesanan = count(select("SELECT * FROM pesanan"));
+$jumlah_pesanan_selesai = count(select("SELECT * FROM pesanan WHERE status = 'Selesai'"));
 $jumlahBarang = count($data_barang);
 
 
@@ -66,7 +67,7 @@ $jumlahBarang = count($data_barang);
                         <div class="inner">
                             <h3><?= $jumlah_pesanan ?></h3>
 
-                            <p>Jumlah Orderan</p>
+                            <p>Total Orderan</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
@@ -78,9 +79,9 @@ $jumlahBarang = count($data_barang);
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>2</h3>
+                            <h3><?= $jumlah_pesanan_selesai ?></h3>
 
-                            <p>Admin</p>
+                            <p>Jumlah Orderan Selesai</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-users"></i>

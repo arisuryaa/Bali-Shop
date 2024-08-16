@@ -38,7 +38,7 @@ $detailPesanan = select("SELECT * FROM pesanan WHERE id_pesanan = $id_pesanan")[
                     </tr>
                     <tr>
                         <td>Email Pemesan</td>
-                        <td><?= $detailPesanan["nama_pemesan"] ?></td>
+                        <td><?= $detailPesanan["email"] ?></td>
                     </tr>
                     <tr>
                         <td>Nomor Telepon</td>

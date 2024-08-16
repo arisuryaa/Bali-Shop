@@ -46,31 +46,37 @@ if (isset($_GET['submit'])) {
     </div>
 </nav>
 
-    <section id="all" class="all-prduk">
+<section id="all" class="all-produk">
+<div class="container <?php echo $noResults ? 'no-results' : ''; ?>">
+        <div class="sidebar">
+            <h3>BALI SHOP</h3><br>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae deserunt quae reiciendis at laborum dolore nam facere inventore repudiandae.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, atque earum? Maiores nisi maxime repudiandae assumenda facilis
+        </div>
 
-        <?php if ($noResults): ?>
-                <p class="tidak-ada-hasil">Tidak ada produk yang ditemukan.</p>
-        <?php else: ?>
-
-        <?php foreach($dataBarang as $barang) : ?>
-        <div class="pro-container">
-            <div class="pro">
-                <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
-
-                <div class="deskripsi">
-                    <span><?= $barang["kategori_barang"] ?></span>
-                    <h5><?= $barang["nama_barang"] ?></h5>
-                    <p><?= (str_word_count($barang["deskripsi_barang"]) > 5 ? substr($barang["deskripsi_barang"],0,50)."..." : $barang["deskripsi_barang"]) ?>
-                    </p>
-                    <h4>Rp. <?= number_format($barang['harga_barang'],0,',','.') ?></h4>
+        <div class="content">
+            <?php if ($noResults): ?>
+                <p class="tidak-ada-hasil">Tidak ada produk yang ditemukan dengan kata kunci <strong><?= htmlspecialchars($keyword) ?></strong>.</p>
+            <?php else: ?>
+            <div class="pro-container">
+                <?php foreach($dataBarang as $barang) : ?>
+                <div class="pro">
+                <a href="#">
+                    <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
+                    <div class="deskripsi">
+                        <span><?= $barang["kategori_barang"] ?></span>
+                        <h5><?= $barang["nama_barang"] ?></h5>
+                        <h4>Rp<?= number_format($barang['harga_barang'],0,',','.') ?></h4>
+                    </div>
+                </a>
                 </div>
-                <a href="singgle-produk.php?id_barang=<?= $barang["id_barang"] ?>" class="beli">+KERANJANG</a>
+  
+                <?php endforeach; ?>
             </div>
-            <?php endforeach; ?>
-
             <?php endif; ?>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="footer-prd" class="ft-prd">
         <h1>BALI SHOP</h1>

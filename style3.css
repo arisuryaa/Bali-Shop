@@ -11,7 +11,6 @@ body {
 nav {
   background-color: #242424;
   color: #fff;
-  padding: 1rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,37 +18,59 @@ nav {
   width: 100%;
   top: 0;
   z-index: 1000;
+  flex-direction: column;
+}
+
+.navbar .top-section1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 
 nav .logo img {
   height: 40px;
+  padding-left: 5rem;
 }
 
-nav .search {
+.search {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-grow: 1;
 }
 
-nav .search input[type="text"] {
+.search input[type="text"] {
   padding: 0.5em;
   border: none;
   border-radius: 0.3em;
   margin-right: 0.5em;
   width: 724px;
-  height: 1.3rem;
+  height: 1rem;
+  transition: box-shadow 0.3s ease, border 0.3s ease, transform 0.3s ease;
+  font-family: "Poppins", sans-serif;
 }
 
-nav .search button {
-  padding: 0.5em 1em;
+.search input[type="text"]:focus {
+  box-shadow: 0px 0px 15px 5px rgba(64, 64, 64, 0.7);
+  border: 1px solid #333333;
+  outline: none;
+  transform: scale(1.01);
+}
+
+.search button {
+  padding: 0.5em 0.9em;
   border: none;
   border-radius: 0.3em;
   background-color: gray;
   color: #fff;
   cursor: pointer;
-  margin-right: 30px;
-  height: 2.2rem;
+  margin-right: 20px;
+  height: 2rem;
 }
 
 .search button:hover {
@@ -59,8 +80,8 @@ nav .search button {
 
 .nav-kiri {
   display: flex;
-  gap: 40px;
-  margin-right: 90px;
+  gap: 35px;
+  padding-right: 5rem;
 }
 
 .nav-kiri i {

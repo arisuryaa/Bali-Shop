@@ -78,13 +78,12 @@ $total = count($dataBarang);
                     </div>
                 </a>
                 </div>
-  
                 <?php endforeach; ?>
+                </div>
+                <?php endif; ?>
             </div>
-            <?php endif; ?>
         </div>
-    </div>
-</section>
+    </section>
 
     <section id="footer-prd" class="ft-prd">
         <h1>BALI SHOP</h1>

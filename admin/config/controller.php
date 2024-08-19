@@ -355,4 +355,9 @@ function konfirmasiPesanan($data) {
   return mysqli_affected_rows($db);
 }
 
+function countTotalBarang($keyword) {
+  $sql = "SELECT COUNT(*) AS total FROM barang WHERE nama_barang LIKE '%$keyword%'";
+  return $row['total'];
+}
+
 ?>

@@ -14,11 +14,7 @@ $data_pesanan = select("SELECT * FROM pesanan");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-/* .content-wrapper {
-    background-color: white;
-} */
-</style>
+
 
 <body>
 
@@ -94,7 +90,6 @@ $data_pesanan = select("SELECT * FROM pesanan");
 
                             </div><!-- /.container-fluid -->
                 </section>
-                <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
 

@@ -14,6 +14,8 @@ if (isset($_GET['submit'])) {
     $noResults = false;
 }
 
+$total = count($dataBarang);
+
 ?>
 
 
@@ -43,7 +45,7 @@ if (isset($_GET['submit'])) {
             </div>
             <div class="nav-kiri">
                 <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
-                <a href=""><i class="fa-solid fa-user"></i></a>
+                <a href="myaccount.php"><i class="fa-solid fa-user"></i></a>
             </div>
         </div>
     </nav>
@@ -57,6 +59,10 @@ if (isset($_GET['submit'])) {
         </div>
 
         <div class="content">
+                <?php if (!$noResults): ?>
+                    <p class="info-pencarian">Menampilkan 1-<?= $total ?> barang dari total untuk <strong><?= htmlspecialchars($keyword) ?></strong>.</p>
+                <?php endif; ?>
+
             <?php if ($noResults): ?>
                 <p class="tidak-ada-hasil">Tidak ada produk yang ditemukan dengan kata kunci <strong><?= htmlspecialchars($keyword) ?></strong>.</p>
             <?php else: ?>
@@ -68,8 +74,6 @@ if (isset($_GET['submit'])) {
                     <div class="deskripsi">
                         <span><?= $barang["kategori_barang"] ?></span>
                         <h5><?= $barang["nama_barang"] ?></h5>
-                        <p><?= (str_word_count($barang["deskripsi_barang"]) > 5 ? substr($barang["deskripsi_barang"],0,50)."..." : $barang["deskripsi_barang"]) ?>
-                        </p>
                         <h4>Rp<?= number_format($barang['harga_barang'],0,',','.') ?></h4>
                     </div>
                 </a>

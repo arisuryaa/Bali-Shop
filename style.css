@@ -132,7 +132,7 @@ nav .logo img {
 }
 
 .hero {
-  margin-top: 12.8rem;
+  margin-top: 11rem;
   margin-bottom: 0rem;
   margin-right: 3rem;
   margin-left: 3rem;
@@ -143,7 +143,7 @@ nav .logo img {
 .slides {
   display: flex;
   width: 100%;
-  height: 60vh;
+  height: 68vh;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -156,8 +156,8 @@ nav .logo img {
 
 .box {
   padding: 2rem;
-  margin-top: 4rem;
-  margin-bottom: 5.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .judul-kategori h1 {
@@ -349,7 +349,7 @@ a.box-container {
 
 #discount .gambar img {
   width: 100%;
-  max-width: 350px;
+  max-width: 450px;
   height: auto;
   padding-left: 50px;
 }
@@ -364,7 +364,7 @@ a.box-container {
 
 #discount .disc-des h1 {
   font-size: 98px;
-  font-weight: 1000;
+  font-weight: 600;
   color: #fff;
   margin: 0;
 }
@@ -379,7 +379,7 @@ a.box-container {
   display: block;
   background-color: #fff;
   color: #242424;
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   text-decoration: none;
   font-size: 1rem;
@@ -401,8 +401,8 @@ a.box-container {
   justify-content: center;
   align-items: center;
   height: 50px;
-  margin-bottom: 5rem;
-  margin-top: 5rem;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
 }
 
 #service .ser-container {
@@ -420,12 +420,12 @@ a.box-container {
   padding-right: 0;
   padding-left: 0;
   padding-bottom: 3rem;
-  padding-top: 8rem;
+  padding-top: 4rem;
 }
 
 #produk h1 {
   text-align: center;
-  font-size: 30px;
+  font-size: 50px;
   margin-top: 0;
   padding-bottom: 40px;
   font-weight: 1000;
@@ -517,7 +517,7 @@ a.box-container {
   .hero {
     margin-left: 3rem;
     margin-right: 3rem;
-    margin-top: 13rem;
+    margin-top: 11.2rem;
   }
 
   .slides {
@@ -528,8 +528,8 @@ a.box-container {
 
   .box {
     padding: 3rem;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .judul-kategori h1 {
@@ -610,7 +610,7 @@ a.box-container {
   }
 
   #discount .gambar img {
-    max-width: 250px;
+    max-width: 450px;
     width: 100%;
     padding-left: 150px;
   }
@@ -648,7 +648,8 @@ a.box-container {
   }
 
   #service {
-    padding: 3rem 0;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
     height: 50px;
   }
 
@@ -843,7 +844,7 @@ a.box-container {
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
-  margin-top: 1rem;
+  margin-top: 1.8rem;
 }
 
 .container.no-results .sidebar {
@@ -855,4 +856,9 @@ a.box-container {
   text-align: center;
   padding: 0;
   margin: 0;
+}
+
+.container .content p {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
 }

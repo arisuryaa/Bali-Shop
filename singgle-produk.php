@@ -41,7 +41,7 @@ if (isset($_POST["submit"])) {
         </div>
         <div class="nav-kiri">
             <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
-            <a href=""><i class="fa-solid fa-user"></i></a>
+            <a href="myaccount.php"><i class="fa-solid fa-user"></i></a>
         </div>
     </div>
 </nav>

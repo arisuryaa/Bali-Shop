@@ -5,6 +5,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 nav {
@@ -353,10 +354,184 @@ nav .logo img {
   padding: 15px;
 }
 
-/* Register */
+/* My Account */
 
-.containerRegister {
+.hero2 {
+  margin-top: 4.5rem;
+  background-image: url(asset/img/bgAccount.png);
+  background-size: contain;
+  background-position: center;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38vh;
+  color: white;
+  flex-direction: column;
 }
 
-/* End Register */
+.hero2 h1 {
+  color: white;
+  font-weight: 400;
+  font-size: 50px;
+  margin-bottom: 5px;
+}
+
+.hero2 .tombol a {
+  color: white;
+  text-decoration: none;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  width: 70%;
+  margin: -2rem auto;
+  height: 65vh;
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+}
+
+.main .fotoUser {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ededed;
+  width: 25%;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.main .fotoUser h1 {
+  text-align: center;
+  padding-bottom: 2rem;
+  font-size: 24px;
+}
+
+.main .fotoUser button {
+  background-color: #242424;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+.main .fotoUser img {
+  width: 100%;
+  height: auto;
+}
+
+.main .dataUser {
+  background-color: #ededed;
+  width: 75%;
+  padding: 1.5rem;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.main .dataUser .bio h1 {
+  font-size: 20px;
+  padding-bottom: 1rem;
+}
+
+.main .dataUser .kontak h1 {
+  font-size: 20px;
+  padding: 1rem 0;
+}
+
+.main .dataUser .bio .containerBio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid black;
+}
+
+.main .dataUser .bio .containerBio .judulBio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main .dataUser .bio .containerBio .judulBio h2 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.main .dataUser .bio .containerBio .deskripsiBio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 40%;
+}
+
+.main .dataUser .bio .containerBio .deskripsiBio h2 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.main .dataUser .bio .containerBio .deskripsiBio a {
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  color: blue;
+}
+
+.main .dataUser .kontak .containerKontak {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.main .dataUser .kontak .containerKontak .judulKontak {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main .dataUser .kontak .containerKontak .judulKontak h2 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.main .dataUser .kontak .containerKontak .deskripsiKontak {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 40%;
+}
+
+.main .dataUser .kontak .containerKontak .deskripsiKontak h2 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.main .dataUser .kontak .containerKontak .deskripsiKontak a {
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  color: blue;
+}
+
+.back {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  padding: 1rem 5rem;
+}
+
+.back a {
+  text-decoration: none;
+  color: blue;
+  font-weight: 400;
+}
+
+.back i {
+  color: blue;
+}

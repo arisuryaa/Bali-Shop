@@ -9,7 +9,7 @@ if (isset($_GET['submit'])) {
     $dataBarang = searchBarang($keyword);
     $noResults = empty($dataBarang);
 } else {
-    $dataBarang = select("SELECT * FROM barang");
+    $dataBarang = select("SELECT * FROM barang LIMIT 6");
     $noResults = false;
 }
 
@@ -72,9 +72,9 @@ if (isset($_GET['submit'])) {
 
     <section class="box" id="tipe">
 
-<div class="judul-kategori">
-    <h1>KATEGORI</h1>
-</div>
+        <div class="judul-kategori">
+            <h1>KATEGORI</h1>
+        </div>
 
         <div class="isi-box">
 

@@ -1,10 +1,11 @@
 <?php
 include "admin/config/app.php";
 
+
 $idBarang = $_GET["id_barang"];
 
 $dataBarang = select("SELECT * FROM barang WHERE id_barang = $idBarang")[0];
-$barangLain =select("SELECT * FROM barang");
+$barangLain =select("SELECT * FROM barang LIMIT 6");
 
 if (isset($_POST["submit"])) {
     var_dump($_POST);
@@ -27,21 +28,23 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
-    <nav>
+<nav class="navbar">
+    <div class="top-section1">
         <div class="logo">
             <a href="index.php"><img src="asset/img/logo.svg" alt="Logo"></a>
         </div>
-
         <div class="search">
-            <input type="text" placeholder="Cari Produk...">
-            <button type="submit"><i class="fas fa-search"></i></button>
+            <form action="produk.php" method="get">
+                <input type="text" name="cari" placeholder="Cari Produk...">
+                <button type="submit" name="submit"><i class="fas fa-search"></i></button>
+            </form>
         </div>
-
         <div class="nav-kiri">
             <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
-            <a href=""><i class="fa-solid fa-user"></i></a>
+            <a href="myaccount.php"><i class="fa-solid fa-user"></i></a>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <section id="mainProduk">
         <div class="container2">

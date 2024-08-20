@@ -27,8 +27,8 @@ nav {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-top: 1.5rem;
-  padding-bottom: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   padding-right: 2rem;
   padding-left: 2rem;
 }
@@ -38,19 +38,18 @@ nav {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-top: 1.7rem;
-  padding-bottom: 1.7rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   padding-right: 2rem;
   padding-left: 2rem;
 }
 
 .navbar .bottom-section {
   display: flex;
-  margin-top: 2rem;
   background-color: #e9e9e9;
   width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 12.5px;
+  padding-bottom: 12.5px;
   justify-content: space-between;
 }
 
@@ -93,7 +92,7 @@ nav .logo img {
   border-radius: 0.3em;
   margin-right: 0.5em;
   width: 724px;
-  height: 1.3rem;
+  height: 1rem;
   transition: box-shadow 0.3s ease, border 0.3s ease, transform 0.3s ease;
   font-family: "Poppins", sans-serif;
 }
@@ -106,14 +105,14 @@ nav .logo img {
 }
 
 .search button {
-  padding: 0.5em 1em;
+  padding: 0.5em 0.9em;
   border: none;
   border-radius: 0.3em;
   background-color: gray;
   color: #fff;
   cursor: pointer;
   margin-right: 20px;
-  height: 2.2rem;
+  height: 2rem;
 }
 
 .search button:hover {
@@ -133,7 +132,7 @@ nav .logo img {
 }
 
 .hero {
-  margin-top: 13.8rem;
+  margin-top: 11rem;
   margin-bottom: 0rem;
   margin-right: 3rem;
   margin-left: 3rem;
@@ -144,7 +143,7 @@ nav .logo img {
 .slides {
   display: flex;
   width: 100%;
-  height: 60vh;
+  height: 68vh;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -156,73 +155,62 @@ nav .logo img {
 }
 
 .box {
-  padding: 5rem 3rem;
-  margin-bottom: 22%;
-  flex: 1;
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
 }
 
-.box-left {
-  width: 500px;
+.judul-kategori h1 {
+  font-weight: 1000;
+  font-size: 30px;
+  padding-bottom: 40px;
+  color: #242424;
+  margin-left: 1rem;
+}
+
+.isi-box {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+a.box-container {
   background-color: #e9e9e9;
-  float: left;
-  padding-top: 3%;
-  padding-bottom: 3%;
-  padding-left: 5%;
-  padding-right: 5%;
-  justify-content: center;
-  border-radius: 10px;
+  border-radius: 5px;
+  padding-top: 0;
+  padding-bottom: 4rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  width: 280px;
+  height: 150px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #242424;
 }
 
-.box-left img {
-  float: right;
-  width: 211px;
-  height: 211px;
+.box-container img {
+  width: 50%;
+  height: auto;
 }
 
-.box-left h1 {
-  margin-top: 3rem;
-  margin-bottom: 15px;
-  font-size: 32px;
+.box-container h1 {
+  font-size: 19px;
+  margin-bottom: 8px;
   font-weight: bold;
 }
 
-.box-left p {
+.box-container p {
+  margin-bottom: 1.2rem;
+  color: #333;
   font-size: 15px;
-  margin-bottom: 35px;
 }
 
-.box-right {
-  width: 500px;
-  background-color: #e9e9e9;
-  float: right;
-  padding-top: 3%;
-  padding-bottom: 3%;
-  padding-left: 5%;
-  padding-right: 5%;
-  justify-content: center;
-  border-radius: 10px;
-}
-
-.box-right img {
-  float: right;
-  width: 211px;
-  height: 211px;
-}
-
-.box-right h1 {
-  margin-top: 3rem;
-  margin-bottom: 15px;
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.box-right p {
-  font-size: 15px;
-  margin-bottom: 35px;
+.box-container:hover {
+  background-color: #d4d4d4;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 #produk {
-  padding: 0; 
+  padding: 0;
 }
 
 #produk h1 {
@@ -271,8 +259,8 @@ nav .logo img {
 }
 
 #produk .pro img {
-  width: 16.7rem;
-  height: 16.7rem;
+  width: 100%;
+  height: 100%;
 }
 
 #produk .pro .beli {
@@ -286,7 +274,6 @@ nav .logo img {
   text-align: center;
   margin-top: 10px;
 }
-
 
 #footer {
   background-color: #242424;
@@ -339,15 +326,13 @@ nav .logo img {
 }
 
 #discount {
-  background-color: #f0f0f0;
+  background-color: #242424;
   padding-bottom: 2rem;
-  padding-top: 0;
+  padding-top: 2.5rem;
   padding-right: 1rem;
   padding-left: 1rem;
   min-height: 200px;
-  margin-bottom: 5rem;
   justify-content: center;
-  margin-top: 22.5rem;
 }
 
 #discount .disc-container {
@@ -364,7 +349,7 @@ nav .logo img {
 
 #discount .gambar img {
   width: 100%;
-  max-width: 350px;
+  max-width: 450px;
   height: auto;
   padding-left: 50px;
 }
@@ -372,38 +357,40 @@ nav .logo img {
 #discount .disc-des {
   flex: 1;
   text-align: left;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 40px;
 }
 
 #discount .disc-des h1 {
   font-size: 98px;
-  font-weight: 1000;
-  color: #242424;
+  font-weight: 600;
+  color: #fff;
   margin: 0;
 }
 
 #discount .disc-des h3 {
-  font-size: 35px;
-  color: #242424;
+  font-size: 25px;
+  color: #fff;
   margin: 0.5rem 0;
 }
 
 #discount .disc-des .beli-sekarang {
   display: block;
-  background-color: #242424;
-  color: #fff;
-  padding: 15px 25px;
+  background-color: #fff;
+  color: #242424;
+  padding: 12px 20px;
   border-radius: 10px;
   text-decoration: none;
   font-size: 1rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   max-width: fit-content;
   margin-left: 0;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 #discount .disc-des .beli-sekarang:hover {
-  background-color: gray;
+  background-color: #dcdcdc;
   transition: background-color 0.3s ease;
 }
 
@@ -414,8 +401,8 @@ nav .logo img {
   justify-content: center;
   align-items: center;
   height: 50px;
-  margin-bottom: 5rem;
-  margin-top: 5rem;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
 }
 
 #service .ser-container {
@@ -432,21 +419,25 @@ nav .logo img {
 #produk {
   padding-right: 0;
   padding-left: 0;
+  padding-bottom: 3rem;
+  padding-top: 4rem;
 }
 
 #produk h1 {
   text-align: center;
-  font-size: 30px;
+  font-size: 50px;
   margin-top: 0;
   padding-bottom: 40px;
   font-weight: 1000;
+  color: #242424;
 }
 
 #produk .pro-container {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   flex-wrap: wrap;
+
   /* border: 1px solid black; */
 }
 
@@ -459,7 +450,7 @@ nav .logo img {
   margin: 1rem;
   border-radius: 0.3em;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 20%;
+  width: 18%;
   /* border: 1px solid black; */
 }
 
@@ -480,19 +471,30 @@ nav .logo img {
 #produk .pro .deskripsi h5 {
   font-size: 25px;
   padding: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 8px;
 }
 
 #produk .pro .deskripsi h4 {
   padding: 1px;
+  margin-top: 4px;
 }
 
 #produk .pro .deskripsi span {
   padding: 2px;
 }
 
+#produk .pro .deskripsi p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 #produk .pro img {
-  width: 16.7rem;
-  height: 16.7rem;
+  width: 100%;
+  height: 100%;
 }
 
 #produk .pro .beli {
@@ -515,13 +517,7 @@ nav .logo img {
   .hero {
     margin-left: 3rem;
     margin-right: 3rem;
-    margin-top: 14.3rem;
-  }
-
-  .hero .hero-right {
-    width: 50%;
-    overflow: hidden;
-    position: relative;
+    margin-top: 11.2rem;
   }
 
   .slides {
@@ -530,99 +526,55 @@ nav .logo img {
     width: 100%;
   }
 
-  .hero .hero-right img {
-    width: 100%;
-    height: auto;
-  }
-
-  .hero .hero-left h1 {
-    font-size: 54px;
-  }
-
-  .hero .hero-left p {
-    font-size: 13px;
-  }
-
   .box {
-    display: flex;
-    align-items: center;
-    padding: 5rem 2rem;
-    gap: 2rem;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    margin-bottom: 0;
-    flex: 1;
+    padding: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
-  .box-left {
-    flex: 1;
-    background-color: #e9e9e9;
-    padding-right: 5%;
-    padding-left: 5%;
-    padding-top: 1%;
-    padding-bottom: 4.7%;
-    border-radius: 10px;
-    text-align: left;
+  .judul-kategori h1 {
+    font-size: 30px;
+    padding-bottom: 20px;
   }
 
-  .box-left img {
-    float: right;
-    width: 211px;
-    height: 211px;
-    margin: 0;
-  }
-
-  .box-left h1 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-top: 3rem;
-    margin-bottom: 15px;
-  }
-
-  .box-left p {
-    font-size: 15px;
-    font-weight: light;
-  }
-
-  .box-right {
-    flex: 1;
-    background-color: #e9e9e9;
-    padding-right: 5%;
-    padding-left: 5%;
-    padding-top: 1%;
-    padding-bottom: 4.7%;
-    border-radius: 10px;
-    text-align: left;
-  }
-
-  .box-right img {
-    float: right;
-    width: 211px;
-    height: 211px;
-    margin: 0;
-  }
-
-  .box-right h1 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-top: 3rem;
-    margin-bottom: 15px;
-  }
-
-  .box-right p {
-    font-size: 15px;
-    font-weight: light;
-  }
-
-  .prd .pro-container {
+  .isi-box {
     gap: 20px;
   }
 
-  .prd .pro {
+  .box-container {
+    width: 100%;
+    width: 280px;
+    height: 150px;
+    padding-top: 0;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .box-container h1 {
+    padding-bottom: 8px;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+  }
+
+  .box-container img {
+    width: 50%;
+    height: auto;
+  }
+
+  .box-container p {
+    font-size: 14px;
+  }
+
+  #produk .pro-container {
+    gap: 20px;
+  }
+
+  #produk .pro {
     width: 16.7rem;
   }
 
-  .prd .isi-produk .deskripsi a {
+  #produk .isi-produk .deskripsi a {
     background-color: #242424;
     color: #fff;
     padding: 8px 69px;
@@ -658,7 +610,7 @@ nav .logo img {
   }
 
   #discount .gambar img {
-    max-width: 250px;
+    max-width: 450px;
     width: 100%;
     padding-left: 150px;
   }
@@ -696,8 +648,24 @@ nav .logo img {
   }
 
   #service {
-    padding: 3rem 0;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
     height: 50px;
+  }
+
+  .judul-kategori h1 {
+    font-size: 30px;
+    padding-bottom: 20px;
+    margin: 0;
+  }
+
+  .container {
+    min-height: 90vh;
+  }
+
+  #all .pro {
+    margin: 9px;
+    margin-top: 1rem;
   }
 }
 
@@ -718,79 +686,84 @@ nav .logo img {
 }
 
 #all {
-  padding-top: 11.5rem;
-  padding-bottom: 5rem;
-  padding-right: 0;
-  padding-left: 0;
+  padding: 0;
+  margin-top: 5rem;
+  margin-bottom: 7rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 #all h1 {
   text-align: center;
-  font-size: 44.5px;
+  font-size: 30px;
   margin-top: 0;
   padding-bottom: 40px;
   font-weight: 1000;
+  color: #242424;
 }
 
 #all .pro-container {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  gap: 5px;
   flex-wrap: wrap;
 }
 
 #all .pro {
-  display: flex;
-  flex-direction: column;
   background-color: #e9e9e9;
-  gap: 10px;
-  padding: 1.5rem 1.5rem;
-  margin: 1rem;
   border-radius: 0.3em;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+  padding: 1rem;
+  width: 18%;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+#all .pro a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #242424;
+  height: 100%;
+  width: 100%;
+}
+
+#all .pro img {
+  width: 100%;
+  height: auto;
 }
 
 #all .pro .deskripsi {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 0;
   gap: 5px;
+  flex-grow: 1;
 }
 
 #all .pro .deskripsi h5 {
-  font-size: 25px;
+  font-size: 17px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: 1px;
 }
 
 #all .pro .deskripsi h4 {
+  font-size: 15px;
   padding: 1px;
 }
 
 #all .pro .deskripsi span {
-  padding: 2px;
-}
-
-#all .pro img {
-  width: 16.7rem;
-  height: 16.7rem;
-}
-
-#all .pro .beli {
-  background-color: #242424;
-  color: #fff;
-  padding: 10px 60px;
-  text-decoration: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   font-size: 13px;
-  text-align: center;
-  margin-top: 10px;
+  padding: 2px;
 }
 
 #all .tidak-ada-hasil {
   text-align: center;
-  justify-content: center;
-  margin-top: 13rem;
-  margin-bottom: 16rem;
+  margin-top: 18rem;
 }
 
 #footer-prd {
@@ -799,7 +772,7 @@ nav .logo img {
   padding-top: 40px;
   padding-bottom: 10px;
   text-align: center;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 #footer-prd h1 {
@@ -842,4 +815,50 @@ nav .logo img {
   font-size: 12px;
   border-top: 1px solid #fff;
   padding: 15px;
+}
+
+.container {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 25%;
+  background-color: #e9e9e9;
+  padding: 20px;
+  height: full;
+  margin-top: 3.3rem;
+  margin-right: 1.5rem;
+}
+
+.sidebar h3 {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.content {
+  width: 75%;
+  padding-top: 20px;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 1.8rem;
+}
+
+.container.no-results .sidebar {
+  display: none;
+}
+
+.container.no-results .content {
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.container .content p {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
 }

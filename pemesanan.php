@@ -1,6 +1,9 @@
 <?php
 
 include "admin/config/app.php";
+session_start();
+
+include "admin/config/security.php";
 
 $data_barang = $_POST;
 
@@ -19,7 +22,7 @@ if(isset($_POST["pesan"])) {
     if(pesanan($_POST) > 0 ) {
         echo "<script>
             alert('pesanan akan segera diproses');
-            document.location.href = 'index.php';
+            document.locati`on.href = 'index.php';
         </script>";
     } else {
         "<script>
@@ -49,19 +52,21 @@ if(isset($_POST["pesan"])) {
 </head>
 
 <body>
-    <nav>
-        <div class="logo">
-            <a href="index.php"><img src="asset/img/logo.svg" alt="Logo"></a>
-        </div>
-
-        <div class="search">
-            <input type="text" placeholder="Cari Produk...">
-            <button type="submit"><i class="fas fa-search"></i></button>
-        </div>
-
-        <div class="nav-kiri">
-            <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
-            <a href=""><i class="fa-solid fa-user"></i></a>
+    <nav class="navbar">
+        <div class="top-section1">
+            <div class="logo">
+                <a href="index.php"><img src="asset/img/logo.svg" alt="Logo"></a>
+            </div>
+            <div class="search">
+                <form action="produk.php" method="get">
+                    <input type="text" name="cari" placeholder="Cari Produk...">
+                    <button type="submit" name="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="nav-kiri">
+                <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+                <a href="myaccount.php"><i class="fa-solid fa-user"></i></a>
+            </div>
         </div>
     </nav>
 
@@ -90,6 +95,10 @@ if(isset($_POST["pesan"])) {
                             <label for="nomor">Nomor Telpon</label>
                             <input type="number" name="telpon" id="nomor" required>
                         </div>
+                    </div>
+                    <div class="emailCust">
+                        <label for="nama">Email</label>
+                        <input type="email" name="email" id="email" required>
                     </div>
                     <div class="catatan">
                         <h1>Informasi Tambahan</h1>

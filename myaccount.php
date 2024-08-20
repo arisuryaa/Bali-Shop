@@ -34,46 +34,47 @@
     </div>
 
     <div class="main">
-        <div class="containerMain">
-            <div class="fotoUser">
-                <img src="asset/img/ikan.png" alt="">
-                <h1>Username</h1>
-                <button>Ubah Foto Profile</button>
-            </div>
-            <div class="dataUser">
-                <div class="bio">
-                    <h1>Biodata Diri</h1>
-                    <div class="containerBio">
-                        <div class="judulBio">
-                            <h2>Nama</h2>
-                            <h2>Tanggal Lahir</h2>
-                            <h2>Jenis Kelamin</h2>
-                        </div>
-                        <div class="deskripsiBio">
-                            <h2>Nama User</h2>
-                            <a href="">Tambah Tanggal Lahir</a>
-                            <a href="">Tambah Jenis Kelamin</a>
-                        </div>
+        <div class="fotoUser">
+            <img src="asset/img/ikan.png" alt="">
+            <h1>Username</h1>
+            <button>Ubah Foto Profile</button>
+        </div>
+        <div class="dataUser">
+            <div class="bio">
+                <h1>Biodata Diri</h1>
+                <div class="containerBio">
+                    <div class="judulBio">
+                        <h2>Nama</h2>
+                        <h2>Tanggal Lahir</h2>
+                        <h2>Jenis Kelamin</h2>
+                    </div>
+                    <div class="deskripsiBio">
+                        <h2>Nama User</h2>
+                        <a href="">Tambah Tanggal Lahir</a>
+                        <a href="">Tambah Jenis Kelamin</a>
                     </div>
                 </div>
-                <div class="kontak">
-                    <h1>Kontak</h1>
-                    <div class="containerKontak">
-                        <div class="judulKontak">
-                            <h2>Email</h2>
-                            <h2>Nomor Telpon</h2>
-                        </div>
-                        <div class="deskripsiKontak">
-                            <h2>email@gmail.com</h2>
-                            <a href="">Tambah Nomor Telpon</a>
-                        </div>
+            </div>
+            <div class="kontak">
+                <h1>Kontak</h1>
+                <div class="containerKontak">
+                    <div class="judulKontak">
+                        <h2>Email</h2>
+                        <h2>Nomor Telpon</h2>
+                    </div>
+                    <div class="deskripsiKontak">
+                        <h2>email@gmail.com</h2>
+                        <a href="">Tambah Nomor Telpon</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="back">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        <a href="index.php">Kembali ke Halaman Depan</a>
+    </div>
 
-    <a href="">Kembali</a>
 
 </body>
 

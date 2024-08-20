@@ -91,9 +91,36 @@ body {
       <img src="asset/img/output-onlinegiftools (1).gif" class="truck-image" alt="Animasi Pengiriman">
       <h1>TERIMA KASIH</h1>
       <div class="order-message">Pesanan Anda akan segera kami proses</div>
-      <a href="#" class="return-button">- Kembali -</a>
+      <a href="index.php" class="return-button">- Kembali -</a>
   </div>
 </div>
+
+    <script>
+        // Fungsi untuk melakukan hitung mundur
+        function countdown(seconds) {
+            var countdownElement = document.getElementById('countdown');
+            var interval = setInterval(function() {
+                countdownElement.textContent = seconds;
+                seconds--;
+                if (seconds < 0) {
+                    clearInterval(interval);
+                    window.location.href = 'index.php'; // Redirect ke index.php setelah hitung mundur selesai
+                }
+            }, 1000);
+        }
+    </script>
+</head>
+<body onload="countdown(10)"> <!-- Memulai hitung mundur dengan 10 detik -->
+    <p style="font-size: smaller;">
+        Anda akan diarahkan ke halaman utama dalam <span id="countdown">10</span> detik...
+    </p>
+</body>
+</html>
+
+<!-- audio backsound
+  <audio id="myAudio" controls autoplay>
+    <source src = "1.ogg" type="audio/ogg"/>
+  </audio>
 
 
 
@@ -101,4 +128,26 @@ body {
 
 
 </body>
-</html>
+
+<script>
+   
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const audio = document.getElementById('myAudio');
+      
+      // Coba untuk memutar audio
+      const playPromise = audio.play();
+
+      // Jika playPromise tidak ada, berarti pemutaran otomatis diblokir
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          // Audio berhasil diputar
+          console.log('Audio is playing');
+        }).catch((error) => {
+          // Audio gagal diputar, mungkin karena kebijakan browser
+          console.log('Audio play failed:', error);
+        });
+      }
+    });
+ 
+</script>
+</html> -->

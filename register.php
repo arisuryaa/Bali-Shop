@@ -190,18 +190,13 @@ if (isset($_POST["submit"])) {
                     <input required type="password" class="form-control" id="password2" placeholder="Konfirmasi Password"
                         name="password2">     
                 </div>
-                <div class="mb-3 form-isi checkbox">
-                    <input type="checkbox" class="form-control" id="remember" placeholder="Masukkan Password"
-                        name="remember">
-                    <label for="remember">Remember Me</label>
-                </div>
                 <div class="button-submit">
                     <button type="submit" name="submit">Submit</button>
                 </div>
                 <div class="regist">
                     <span>
                         don't have an account?
-                        <a href="register.php">Login</a>
+                        <a href="login.php">Login</a>
                     </span>
                 </div>
             </form>

@@ -91,7 +91,7 @@ nav .logo img {
 
 .hero {
   margin-top: 4.5rem;
-  background-image: url(asset/img/bg2.jpg);
+  background-image: url(asset/img/bg3.jpg);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -143,8 +143,9 @@ nav .logo img {
 }
 
 .container-utama .container-kiri .namaCust label {
-  display: block;
   font-size: 18px;
+  padding: 0px 5px;
+  color: black;
 }
 
 .container-utama .container-kiri .namaCust input {
@@ -152,8 +153,8 @@ nav .logo img {
   padding: 0.6rem;
   border-radius: 0.5rem;
   border: none;
-  background-color: #333333;
-  color: white;
+  background-color: #dcdcdc;
+  color: black;
 }
 .container-utama .emailCust {
   width: 100%;
@@ -172,8 +173,8 @@ nav .logo img {
   padding: 0.6rem;
   border-radius: 0.5rem;
   border: none;
-  background-color: #333333;
-  color: white;
+  background-color: #dcdcdc;
+  color: black;
 }
 
 .container-utama .container-kiri .nomorCust {
@@ -193,8 +194,8 @@ nav .logo img {
   padding: 0.6rem;
   border-radius: 0.5rem;
   border: none;
-  background-color: #333333;
-  color: white;
+  background-color: #dcdcdc;
+  color: black;
 }
 
 .container-utama .container-kiri .catatan {
@@ -204,6 +205,7 @@ nav .logo img {
 .container-utama .container-kiri .catatan .catatanCust label {
   display: block;
   font-size: 18px;
+  padding-bottom: 5px;
 }
 
 .container-utama .container-kiri .catatan .catatanCust {
@@ -215,8 +217,8 @@ nav .logo img {
   padding: 3rem 1rem;
   border-radius: 0.5rem;
   border: none;
-  background-color: #333333;
-  color: white;
+  background-color: #dcdcdc;
+  color: black;
 }
 
 .container-utama .container-kanan {
@@ -249,6 +251,7 @@ nav .logo img {
 .container-utama .container-kanan .dataPesanan .namaProduk .dataProduk {
   display: flex;
   gap: 4px;
+  width: 75%;
 }
 
 .container-utama .container-kanan .dataPesanan .namaProduk .titleProduk h1 {
@@ -292,6 +295,18 @@ nav .logo img {
   border-radius: 0.5rem;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
   font-family: "Poppins", sans-serif;
+}
+
+input:focus{
+  box-shadow: 0px 0px 10px 3px rgba(64, 64, 64, 0.7);
+  border: 1px solid #333333;
+  outline: none;
+
+}
+
+input{
+  transition: box-shadow 0.3s ease, border 0.3s ease, transform 0.3s ease;
+
 }
 
 /* .detailtagihan {

@@ -55,6 +55,8 @@ if(isset($_COOKIE["login"]) || isset($_SESSION["Login"])) {
     <link rel="stylesheet" href="assets-adminLTE/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="assets-adminLTE/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="assets-adminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="../../plugins/jsgrid/jsgrid.min.css">
+    <link rel="stylesheet" href="../../plugins/jsgrid/jsgrid-theme.min.css">
 
     <style>
     #order {
@@ -132,10 +134,10 @@ if(isset($_COOKIE["login"]) || isset($_SESSION["Login"])) {
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="index.php" class="nav-link">
+                                <a href="pesanan.php" class="nav-link">
                                     <i class="nav-icon fas fa-shopping-bag"></i>
                                     <p>
-                                        Jumlah Orderan
+                                        Orderan
                                     </p>
                                 </a>
                             </li>

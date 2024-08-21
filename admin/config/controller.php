@@ -238,6 +238,7 @@ function pesanan($post) {
 
   $namaPemesan = $post["nama"];
   $nomorTelpon = $post["telpon"];
+  $emailPemesan = $post["email"];
   $catatan = $post["catatan"] ;
   $namaBarang = $post["namaBarang"];
   $quantity = $post["quantityBarang"];
@@ -245,12 +246,118 @@ function pesanan($post) {
   $subtotal = $post["subtotal"];
 
 
-  $query = "INSERT INTO pesanan VALUES (null, '$namaPemesan', '$nomorTelpon', '$catatan','$namaBarang','$quantity','$hargaBarang','$subtotal')";
+  $query = "INSERT INTO pesanan VALUES (null, '$namaPemesan', '$nomorTelpon', '$emailPemesan' ,'$catatan','$namaBarang','$quantity','$hargaBarang','$subtotal','Diproses')";
 
   mysqli_query($db,$query);
   return mysqli_affected_rows($db);
 }
 
+function registerUser($post) {
+  global $db;
 
+  $email = $post["email"];
+  $nama = $post["nama"];
+  $password = $post["password"];
+  $password2 = $post["password2"];
+
+  $emailSama = select("SELECT email FROM user WHERE email = '$email' ");
+  if ($emailSama) {
+    echo "<script>alert('email sudah terdaftar!');
+    document.location.href = 'register.php';
+  </script>";
+  die();
+  }
+
+  if ($password != $password2) {
+    echo "<script>alert('konfirmasi password anda tidak sesuai!');
+      document.location.href = 'register.php';
+    </script>";
+    die();
+  } 
+
+ $hashPassword = password_hash($password,PASSWORD_DEFAULT);
+
+
+  $query = "INSERT INTO user VALUES(null, '$email', '$nama', '$hashPassword')";
+  mysqli_query($db, $query);
+  return mysqli_affected_rows($db);
+}
+
+function loginUser($post) {
+  global $db;
+  $email = $post["email"];
+  $password = $post["password"];
+
+  // echo $post["remember"];
+  $data = mysqli_query($db, "SELECT * FROM user WHERE email = '$email' ");
+
+  if(mysqli_num_rows($data) === 1) {
+      $row = mysqli_fetch_assoc($data);
+      if (password_verify($password,  $row["password"])) {
+             $_SESSION["loginUser"] = true;
+             
+             if(isset($post["remember"]) == "on") { 
+            setcookie("cokie","ok", time() + 60 * 60 * 24 * 7);
+          }
+          echo "<script>
+          document.location.href = 'index.php';
+      </script>";
+      }  
+  } else {
+    echo "<script>alert('Password/Username Salah');
+    document.location.href = 'login.php';
+  </script>";
+  }  
+
+
+}
+
+
+function hapusPesanan($get) {
+  global $db;
+
+  $idPesanan = $get;
+
+  $query = "DELETE FROM pesanan WHERE id_pesanan = $idPesanan";
+
+  mysqli_query($db,$query);
+  return mysqli_affected_rows($db);
+}
+
+function konfirmasiPesanan($data) {
+  global $db;
+
+  // var_dump(count($post["catatan"]));
+
+  $idPesanan = $data["id_pesanan"];
+  $namaPemesan = $data["nama_pemesan"];
+  $nomorTelpon = $data["nomor_telpon"];
+  $emailPemesan = $data["email"];
+  $catatan = $data["catatan_pesanan"] ;
+  $namaBarang = $data["nama_barang"];
+  $quantity = $data["quantity_barang"];
+  $hargaBarang = $data["harga_barang"];
+  $subtotal = $data["subtotal"];
+
+  $query = "UPDATE pesanan SET 
+  nama_pemesan = '$namaPemesan',
+  nomor_telpon = '$nomorTelpon',
+  email = '$emailPemesan',
+  catatan_pesanan = '$catatan',
+  nama_barang = '$namaBarang',
+  quantity_barang = '$quantity',
+  harga_barang = '$hargaBarang',
+  subtotal = '$subtotal',
+  status = 'Selesai'
+  WHERE id_pesanan = '$idPesanan' ";
+
+  mysqli_query($db,$query);
+  return mysqli_affected_rows($db);
+}
+
+function countTotalBarang($keyword) {
+  $sql = "SELECT COUNT(*) AS total FROM barang WHERE nama_barang LIKE '%$keyword%'";
+  return $row['total'];
+}
 
 ?>

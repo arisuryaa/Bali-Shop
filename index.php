@@ -45,7 +45,7 @@ if (isset($_GET['submit'])) {
             </div>
             <div class="nav-kiri">
                 <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
-                <a href=""><i class="fa-solid fa-user"></i></a>
+                <a href="myaccount.php"><i class="fa-solid fa-user"></i></a>
             </div>
         </div>
 
@@ -71,22 +71,37 @@ if (isset($_GET['submit'])) {
     <!--tipe produk-->
 
     <section class="box" id="tipe">
-        <div class="box-left">
-            <img src="asset/img/monitor.svg">
-            <h1>MONITOR</h1>
-            <p>Monitor kami menghadirkan visual tajam dan performa optimal untuk pengalaman tampilan yang menakjubkan.
-            </p>
-            <a href="" class="tombol-box">Lihat Semua</a>
-        </div>
 
-        <div class="box-right">
-            <img src="asset/img/vr-mockup.svg">
-            <div class="text">
-                <h1>VR</h1>
-                <p>VR kami menawarkan pengalaman imersif yang mendalam dengan grafis yang memukau dan interaksi yang
-                    intuitif.</p>
-                <a href="" class="tombol-box">Lihat Semua</a>
-            </div>
+<div class="judul-kategori">
+    <h1>KATEGORI</h1>
+</div>
+
+        <div class="isi-box">
+
+            <a href="" class="box-container">
+                <img src="asset/img/ilustrasi-mousee.svg">
+                <h1>Mouse</h1>
+                <p>5 Produk</p>
+            </a>
+
+            <a href="" class="box-container">
+                <img src="asset/img/ilustrasi-monitor1.svg">
+                <h1>Monitor</h1>
+                <p>5 Produk</p>
+            </a>
+
+            <a href="" class="box-container">
+                <img src="asset/img/ilustrasi-headset.svg">
+                <h1>Headset</h1>
+                <p>5 Produk</p>
+            </a>
+
+            <a href="" class="box-container">
+                <img src="asset/img/ilustrasi-keyboard.svg">
+                <h1>Keyboard</h1>
+                <p>5 Produk</p>
+            </a>
+
         </div>
     </section>
 
@@ -95,12 +110,12 @@ if (isset($_GET['submit'])) {
     <section id="discount" class="disc">
         <div class="disc-container">
             <div class="gambar">
-                <img src="asset/img/monitor.svg">
+                <img src="asset/img/discount-mockup.svg">
             </div>
 
             <div class="disc-des">
                 <h1>50% OFF</h1>
-                <h3>MONITOR ASUS 240HZ</h3>
+                <h3>UNTUK SEMUA KOLEKSI TERBARU</h3>
                 <a href="" class="beli-sekarang">Beli Sekarang</a>
             </div>
         </div>
@@ -123,7 +138,7 @@ if (isset($_GET['submit'])) {
                     <p><?= (str_word_count($barang["deskripsi_barang"]) > 5 ? substr($barang["deskripsi_barang"],0,30)."..." : $barang["deskripsi_barang"]) ?>
                     </p>
                     <div class="harga">
-                        <h4>Rp.<?= number_format($barang['harga_barang'],0,',','.') ?></h4>
+                        <h4>Rp<?= number_format($barang['harga_barang'],0,',','.') ?></h4>
                         <a href="singgle-produk.php?id_barang=<?= $barang["id_barang"] ?>" class="beli">BELI
                             SEKARANG</a>
                     </div>

@@ -14,6 +14,8 @@ if (isset($_GET['submit'])) {
     $noResults = false;
 }
 
+var_dump($noResults);
+
 $total = count($dataBarang);
 
 ?>
@@ -63,17 +65,19 @@ $total = count($dataBarang);
             <div class="content">
                 <?php if (!$noResults && !empty($keyword)): ?>
                 <p class="info-pencarian">Menampilkan 1-<?= $total ?> barang dari total untuk
-                    <strong><?= htmlspecialchars($keyword) ?></strong>.</p>
+                    <strong><?= htmlspecialchars($keyword) ?></strong>.
+                </p>
                 <?php endif; ?>
 
                 <?php if ($noResults): ?>
                 <p class="tidak-ada-hasil">Tidak ada produk yang ditemukan dengan kata kunci
-                    <strong><?= htmlspecialchars($keyword) ?></strong>.</p>
+                    <strong><?= htmlspecialchars($keyword) ?></strong>.
+                </p>
                 <?php else: ?>
                 <div class="pro-container">
                     <?php foreach($dataBarang as $barang) : ?>
                     <div class="pro">
-                        <a href="#">
+                        <a href="singgle-produk.php?id_barang=<?= $barang["id_barang"] ?>">
                             <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
                             <div class="deskripsi">
                                 <span><?= $barang["kategori_barang"] ?></span>

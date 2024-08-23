@@ -1,5 +1,6 @@
 <?php
 include "admin/config/app.php";
+include "layout/navbar.php";
 session_start();
 
 
@@ -41,25 +42,6 @@ $data_akun = select("SELECT * FROM user WHERE email = '$email'")[0];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
-
-<body>
-    <nav class="navbar">
-        <div class="top-section1">
-            <div class="logo">
-                <a href="index.php"><img src="asset/img/logo.svg" alt="Logo"></a>
-            </div>
-            <div class="search">
-                <form action="produk.php" method="get">
-                    <input type="text" name="cari" placeholder="Cari Produk...">
-                    <button type="submit" name="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-            <div class="nav-kiri">
-                <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
-                <a href=""><i class="fa-solid fa-user"></i></a>
-            </div>
-        </div>
-    </nav>
 
     <div class="hero2">
         <h1>My Account</h1>

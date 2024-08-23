@@ -21,15 +21,41 @@ nav {
   flex-direction: column;
 }
 
-.navbar .top-section1 {
+.navbar .top-section, .navbar .top-section1 {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding: 1rem 2rem;
+}
+
+.navbar .bottom-section {
+  display: flex;
+  background-color: #e9e9e9;
+  width: 100%;
+  padding: 12.5px 0;
+  justify-content: space-between;
+}
+
+.navbar .bottom-section a {
+  color: #242424;
+  text-decoration: none;
+  padding-left: 5rem;
+  font-weight: 700;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar .bottom-section a:hover {
+  color: gray;
+}
+
+.navbar .bottom-section p {
+  color: #242424;
+  text-decoration: none;
+  padding-right: 5rem;
+  font-weight: 700;
+  font-size: 15px;
 }
 
 nav .logo img {
@@ -78,15 +104,60 @@ nav .logo img {
   background-color: #333333;
 }
 
-.nav-kiri {
+.nav-kiri ul {
   display: flex;
   gap: 35px;
+  list-style-type: none;
   padding-right: 5rem;
 }
 
-.nav-kiri i {
+.nav-kiri li i {
   color: #fff;
   font-size: 24px;
+}
+
+.sidebarr {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: #242424;
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebarr.show {
+  transform: translateX(0);
+}
+
+.sidebarr li {
+  width: 100%;
+  list-style-type: none;
+}
+
+.sidebarr a {
+  width: 100%;
+  padding: 15px;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebarr a:hover {
+  color: #dcdcdc;
+  transition: 0.3s ease-in-out;
+}
+
+
+.menu-button {
+  display: none;
 }
 
 .swiper {
@@ -117,7 +188,7 @@ nav .logo img {
   padding-right: 3rem;
   padding-left: 3rem;
   align-items: center;
-  margin-top: 7rem;
+  margin-top: 9.5rem;
   height: 75vh;
 }
 
@@ -536,4 +607,289 @@ nav .logo img {
 
 .back i {
   color: blue;
+}
+
+@media only screen and (max-width: 800px) {
+  nav .logo img {
+      display: none;
+  }
+
+  .search button {
+      display: none;
+  }
+
+  .bottom-section .right-nav {
+      display: none;
+  }
+
+  .nav-kiri .fa-user {
+      display: none;
+  }
+
+  .nav-kiri ul {
+      gap: 15px;
+      margin-right: 3.5rem;
+      padding: 0;
+  }
+
+  .navbar .bottom-section {
+      display: none;
+  }
+
+  .hideOnMobile {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .nav-kiri ul {
+    padding-top: 8px;
+    gap: 20px; 
+  }
+
+  nav {
+      background-color: #242424;
+      color: #fff;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+  }
+
+  .search {
+      width: 75%;
+      padding: 0 1rem;
+      float: left;
+  }
+
+  .search form {
+      display: flex;
+      width: 75%;
+  }
+
+  .search input[type="text"] {
+      flex: 1;
+      padding: 0.5em;
+      border: none;
+      border-radius: 0.3em;
+      height: 1rem;
+      transition: box-shadow 0.3s ease, border 0.3s ease, transform 0.3s ease;
+  }
+
+  .search input[type="text"]:focus {
+      box-shadow: 0px 0px 15px 5px rgba(64, 64, 64, 0.7);
+      border: 1px solid #333333;
+      outline: none;
+      transform: scale(1.01);
+  }
+
+  .search button {
+      padding: 0.5em 0.9em;
+      border: none;
+      border-radius: 0.3em;
+      background-color: gray;
+      color: #fff;
+      cursor: pointer;
+      margin-left: 0.5em;
+      height: 2rem;
+  }
+
+  .search button i {
+      font-size: 1rem;
+  }
+
+  .hamburger-menu {
+      display: block;
+      font-size: 1.5rem;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 1rem;
+  }
+
+  #produk {
+    padding: 0;
+    margin: 2.5rem 0 1.5rem 0;
+  }
+  
+  #produk .pro-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+    margin: 1rem;
+  }
+  
+  #produk .pro {
+    flex: 1 1 calc(50% - 15px);
+    box-sizing: border-box;
+    margin: 0;
+    background-color: #e9e9e9;
+    border-radius: 0.3em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.8rem;
+    transform: scale(0.95);
+  }
+  
+  #produk .pro img {
+    width: 100%;
+    height: auto;
+  }
+  
+  #produk .deskripsi {
+    padding: 0.3rem 0;
+  }
+  
+  #produk .pro .deskripsi {
+    padding: 0.5rem 0 0.1rem 0;
+  }
+  
+  #produk .pro .deskripsi h5 {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1px;
+    margin: 0.2rem 0 0 0;
+  }
+  
+  #produk .pro .deskripsi p {
+    display: none;
+  }
+  
+  #produk .pro .deskripsi span {
+    font-size: 9px;
+    padding: 1px;
+    margin: 0;
+  }
+  
+  #produk .pro .harga {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #produk .pro .deskripsi h4 {
+    font-size: 11px;
+    color: #333;
+    margin: 0;
+  }
+  
+  #produk .pro .harga .beli {
+    background-color: #333;
+    color: #fff;
+    padding: 0.4rem 0.1rem;
+    font-size: 11px;
+    border-radius: 0.3em;
+    text-decoration: none;
+    margin: 3px 0 0 0;
+    width: 100%;
+  }
+
+  #produk h1 {
+    padding: 0;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: auto;
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .swiper-slide img {
+    object-fit: fill;
+    margin-top: 4rem;
+  }
+
+  .container2 {
+    display: block;
+    padding: 1rem;
+    align-items: flex-start;
+    margin-top: 2rem;
+    height: auto;
+  }
+
+  .container2 .foto {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .container2 .foto img {
+    width: 100%;
+    height: auto;
+  }
+
+  .container2 .foto .fotoDetail {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1%;
+  }
+
+  .container2 .foto .fotoDetail img {
+    width: 23%;
+    height: auto;
+  }
+
+  .container2 .deskripsi {
+    width: 100%;
+    border-left: none;
+    padding-left: 0;
+    text-align: start;
+  }
+
+  .container2 .deskripsi .judulBarang h1 {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  .container2 .deskripsi .deskripsiBarang p {
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 8px;
+  }
+
+  .container2 .deskripsi .judulBarang h2 {
+    font-size: 12px;
+    margin: 5px 0 0 0;
+  }
+
+  .container2 .deskripsi .deskripsiBarang {
+    padding-right: 0;
+  }
+
+  .container2 .deskripsi .quantity {
+    width: 25%;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .container2 .deskripsi .quantity h1 {
+    font-size: 18px;
+    margin: 0 1rem;
+  }
+  
+  .container2 .deskripsi .quantity button {
+    width: 30px;
+    height: 30px;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container2 .deskripsi form button {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+    background-color: #242424;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 0;
+    border-radius: 0.6rem;
+  }  
+  
 }

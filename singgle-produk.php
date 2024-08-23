@@ -1,5 +1,6 @@
 <?php
 include "admin/config/app.php";
+include "layout/navbar.php";
 
 
 $idBarang = $_GET["id_barang"];
@@ -23,23 +24,6 @@ $barangLain =select("SELECT * FROM barang LIMIT 6");
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="top-section1">
-            <div class="logo">
-                <a href="index.php"><img src="asset/img/logo.svg" alt="Logo"></a>
-            </div>
-            <div class="search">
-                <form action="produk.php" method="get">
-                    <input type="text" name="cari" placeholder="Cari Produk...">
-                    <button type="submit" name="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-            <div class="nav-kiri">
-                <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
-                <a href="myaccount.php"><i class="fa-solid fa-user"></i></a>
-            </div>
-        </div>
-    </nav>
 
     <section id="mainProduk">
         <div class="container2">
@@ -78,15 +62,11 @@ $barangLain =select("SELECT * FROM barang LIMIT 6");
                     <input type="hidden" name="harga_barang" value="<?= $dataBarang["harga_barang"] ?>">
                     <input type="hidden" id="quantityInput" name="quantity_barang" value="">
                     <button type="submit" name="add_to_cart" onclick="setAction('cart.php')">Tambah Keranjang</button>
-                    <button type="submit" name="buy_now" onclick="setAction('pemesanan.php')">Beli Sekarang</button>
+                    <button type="submit" name="buy_now" onclick="setAction('checkout.php')">Beli Sekarang</button>
                 </form>
             </div>
-
+            </div>
         </div>
-
-        </div>
-
-
     </section>
 
 
@@ -103,8 +83,8 @@ $barangLain =select("SELECT * FROM barang LIMIT 6");
                     </div>
                     <p><?= (str_word_count($barang["deskripsi_barang"]) > 5 ? substr($barang["deskripsi_barang"],0,30)."..." : $barang["deskripsi_barang"]) ?>
                     </p>
+                    <h4>Rp.<?= number_format($barang['harga_barang'],0,',','.') ?></h4>
                     <div class="harga">
-                        <h4>Rp.<?= number_format($barang['harga_barang'],0,',','.') ?></h4>
                         <a href="singgle-produk.php?id_barang=<?= $barang["id_barang"] ?>" class="beli">BELI
                             SEKARANG</a>
                     </div>

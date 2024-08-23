@@ -94,6 +94,7 @@ if (isset($_POST["submit"])) {
                     <h1>Register Your Account</h1>
                     <p>Please NEfajdnfajdnfajdnfajdfn</p>
                 </div>
+
                 <div class="input">
                     <input type="email" placeholder="masukkan email" name="email">
                     <input type="text" placeholder="masukkan nama" name="nama">

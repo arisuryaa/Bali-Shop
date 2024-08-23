@@ -8,6 +8,7 @@ $idBarang = $_GET["id_barang"];
 $dataBarang = select("SELECT * FROM barang WHERE id_barang = $idBarang")[0];
 $barangLain =select("SELECT * FROM barang LIMIT 6");
 
+session_start();
 
 ?>
 
@@ -56,16 +57,18 @@ $barangLain =select("SELECT * FROM barang LIMIT 6");
                     <h1 id="quantity">1</h1>
                     <button id="plus-btn"><i class="fa-solid fa-plus"></i></button>
                 </div>
-                <form id="orderForm" method="POST" onsubmit="setQuantityValue()">
+
+                <form id="orderForm" action="keranjang.php" method="POST" onsubmit="setQuantityValue()">
                     <input type="hidden" name="judul_barang" value="<?= $dataBarang["nama_barang"] ?>">
                     <input type="hidden" name="id_barang" value="<?= $idBarang ?>">
                     <input type="hidden" name="harga_barang" value="<?= $dataBarang["harga_barang"] ?>">
                     <input type="hidden" id="quantityInput" name="quantity_barang" value="">
-                    <button type="submit" name="add_to_cart" onclick="setAction('cart.php')">Tambah Keranjang</button>
-                    <button type="submit" name="buy_now" onclick="setAction('checkout.php')">Beli Sekarang</button>
+                    <button type="submit" name="add_to_cart" onclick="setAction('keranjang.php')">Tambah
+                        Keranjang</button>
+                    <button type="submit" name="buy_now" onclick="setAction('pemesanan.php')">Beli Sekarang</button>
                 </form>
             </div>
-            </div>
+        </div>
         </div>
     </section>
 
@@ -117,7 +120,7 @@ $barangLain =select("SELECT * FROM barang LIMIT 6");
     });
 
     function setQuantityValue() {
-        var quantityValue = document.getElementById("quantity").innerText;
+        let quantityValue = document.getElementById("quantity").innerText;
         document.getElementById("quantityInput").value = quantityValue;
     }
 
@@ -126,19 +129,19 @@ $barangLain =select("SELECT * FROM barang LIMIT 6");
     }
 
     document.addEventListener("DOMContentLoaded", function() {
-        var quantity1 = document.getElementById("quantity");
-        var plusBtn = document.getElementById("plus-btn");
-        var minusBtn = document.getElementById("minus-btn");
+        let quantity1 = document.getElementById("quantity");
+        let plusBtn = document.getElementById("plus-btn");
+        let minusBtn = document.getElementById("minus-btn");
 
         // Tambahkan event listener untuk tombol plus
         plusBtn.addEventListener("click", function() {
-            var currentQuantity = parseInt(quantity1.innerText);
+            let currentQuantity = parseInt(quantity1.innerText);
             quantity1.innerText = currentQuantity + 1;
         });
 
         // Tambahkan event listener untuk tombol minus
         minusBtn.addEventListener("click", function() {
-            var currentQuantity = parseInt(quantity1.innerText);
+            let currentQuantity = parseInt(quantity1.innerText);
             if (currentQuantity > 1) {
                 quantity1.innerText = currentQuantity - 1;
             }

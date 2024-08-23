@@ -2,6 +2,7 @@
 
 
 include "admin/config/app.php";
+include "layout/navbar.php";
 
 $dataBarang = select("SELECT * FROM barang");
 
@@ -33,24 +34,6 @@ $total = count($dataBarang);
 </head>
 
 <body>
-
-    <nav class="navbar">
-        <div class="top-section1">
-            <div class="logo">
-                <a href="index.php"><img src="asset/img/logo.svg" alt="Logo"></a>
-            </div>
-            <div class="search">
-                <form action="produk.php" method="get">
-                    <input type="text" name="cari" placeholder="Cari Produk...">
-                    <button type="submit" name="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-            <div class="nav-kiri">
-                <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
-                <a href="myaccount.php"><i class="fa-solid fa-user"></i></a>
-            </div>
-        </div>
-    </nav>
 
     <section id="all" class="all-produk">
         <div class="container <?php echo $noResults ? 'no-results' : ''; ?>">

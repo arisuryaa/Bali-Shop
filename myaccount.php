@@ -1,3 +1,35 @@
+<?php
+include "admin/config/app.php";
+session_start();
+
+
+
+if(!isset($_SESSION["email"]) && !isset($_COOKIE["email"])) {
+    echo "
+        <script>
+            document.location.href = 'login.php';
+        </script>
+    ";
+} elseif(isset($_SESSION["email"])) {
+    $email = $_SESSION["email"];
+} elseif(isset($_COOKIE["email"])) {
+    $_SESSION["email"] = $_COOKIE["email"];
+    $email = $_SESSION["email"];
+}
+
+
+
+
+$data_akun = select("SELECT * FROM user WHERE email = '$email'")[0];
+
+
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,9 +67,9 @@
 
     <div class="main">
         <div class="fotoUser">
-            <img src="asset/img/ikan.png" alt="">
-            <h1>Username</h1>
-            <button>Ubah Foto Profile</button>
+            <img src="asset/img/admin.webp" alt="">
+            <h1><?= $data_akun["nama"] ?></h1>
+            <a href="logout.php">Logout</a>
         </div>
         <div class="dataUser">
             <div class="bio">
@@ -49,7 +81,7 @@
                         <h2>Jenis Kelamin</h2>
                     </div>
                     <div class="deskripsiBio">
-                        <h2>Nama User</h2>
+                        <h2><?= $data_akun["nama"] ?></h2>
                         <a href="">Tambah Tanggal Lahir</a>
                         <a href="">Tambah Jenis Kelamin</a>
                     </div>
@@ -63,7 +95,7 @@
                         <h2>Nomor Telpon</h2>
                     </div>
                     <div class="deskripsiKontak">
-                        <h2>email@gmail.com</h2>
+                        <h2><?= $data_akun["email"] ?></h2>
                         <a href="">Tambah Nomor Telpon</a>
                     </div>
                 </div>

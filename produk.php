@@ -50,35 +50,39 @@ $total = count($dataBarang);
         </div>
     </nav>
 
-<section id="all" class="all-produk">
-<div class="container <?php echo $noResults ? 'no-results' : ''; ?>">
-        <div class="sidebar">
-            <h3>BALI SHOP</h3><br>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae deserunt quae reiciendis at laborum dolore nam facere inventore repudiandae.
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, atque earum? Maiores nisi maxime repudiandae assumenda facilis
-        </div>
+    <section id="all" class="all-produk">
+        <div class="container <?php echo $noResults ? 'no-results' : ''; ?>">
+            <div class="sidebar">
+                <h3>BALI SHOP</h3><br>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae deserunt quae reiciendis at laborum
+                    dolore nam facere inventore repudiandae.
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, atque earum? Maiores nisi maxime
+                    repudiandae assumenda facilis
+            </div>
 
-        <div class="content">
-                <?php if (!$noResults): ?>
-                    <p class="info-pencarian">Menampilkan 1-<?= $total ?> barang dari total untuk <strong><?= htmlspecialchars($keyword) ?></strong>.</p>
+            <div class="content">
+                <?php if (!$noResults && !empty($keyword)): ?>
+                <p class="info-pencarian">Menampilkan 1-<?= $total ?> barang dari total untuk
+                    <strong><?= htmlspecialchars($keyword) ?></strong>.</p>
                 <?php endif; ?>
 
-            <?php if ($noResults): ?>
-                <p class="tidak-ada-hasil">Tidak ada produk yang ditemukan dengan kata kunci <strong><?= htmlspecialchars($keyword) ?></strong>.</p>
-            <?php else: ?>
-            <div class="pro-container">
-                <?php foreach($dataBarang as $barang) : ?>
-                <div class="pro">
-                <a href="#">
-                    <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
-                    <div class="deskripsi">
-                        <span><?= $barang["kategori_barang"] ?></span>
-                        <h5><?= $barang["nama_barang"] ?></h5>
-                        <h4>Rp<?= number_format($barang['harga_barang'],0,',','.') ?></h4>
+                <?php if ($noResults): ?>
+                <p class="tidak-ada-hasil">Tidak ada produk yang ditemukan dengan kata kunci
+                    <strong><?= htmlspecialchars($keyword) ?></strong>.</p>
+                <?php else: ?>
+                <div class="pro-container">
+                    <?php foreach($dataBarang as $barang) : ?>
+                    <div class="pro">
+                        <a href="#">
+                            <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
+                            <div class="deskripsi">
+                                <span><?= $barang["kategori_barang"] ?></span>
+                                <h5><?= $barang["nama_barang"] ?></h5>
+                                <h4>Rp<?= number_format($barang['harga_barang'],0,',','.') ?></h4>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
                 </div>
                 <?php endif; ?>
             </div>

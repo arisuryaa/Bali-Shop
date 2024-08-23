@@ -408,17 +408,19 @@ nav .logo img {
   text-align: center;
   padding-bottom: 2rem;
   font-size: 24px;
+  text-transform: uppercase;
 }
 
-.main .fotoUser button {
+.main .fotoUser a {
   background-color: #242424;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 100%;
   font-family: "Poppins", sans-serif;
+  text-align: center;
+  text-decoration: none;
 }
 
 .main .fotoUser img {
@@ -535,3 +537,77 @@ nav .logo img {
 .back i {
   color: blue;
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    box-sizing: border-box;
+  }
+
+  .main .fotoUser {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    padding-bottom: 1rem;
+    padding-top: 2.2rem;
+    background-color: #fff;
+  }
+
+  .main .fotoUser img {
+    width: 50%;
+    height: 50%;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+  }
+
+  .main .dataUser {
+    width: calc(100% - 40px); /* Kurangi lebar untuk memperhitungkan margin kiri dan kanan */
+    height: auto;
+    margin: 0 20px; /* Menambahkan jarak di kiri dan kanan */
+    box-sizing: border-box;
+  }
+
+  .main .dataUser .bio .containerBio .deskripsiBio {
+    padding-right: 0;
+  }
+
+  .main .dataUser .kontak .containerKontak .deskripsiKontak {
+    padding-right: 0;
+  }
+
+  .hero2 {
+    height: 20vh;
+  }
+  
+  
+  .hero2 h1 {
+    font-size: 30px;
+  }
+
+  .main {
+    width: 100%;
+    margin: 0;
+  }
+
+  .main .fotoUser h1 {
+    padding:1rem 0 1rem 0;
+    font-size: 20px;
+  }
+
+  .main .dataUser .bio h1,
+  .main .dataUser .kontak h1 {
+    font-size: 18px;
+  }
+
+  .back {
+    padding:2rem 0 1.5rem 21px;
+  }
+
+  .main .dataUser .kontak .containerKontak {
+    padding-bottom: 0;
+  }
+}
+

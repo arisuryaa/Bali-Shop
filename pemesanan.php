@@ -92,7 +92,7 @@ if(isset($_POST["pesan"])) {
                             <input type="text" name="nama" id="nama" required>
                         </div>
                         <div class="nomorCust">
-                            <label for="nomor">Nomor Telpon</label>
+                            <label for="nomor">Nomor Telepon</label>
                             <input type="number" name="telpon" id="nomor" required>
                         </div>
                     </div>

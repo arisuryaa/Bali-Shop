@@ -295,9 +295,10 @@ function loginUser($post) {
       $row = mysqli_fetch_assoc($data);
       if (password_verify($password,  $row["password"])) {
              $_SESSION["loginUser"] = true;
-             
+             $_SESSION["email"] = $email;
              if(isset($post["remember"]) == "on") { 
             setcookie("cokie","ok", time() + 60 * 60 * 24 * 7);
+            setcookie("email",$email, time() + 60 * 60 * 24 * 7);
           }
           echo "<script>
           document.location.href = 'index.php';

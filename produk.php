@@ -2,6 +2,7 @@
 
 
 include "admin/config/app.php";
+include "layout/navbar.php";
 
 $dataBarang = select("SELECT * FROM barang");
 
@@ -13,6 +14,8 @@ if (isset($_GET['submit'])) {
     $dataBarang = select("SELECT * FROM barang");
     $noResults = false;
 }
+
+var_dump($noResults);
 
 $total = count($dataBarang);
 
@@ -32,24 +35,6 @@ $total = count($dataBarang);
 
 <body>
 
-    <nav class="navbar">
-        <div class="top-section1">
-            <div class="logo">
-                <a href="index.php"><img src="asset/img/logo.svg" alt="Logo"></a>
-            </div>
-            <div class="search">
-                <form action="produk.php" method="get">
-                    <input type="text" name="cari" placeholder="Cari Produk...">
-                    <button type="submit" name="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-            <div class="nav-kiri">
-                <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
-                <a href="myaccount.php"><i class="fa-solid fa-user"></i></a>
-            </div>
-        </div>
-    </nav>
-
     <section id="all" class="all-produk">
         <div class="container <?php echo $noResults ? 'no-results' : ''; ?>">
             <div class="sidebar">
@@ -63,17 +48,19 @@ $total = count($dataBarang);
             <div class="content">
                 <?php if (!$noResults && !empty($keyword)): ?>
                 <p class="info-pencarian">Menampilkan 1-<?= $total ?> barang dari total untuk
-                    <strong><?= htmlspecialchars($keyword) ?></strong>.</p>
+                    <strong><?= htmlspecialchars($keyword) ?></strong>.
+                </p>
                 <?php endif; ?>
 
                 <?php if ($noResults): ?>
                 <p class="tidak-ada-hasil">Tidak ada produk yang ditemukan dengan kata kunci
-                    <strong><?= htmlspecialchars($keyword) ?></strong>.</p>
+                    <strong><?= htmlspecialchars($keyword) ?></strong>.
+                </p>
                 <?php else: ?>
                 <div class="pro-container">
                     <?php foreach($dataBarang as $barang) : ?>
                     <div class="pro">
-                        <a href="#">
+                        <a href="singgle-produk.php?id_barang=<?= $barang["id_barang"] ?>">
                             <img src="admin/assets/img/<?= $barang["foto_barang"] ?>">
                             <div class="deskripsi">
                                 <span><?= $barang["kategori_barang"] ?></span>

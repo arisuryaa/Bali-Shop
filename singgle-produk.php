@@ -1,5 +1,6 @@
 <?php
 include "admin/config/app.php";
+include "layout/navbar.php";
 
 
 $idBarang = $_GET["id_barang"];
@@ -7,11 +8,6 @@ $idBarang = $_GET["id_barang"];
 $dataBarang = select("SELECT * FROM barang WHERE id_barang = $idBarang")[0];
 $barangLain =select("SELECT * FROM barang LIMIT 6");
 
-if (isset($_POST["submit"])) {
-    var_dump($_POST);
-}
-
-// var_dump($dataBarang["foto_barang"])
 
 ?>
 
@@ -28,23 +24,6 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
-<nav class="navbar">
-    <div class="top-section1">
-        <div class="logo">
-            <a href="index.php"><img src="asset/img/logo.svg" alt="Logo"></a>
-        </div>
-        <div class="search">
-            <form action="produk.php" method="get">
-                <input type="text" name="cari" placeholder="Cari Produk...">
-                <button type="submit" name="submit"><i class="fas fa-search"></i></button>
-            </form>
-        </div>
-        <div class="nav-kiri">
-            <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
-            <a href="myaccount.php"><i class="fa-solid fa-user"></i></a>
-        </div>
-    </div>
-</nav>
 
     <section id="mainProduk">
         <div class="container2">
@@ -77,20 +56,17 @@ if (isset($_POST["submit"])) {
                     <h1 id="quantity">1</h1>
                     <button id="plus-btn"><i class="fa-solid fa-plus"></i></button>
                 </div>
-                <form action="pemesanan.php" method="POST" onsubmit="setQuantityValue()">
+                <form id="orderForm" method="POST" onsubmit="setQuantityValue()">
                     <input type="hidden" name="judul_barang" value="<?= $dataBarang["nama_barang"] ?>">
                     <input type="hidden" name="id_barang" value="<?= $idBarang ?>">
                     <input type="hidden" name="harga_barang" value="<?= $dataBarang["harga_barang"] ?>">
                     <input type="hidden" id="quantityInput" name="quantity_barang" value="">
-                    <button type="submit" name="submit">Beli Sekarang</button>
+                    <button type="submit" name="add_to_cart" onclick="setAction('cart.php')">Tambah Keranjang</button>
+                    <button type="submit" name="buy_now" onclick="setAction('checkout.php')">Beli Sekarang</button>
                 </form>
             </div>
-
+            </div>
         </div>
-
-        </div>
-
-
     </section>
 
 
@@ -107,8 +83,8 @@ if (isset($_POST["submit"])) {
                     </div>
                     <p><?= (str_word_count($barang["deskripsi_barang"]) > 5 ? substr($barang["deskripsi_barang"],0,30)."..." : $barang["deskripsi_barang"]) ?>
                     </p>
+                    <h4>Rp.<?= number_format($barang['harga_barang'],0,',','.') ?></h4>
                     <div class="harga">
-                        <h4>Rp.<?= number_format($barang['harga_barang'],0,',','.') ?></h4>
                         <a href="singgle-produk.php?id_barang=<?= $barang["id_barang"] ?>" class="beli">BELI
                             SEKARANG</a>
                     </div>
@@ -142,11 +118,12 @@ if (isset($_POST["submit"])) {
 
     function setQuantityValue() {
         var quantityValue = document.getElementById("quantity").innerText;
-
-        // Set nilai tersebut ke input hidden dengan name="quantity_barang"
         document.getElementById("quantityInput").value = quantityValue;
     }
 
+    function setAction(actionUrl) {
+        document.getElementById('orderForm').action = actionUrl;
+    }
 
     document.addEventListener("DOMContentLoaded", function() {
         var quantity1 = document.getElementById("quantity");

@@ -1,9 +1,11 @@
 <?php
 
 include "admin/config/app.php";
+include "layout/navbar.php";
 session_start();
 
 include "admin/config/security.php";
+
 
 $data_barang = $_POST;
 
@@ -52,23 +54,6 @@ if(isset($_POST["pesan"])) {
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="top-section1">
-            <div class="logo">
-                <a href="index.php"><img src="asset/img/logo.svg" alt="Logo"></a>
-            </div>
-            <div class="search">
-                <form action="produk.php" method="get">
-                    <input type="text" name="cari" placeholder="Cari Produk...">
-                    <button type="submit" name="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-            <div class="nav-kiri">
-                <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
-                <a href="myaccount.php"><i class="fa-solid fa-user"></i></a>
-            </div>
-        </div>
-    </nav>
 
     <!-- Breadcrumbs -->
     <div class="hero">

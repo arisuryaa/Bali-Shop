@@ -2,6 +2,8 @@
 
 include "admin/config/app.php";
 
+include "layout/navbar.php";
+
 $dataBarang = select("SELECT * FROM barang");
 
 if (isset($_GET['submit'])) {
@@ -29,35 +31,6 @@ if (isset($_GET['submit'])) {
 </head>
 
 <body>
-
-    <!--navbar-->
-
-    <nav class="navbar">
-        <div class="top-section">
-            <div class="logo">
-                <a href="index.php"><img src="asset/img/logo.svg" alt="Logo"></a>
-            </div>
-            <div class="search">
-                <form action="produk.php" method="get">
-                    <input type="text" name="cari" placeholder="Cari Produk...">
-                    <button type="submit" name="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-            <div class="nav-kiri">
-                <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
-                <a href="myaccount.php"><i class="fa-solid fa-user"></i></a>
-            </div>
-        </div>
-
-        <div class="bottom-section">
-            <div class="left-nav">
-                <a href="produk.php">SEMUA PRODUK</a>
-            </div>
-            <div class="right-nav">
-                <p>Hubungi Kami: +62 877 5081 7501</p>
-            </div>
-        </div>
-    </nav>
 
     <!--hero-->
 

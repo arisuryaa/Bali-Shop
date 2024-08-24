@@ -84,11 +84,14 @@ h4 {
   font-weight: normal;
 }
 
-.subtotal form button {
+.subtotal .total a {
   background-color: #242424;
+  display: block;
+  text-align: center;
   color: white;
-  width: 100%;
+  /* width: 100%; */
   padding: 0.5rem;
+  text-decoration: none;
   border-radius: 0.5rem;
 }
 

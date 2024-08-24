@@ -231,6 +231,45 @@ function searchBarang($keyword) {
   
 }
 
+function pesananKeranjang($post) {
+  global $db;
+
+  $namaPemesan = $post["nama"];
+  $nomorTelpon = $post["telpon"];
+  $emailPemesan = $post["email"];
+  $catatan = $post["catatan"];
+  $statusPesanan = 'Diproses';
+
+  // Menggabungkan nama barang dari array menjadi satu string
+  $namaBarangList = [];
+  $quantityList = [];
+  $hargaList = [];
+  $subtotalList = [];
+
+  $cartItems = $_SESSION['cart'];
+
+  foreach ($cartItems as $index => $item) {
+      $namaBarangList[] = ($index + 1) . ". " . $item["name"] ;
+      $quantityList[] = $item["quantity"];
+      $hargaList[] = $item["price"];
+      $subtotalList[] = $item["price"] * $item["quantity"];
+  }
+
+  $namaBarang = implode(",", $namaBarangList);
+  $quantity = implode(",", $quantityList);
+  $hargaBarang = implode(",", $hargaList);
+  $subtotal = implode(",  ", $subtotalList);
+
+  $query = "INSERT INTO pesanan VALUES (null, '$namaPemesan', '$nomorTelpon', '$emailPemesan', '$catatan', '$namaBarang', '$quantity', '$hargaBarang', '$subtotal', 'Diproses')";
+
+  unset($_SESSION["cart"]);
+
+  mysqli_query($db, $query);
+
+  return mysqli_affected_rows($db);
+}
+
+
 function pesanan($post) {
   global $db;
 

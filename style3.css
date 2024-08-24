@@ -21,7 +21,8 @@ nav {
   flex-direction: column;
 }
 
-.navbar .top-section, .navbar .top-section1 {
+.navbar .top-section,
+.navbar .top-section1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,7 +155,6 @@ nav .logo img {
   color: #dcdcdc;
   transition: 0.3s ease-in-out;
 }
-
 
 .menu-button {
   display: none;
@@ -319,12 +319,6 @@ nav .logo img {
   gap: 10px;
 }
 
-.container-utama .container-kanan .dataPesanan .namaProduk .dataProduk {
-  display: flex;
-  gap: 4px;
-  width: 75%;
-}
-
 .container-utama .container-kanan .dataPesanan .namaProduk .titleProduk h1 {
   font-size: 18px;
   font-weight: 600;
@@ -333,6 +327,18 @@ nav .logo img {
 .container-utama .container-kanan .dataPesanan .totalProduk .total h1 {
   font-size: 18px;
   font-weight: 600;
+}
+
+.container-utama .container-kanan .dataPesanan .namaProduk .dataProduk {
+  display: flex;
+  gap: 4px;
+  width: 75%;
+  flex-direction: column;
+}
+
+.container-utama .container-kanan .dataPesanan .namaProduk .dataProduk .produk {
+  display: flex;
+  padding-bottom: 0.2rem;
 }
 
 .container-utama .container-kanan .dataPesanan .namaProduk .dataProduk h1 {
@@ -347,6 +353,7 @@ nav .logo img {
 .container-utama .container-kanan .dataPesanan .totalProduk .dataTotal h1 {
   font-size: 14px;
   font-weight: 600;
+  padding-bottom: 0.2rem;
 }
 
 .container-utama .container-kanan .dataPesanan .totalProduk {
@@ -368,16 +375,14 @@ nav .logo img {
   font-family: "Poppins", sans-serif;
 }
 
-input:focus{
+input:focus {
   box-shadow: 0px 0px 10px 3px rgba(64, 64, 64, 0.7);
   border: 1px solid #333333;
   outline: none;
-
 }
 
-input{
+input {
   transition: box-shadow 0.3s ease, border 0.3s ease, transform 0.3s ease;
-
 }
 
 /* .detailtagihan {
@@ -473,29 +478,29 @@ input.catatan {
 
 @media only screen and (max-width: 800px) {
   nav .logo img {
-      display: none;
+    display: none;
   }
 
   .search button {
-      display: none;
+    display: none;
   }
 
   .bottom-section .right-nav {
-      display: none;
+    display: none;
   }
 
   .nav-kiri .fa-user {
-      display: none;
+    display: none;
   }
 
   .nav-kiri ul {
-      gap: 15px;
-      margin-right: 3.5rem;
-      padding: 0;
+    gap: 15px;
+    margin-right: 3.5rem;
+    padding: 0;
   }
 
   .navbar .bottom-section {
-      display: none;
+    display: none;
   }
 
   .hideOnMobile {
@@ -508,65 +513,64 @@ input.catatan {
 
   .nav-kiri ul {
     padding-top: 8px;
-    gap: 20px; 
+    gap: 20px;
   }
 
   nav {
-      background-color: #242424;
-      color: #fff;
-      flex-direction: column;
-      justify-content: center;
-      width: 100%;
+    background-color: #242424;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
   }
 
   .search {
-      width: 75%;
-      padding: 0 1rem;
-      float: left;
+    width: 75%;
+    padding: 0 1rem;
+    float: left;
   }
 
   .search form {
-      display: flex;
-      width: 75%;
+    display: flex;
+    width: 75%;
   }
 
   .search input[type="text"] {
-      flex: 1;
-      padding: 0.5em;
-      border: none;
-      border-radius: 0.3em;
-      height: 1rem;
-      transition: box-shadow 0.3s ease, border 0.3s ease, transform 0.3s ease;
+    flex: 1;
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.3em;
+    height: 1rem;
+    transition: box-shadow 0.3s ease, border 0.3s ease, transform 0.3s ease;
   }
 
   .search input[type="text"]:focus {
-      box-shadow: 0px 0px 15px 5px rgba(64, 64, 64, 0.7);
-      border: 1px solid #333333;
-      outline: none;
-      transform: scale(1.01);
+    box-shadow: 0px 0px 15px 5px rgba(64, 64, 64, 0.7);
+    border: 1px solid #333333;
+    outline: none;
+    transform: scale(1.01);
   }
 
   .search button {
-      padding: 0.5em 0.9em;
-      border: none;
-      border-radius: 0.3em;
-      background-color: gray;
-      color: #fff;
-      cursor: pointer;
-      margin-left: 0.5em;
-      height: 2rem;
+    padding: 0.5em 0.9em;
+    border: none;
+    border-radius: 0.3em;
+    background-color: gray;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 0.5em;
+    height: 2rem;
   }
 
   .search button i {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   .hamburger-menu {
-      display: block;
-      font-size: 1.5rem;
-      color: #fff;
-      cursor: pointer;
-      margin-top: 1rem;
+    display: block;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1rem;
   }
-  
 }

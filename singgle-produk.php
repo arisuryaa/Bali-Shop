@@ -58,14 +58,14 @@ session_start();
                     <button id="plus-btn"><i class="fa-solid fa-plus"></i></button>
                 </div>
 
-                <form id="orderForm" action="keranjang.php" method="POST" onsubmit="setQuantityValue()">
+                <form id="orderForm" action="" method="POST" onsubmit="setQuantityValue()">
                     <input type="hidden" name="judul_barang" value="<?= $dataBarang["nama_barang"] ?>">
                     <input type="hidden" name="id_barang" value="<?= $idBarang ?>">
                     <input type="hidden" name="harga_barang" value="<?= $dataBarang["harga_barang"] ?>">
                     <input type="hidden" id="quantityInput" name="quantity_barang" value="">
                     <button type="submit" name="add_to_cart" onclick="setAction('keranjang.php')">Tambah
                         Keranjang</button>
-                    <button type="submit" name="buy_now" onclick="setAction('pemesanan.php')">Beli Sekarang</button>
+                    <button type="submit" name="buy_now" onclick="setAction('checkout.php')">Beli Sekarang</button>
                 </form>
             </div>
         </div>

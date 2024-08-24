@@ -2,6 +2,13 @@
 
 session_start();
 
+$noitem = true;
+
+
+if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
+    $noitem = false;
+}
+
 if (isset($_POST['add_to_cart'])) {
     $product_id = $_POST['id_barang'];
     $product_name = $_POST['judul_barang'];
@@ -31,6 +38,7 @@ if (isset($_POST['add_to_cart'])) {
         }
     } else {
         $_SESSION['cart'] = array($cart_item);
+        $noitem = false;
     }
     
 }
@@ -49,6 +57,13 @@ include "Layout/Navbar.php";
 </head>
 
 <body>
+    <?php if($noitem === true) : ?>
+    <div class="noitem">
+        <h1>Tidak Ada Barang Di Keranjang...</h1>
+    </div>
+    <?php endif; ?>
+
+    <?php if(!$noitem) : ?>
     <h4>Keranjang Anda</h4>
     <div class="container">
         <table cellspacing="0" cellpadding="0">
@@ -89,12 +104,14 @@ include "Layout/Navbar.php";
                 <h1>Subtotal :</h1>
                 <h1><?= number_format($subtotal,0,',','.') ?></h1>
             </div>
-            <form action="" method="POST">
-                <button>Pesan Sekarang</button>
-            </form>
+            <a href="checkout.php">Pesan Sekarang</a>
+            <!-- <form action="checkout.php" method="POST">
+                <input type="hidden" name="data" value="">
+                <button type="submit" name="submit">Pesan Sekarang</button>
+             </form> -->
         </div>
     </div>
-
+    <?php endif ; ?>
 </body>
 
 </html>

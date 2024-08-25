@@ -428,14 +428,14 @@ nav .logo img {
 /* My Account */
 
 .hero2 {
-  margin-top: 4.5rem;
+  margin-top: 8rem;
   background-image: url(asset/img/bgAccount.png);
   background-size: contain;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 38vh;
+  height: 40vh;
   color: white;
   flex-direction: column;
 }

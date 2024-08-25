@@ -158,6 +158,7 @@ if(isset($_POST["pesan"])) {
                     <input type="hidden" name="quantityBarang" value="<?= $data_barang["quantity_barang"] ?>">
                     <input type="hidden" name="hargaBarang" value="<?= $data_barang["harga_barang"] ?>">
                     <input type="hidden" name="subtotal" value="<?= $subtotal ?>">
+                    <input type="hidden" name="id" value="<?= $data_barang["id"] ?>">
                     <button type="submit" name="pesan">Buat Nomor Pesanan</button>
                     <?php endif; ?>
 

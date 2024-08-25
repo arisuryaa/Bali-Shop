@@ -7,10 +7,11 @@ $noitem = true;
 
 if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
     $noitem = false;
+    var_dump($_SESSION["cart"]);    
 }
 
 if (isset($_POST['add_to_cart'])) {
-    $product_id = $_POST['id_barang'];
+    $product_id = $_POST['id'];
     $product_name = $_POST['judul_barang'];
     $product_price = $_POST['harga_barang'];
     $product_quantity = $_POST['quantity_barang'];

@@ -60,7 +60,7 @@ session_start();
 
                 <form id="orderForm" action="" method="POST" onsubmit="setQuantityValue()">
                     <input type="hidden" name="judul_barang" value="<?= $dataBarang["nama_barang"] ?>">
-                    <input type="hidden" name="id_barang" value="<?= $idBarang ?>">
+                    <input type="hidden" name="id" value="<?= $idBarang ?>">
                     <input type="hidden" name="harga_barang" value="<?= $dataBarang["harga_barang"] ?>">
                     <input type="hidden" id="quantityInput" name="quantity_barang" value="">
                     <button type="submit" name="add_to_cart" onclick="setAction('keranjang.php')">Tambah

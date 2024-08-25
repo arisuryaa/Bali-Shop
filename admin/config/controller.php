@@ -240,7 +240,6 @@ function pesananKeranjang($post) {
   $catatan = $post["catatan"];
   $statusPesanan = 'Diproses';
 
-  // Menggabungkan nama barang dari array menjadi satu string
   $namaBarangList = [];
   $quantityList = [];
   $hargaList = [];
@@ -263,9 +262,20 @@ function pesananKeranjang($post) {
   $query = "INSERT INTO pesanan VALUES (null, '$namaPemesan', '$nomorTelpon', '$emailPemesan', '$catatan', '$namaBarang', '$quantity', '$hargaBarang', '$subtotal', 'Diproses')";
 
   unset($_SESSION["cart"]);
-
   mysqli_query($db, $query);
 
+  
+  foreach($cartItems as $item) {
+    $id = $item["id"];
+    $stok = (int)select("SELECT stock_barang FROM barang WHERE id_barang = $id")[0]["stock_barang"];
+
+    $stokBaru = $stok - (int)$item["quantity"];
+    $queryStok = "UPDATE barang SET stock_barang = '$stokBaru' WHERE id_barang = '$id' ";
+  
+    mysqli_query($db,$queryStok);
+
+  }
+  
   return mysqli_affected_rows($db);
 }
 
@@ -273,7 +283,9 @@ function pesananKeranjang($post) {
 function pesanan($post) {
   global $db;
 
+  $id = $post["id"];
   // var_dump(count($post["catatan"]));
+  $stok = (int)select("SELECT stock_barang FROM barang WHERE id_barang = $id")[0]["stock_barang"];
 
   $namaPemesan = $post["nama"];
   $nomorTelpon = $post["telpon"];
@@ -288,6 +300,11 @@ function pesanan($post) {
   $query = "INSERT INTO pesanan VALUES (null, '$namaPemesan', '$nomorTelpon', '$emailPemesan' ,'$catatan','$namaBarang','$quantity','$hargaBarang','$subtotal','Diproses')";
 
   mysqli_query($db,$query);
+
+  $stokBaru = $stok - (int)$quantity;
+  $queryStok = "UPDATE barang SET stock_barang = '$stokBaru' WHERE id_barang = '$id' ";
+
+  mysqli_query($db,$queryStok);
   return mysqli_affected_rows($db);
 }
 

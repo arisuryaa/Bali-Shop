@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +43,18 @@
             </div>
             <div class="nav-kiri">
                 <ul>
-                    <li><a href="keranjang.php"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                    <li>
+                        <a href="keranjang.php">
+                            <i class="fa-solid fa-bag-shopping">
+                                <?php if(isset($_SESSION['cart'])) : ?>
+                                <?php if(count($_SESSION['cart']) > 0) : ?>
+                                <h1><?= count($_SESSION['cart']) ?></h1>
+                                <?php endif; ?>
+                                <?php endif; ?>
+                            </i>
+                        </a>
+                    </li>
+
                     <li class="hideOnMobile"><a href="myaccount.php"><i class="fa-solid fa-user"></i></a></li>
                     <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
                                 height="30px" viewBox="0 -960 960 960" width="30px" fill="#e8eaed">

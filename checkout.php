@@ -26,8 +26,7 @@ $subtotal = $harga * $quantity;
 if(isset($_POST["pesanKeranjang"])) {
     if(pesananKeranjang($_POST) > 0 ) {
         echo "<script>
-            alert('pesanan akan segera diproses');
-            document.location.href = 'index.php';
+            document.location.href = 'thankyou.php';
         </script>";
     } else {
         "<script>
@@ -39,8 +38,7 @@ if(isset($_POST["pesanKeranjang"])) {
 if(isset($_POST["pesan"])) {
     if(pesanan($_POST) > 0 ) {
         echo "<script>
-            alert('pesanan akan segera diproses');
-            document.location.href = 'index.php';
+            document.location.href = 'thankyou.php';
         </script>";
     } else {
         "<script>

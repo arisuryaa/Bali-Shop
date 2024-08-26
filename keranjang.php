@@ -1,6 +1,6 @@
 <?php
-
-session_start();
+include "Layout/Navbar.php";
+// session_start();
 
 $noitem = true;
 
@@ -44,7 +44,7 @@ if (isset($_POST['add_to_cart'])) {
     
 }
 
-include "Layout/Navbar.php";
+
 ?>
 
 <!DOCTYPE html>

@@ -8,7 +8,8 @@ $idBarang = $_GET["id_barang"];
 $dataBarang = select("SELECT * FROM barang WHERE id_barang = $idBarang")[0];
 $barangLain =select("SELECT * FROM barang LIMIT 6");
 
-session_start();
+var_dump($dataBarang);
+
 
 ?>
 
@@ -58,6 +59,8 @@ session_start();
                     <button id="plus-btn"><i class="fa-solid fa-plus"></i></button>
                 </div>
 
+                <?php if((int)$dataBarang["stock_barang"] > 0) : ?>
+
                 <form id="orderForm" action="" method="POST" onsubmit="setQuantityValue()">
                     <input type="hidden" name="judul_barang" value="<?= $dataBarang["nama_barang"] ?>">
                     <input type="hidden" name="id" value="<?= $idBarang ?>">
@@ -67,6 +70,13 @@ session_start();
                         Keranjang</button>
                     <button type="submit" name="buy_now" onclick="setAction('checkout.php')">Beli Sekarang</button>
                 </form>
+
+                <?php endif; ?>
+
+                <?php if($dataBarang["stock_barang"] < 1) : ?>
+                <a href="">Stok Habis</a>
+                <?php endif; ?>
+                <?php ?>
             </div>
         </div>
         </div>

@@ -9,8 +9,8 @@ include "admin/config/security.php";
 $data_barang = $_POST;
 
 
-var_dump($_SESSION['cart']);
-var_dump(count($data_barang));
+//var_dump($_SESSION['cart']);
+//var_dump(count($data_barang));
 
 if (!isset($_SESSION['cart']) && count($data_barang) < 1  ) {
     echo "<script>
@@ -59,7 +59,7 @@ if(isset($_POST["pesan"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Bali Shop</title>
+    <title>Checkout</title>
     <style>
 
     </style>

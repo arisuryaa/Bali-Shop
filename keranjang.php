@@ -7,7 +7,6 @@ $noitem = true;
 
 if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
     $noitem = false;
-    var_dump($_SESSION["cart"]);    
 }
 
 if (isset($_POST['add_to_cart'])) {
@@ -53,7 +52,7 @@ if (isset($_POST['add_to_cart'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Keranjang</title>
     <link rel="stylesheet" href="stylekeranjang.css">
 </head>
 
@@ -75,7 +74,7 @@ if (isset($_POST['add_to_cart'])) {
                     <td>Harga</td>
                     <td>Jumlah</td>
                     <td>Total</td>
-                    <td></td>
+                    <td>Hapus</td>
                 </tr>
             </thead>
             <tbody>

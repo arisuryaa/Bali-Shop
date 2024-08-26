@@ -8,8 +8,6 @@ $idBarang = $_GET["id_barang"];
 $dataBarang = select("SELECT * FROM barang WHERE id_barang = $idBarang")[0];
 $barangLain =select("SELECT * FROM barang LIMIT 6");
 
-var_dump($dataBarang);
-
 
 ?>
 

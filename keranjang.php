@@ -59,7 +59,7 @@ include "Layout/Navbar.php";
                     <td>Harga</td>
                     <td>Jumlah</td>
                     <td>Total</td>
-                    <td></td>
+                    <td>Hapus</td>
                 </tr>
             </thead>
             <tbody>

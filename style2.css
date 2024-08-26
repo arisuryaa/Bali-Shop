@@ -255,6 +255,11 @@ nav .logo img {
   padding: 0.7rem 1.5rem;
   border-radius: 0.6rem;
   font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.container2 .deskripsi form button:hover {
+  background-color: #333;
 }
 
 .container2 .deskripsi .quantity button {
@@ -373,6 +378,7 @@ nav .logo img {
   font-size: 13px;
   text-align: center;
   margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #footer {
@@ -492,6 +498,11 @@ nav .logo img {
   font-family: "Poppins", sans-serif;
   text-align: center;
   text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.main .fotoUser a:hover {
+  background-color: #333;
 }
 
 .main .fotoUser img {
@@ -962,4 +973,3 @@ nav .logo img {
     padding-bottom: 0;
   }
 }
->>>>>>> cef20511feb8d08ed4ded6660489283463baecc5

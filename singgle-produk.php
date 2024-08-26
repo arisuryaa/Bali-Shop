@@ -65,7 +65,7 @@ session_start();
                     <input type="hidden" id="quantityInput" name="quantity_barang" value="">
                     <button type="submit" name="add_to_cart" onclick="setAction('keranjang.php')">Tambah
                         Keranjang</button>
-                    <button type="submit" name="buy_now" onclick="setAction('pemesanan.php')">Beli Sekarang</button>
+                    <button type="submit" name="buy_now" onclick="setAction('checkout.php')">Beli Sekarang</button>
                 </form>
             </div>
         </div>

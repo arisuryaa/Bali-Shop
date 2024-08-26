@@ -51,25 +51,25 @@ if (isset($_GET['submit'])) {
 
         <div class="isi-box">
 
-            <a href="" class="box-container">
+            <a href="produk.php?submit=xasdahr&cari=mouse" class="box-container">
                 <img src="asset/img/ilustrasi-mousee.svg">
                 <h1>Mouse</h1>
                 <p>5 Produk</p>
             </a>
 
-            <a href="" class="box-container">
+            <a href="produk.php?submit=koeade&cari=monitor" class="box-container">
                 <img src="asset/img/ilustrasi-monitor1.svg">
                 <h1>Monitor</h1>
                 <p>5 Produk</p>
             </a>
 
-            <a href="" class="box-container">
+            <a href="produk.php?submit=suk4ry4&cari=headset" class="box-container">
                 <img src="asset/img/ilustrasi-headset.svg">
                 <h1>Headset</h1>
                 <p>5 Produk</p>
             </a>
 
-            <a href="" class="box-container">
+            <a href="produk.php?submit=oasdsk&cari=keyboard" class="box-container">
                 <img src="asset/img/ilustrasi-keyboard.svg">
                 <h1>Keyboard</h1>
                 <p>5 Produk</p>

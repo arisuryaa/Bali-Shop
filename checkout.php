@@ -3,13 +3,16 @@
 include "admin/config/app.php";
 include "layout/navbar.php";
 session_start();
-
 include "admin/config/security.php";
 
 
 $data_barang = $_POST;
 
-if(count($data_barang) <= 0) {
+
+//var_dump($_SESSION['cart']);
+//var_dump(count($data_barang));
+
+if (!isset($_SESSION['cart']) && count($data_barang) < 1  ) {
     echo "<script>
         document.location.href = 'index.php';
     </script>";
@@ -20,11 +23,22 @@ $quantity = (int)$data_barang['quantity_barang'];
 
 $subtotal = $harga * $quantity; 
 
+if(isset($_POST["pesanKeranjang"])) {
+    if(pesananKeranjang($_POST) > 0 ) {
+        echo "<script>
+            document.location.href = 'thankyou.php';
+        </script>";
+    } else {
+        "<script>
+            alert('gagal');
+            document.location.href = 'index.php';
+        </script>";
+    }
+}
 if(isset($_POST["pesan"])) {
     if(pesanan($_POST) > 0 ) {
         echo "<script>
-            alert('pesanan akan segera diproses');
-            document.locati`on.href = 'index.php';
+            document.location.href = 'thankyou.php';
         </script>";
     } else {
         "<script>
@@ -45,9 +59,7 @@ if(isset($_POST["pesan"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    <title>Bali Shop</title>
+    <title>Checkout</title>
     <style>
 
     </style>
@@ -104,8 +116,21 @@ if(isset($_POST["pesan"])) {
                                 <h1>Produk</h1>
                             </div>
                             <div class="dataProduk">
-                                <h1><?= $data_barang["judul_barang"] ?></h1>
-                                <h1> x<?= $data_barang["quantity_barang"] ?></h1>
+                                <?php if(isset($_SESSION['cart']) && count($data_barang) < 1) : ?>
+                                <?php foreach($_SESSION['cart'] as $barang) : ?>
+                                <div class="produk">
+                                    <h1><?= $barang["name"] ?></h1>
+                                    <h1> x<?= $barang["quantity"] ?></h1>
+                                </div>
+                                <?php endforeach ?>
+                                <?php endif; ?>
+
+                                <?php if(count($data_barang) > 0) : ?>
+                                <div class="produk">
+                                    <h1><?= $data_barang["judul_barang"] ?></h1>
+                                    <h1> x<?= $data_barang["quantity_barang"] ?></h1>
+                                </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="totalProduk">
@@ -113,15 +138,33 @@ if(isset($_POST["pesan"])) {
                                 <h1>Subtotal</h1>
                             </div>
                             <div class="dataTotal">
+                                <?php if(isset($_SESSION['cart']) && count($data_barang) < 1) : ?>
+                                <?php foreach($_SESSION['cart'] as $barang) : ?>
+                                <h1>Rp. <?=  number_format($barang['quantity'] * $barang["price"],0,',','.') ?></h1>
+                                <?php endforeach ?>
+                                <?php endif; ?>
+
+                                <?php if(count($data_barang) > 0) : ?>
                                 <h1>Rp. <?=  number_format($subtotal,0,',','.') ?></h1>
+                                <?php endif; ?>
+
                             </div>
                         </div>
                     </div>
+                    <?php if(count($data_barang) > 0) : ?>
                     <input type="hidden" name="namaBarang" value="<?= $data_barang["judul_barang"] ?>">
                     <input type="hidden" name="quantityBarang" value="<?= $data_barang["quantity_barang"] ?>">
                     <input type="hidden" name="hargaBarang" value="<?= $data_barang["harga_barang"] ?>">
                     <input type="hidden" name="subtotal" value="<?= $subtotal ?>">
+                    <input type="hidden" name="id" value="<?= $data_barang["id"] ?>">
                     <button type="submit" name="pesan">Buat Nomor Pesanan</button>
+                    <?php endif; ?>
+
+
+                    <?php if(isset($_SESSION['cart']) && count($data_barang) < 1) : ?>
+                    <button type="submit" name="pesanKeranjang">Buat Nomor Pesanan</button>
+                    <?php endif; ?>
+
                 </div>
 
             </div>

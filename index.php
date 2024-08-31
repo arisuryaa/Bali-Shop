@@ -2,7 +2,7 @@
 
 include "admin/config/app.php";
 
-include "layout/navbar.php";
+include "Layout/Navbar.php";
 
 $dataBarang = select("SELECT * FROM barang");
 
@@ -28,6 +28,7 @@ if (isset($_GET['submit'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>Bali Shop</title>
+    <link rel="icon" href="asset/img/logo2.png" type="image/png" />
 </head>
 
 <body>
@@ -36,8 +37,8 @@ if (isset($_GET['submit'])) {
 
     <section class="hero" id="hr">
         <div class="slides">
-            <img src="asset/img/frame 2.svg" alt="Frame1">
-            <img src="asset/img/frame 3.svg" alt="Frame2">
+            <img src="asset/img/Frame2.png" alt="Frame1">
+            <img src="asset/img/Frame3.png" alt="Frame2">
         </div>
     </section>
 
@@ -54,25 +55,25 @@ if (isset($_GET['submit'])) {
             <a href="produk.php?submit=xasdahr&cari=mouse" class="box-container">
                 <img src="asset/img/ilustrasi-mousee.svg">
                 <h1>Mouse</h1>
-                <p>5 Produk</p>
+                <!-- <p>5 Produk</p> -->
             </a>
 
             <a href="produk.php?submit=koeade&cari=monitor" class="box-container">
                 <img src="asset/img/ilustrasi-monitor1.svg">
                 <h1>Monitor</h1>
-                <p>5 Produk</p>
+                <!-- <p>5 Produk</p> -->
             </a>
 
             <a href="produk.php?submit=suk4ry4&cari=headset" class="box-container">
                 <img src="asset/img/ilustrasi-headset.svg">
                 <h1>Headset</h1>
-                <p>5 Produk</p>
+                <!-- <p>5 Produk</p> -->
             </a>
 
             <a href="produk.php?submit=oasdsk&cari=keyboard" class="box-container">
                 <img src="asset/img/ilustrasi-keyboard.svg">
                 <h1>Keyboard</h1>
-                <p>5 Produk</p>
+                <!-- <p>5 Produk</p> -->
             </a>
 
         </div>

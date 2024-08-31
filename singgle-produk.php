@@ -1,6 +1,6 @@
 <?php
 include "admin/config/app.php";
-include "layout/navbar.php";
+include "Layout/Navbar.php";
 
 
 $idBarang = $_GET["id_barang"];
@@ -48,7 +48,7 @@ $barangLain =select("SELECT * FROM barang LIMIT 6");
                     <h2 class="">Stok Tersedia : <?= $dataBarang["stock_barang"] ?></h2>
                 </div>
                 <div class="deskripsiBarang">
-                    <p><?= $dataBarang["deskripsi_barang"] ?></p>
+
                     <h1>Rp. <?= number_format($dataBarang['harga_barang'],0,',','.') ?></h1>
                 </div>
                 <div class="quantity">
@@ -57,6 +57,8 @@ $barangLain =select("SELECT * FROM barang LIMIT 6");
                     <button id="plus-btn"><i class="fa-solid fa-plus"></i></button>
                 </div>
 
+
+
                 <?php if((int)$dataBarang["stock_barang"] > 0) : ?>
 
                 <form id="orderForm" action="" method="POST" onsubmit="setQuantityValue()">
@@ -64,9 +66,10 @@ $barangLain =select("SELECT * FROM barang LIMIT 6");
                     <input type="hidden" name="id" value="<?= $idBarang ?>">
                     <input type="hidden" name="harga_barang" value="<?= $dataBarang["harga_barang"] ?>">
                     <input type="hidden" id="quantityInput" name="quantity_barang" value="">
-                    <button type="submit" name="add_to_cart" onclick="setAction('keranjang.php')">Tambah
-                        Keranjang</button>
-                    <button type="submit" name="buy_now" onclick="setAction('checkout.php')">Beli Sekarang</button>
+                    <button type="submit" name="add_to_cart" onclick="setAction('keranjang.php')"><i
+                            class="fa fa-shopping-cart" aria-hidden="true"></i> Keranjang</button>
+                    <button type="submit" name="buy_now" onclick="setAction('checkout.php')"><i
+                            class="fa fa-shopping-bag" aria-hidden="true"></i> Beli Sekarang</button>
                 </form>
 
                 <?php endif; ?>
@@ -75,6 +78,12 @@ $barangLain =select("SELECT * FROM barang LIMIT 6");
                 <a href="">Stok Habis</a>
                 <?php endif; ?>
                 <?php ?>
+            </div>
+        </div>
+        <div class="deskripsibarangg">
+            <div class="deskripsidetail">
+                <h1>DESKRIPSI BARANG</h1>
+                <p><?= $dataBarang["deskripsi_barang"] ?></p>
             </div>
         </div>
         </div>

@@ -1,8 +1,7 @@
 <?php
 
 include "admin/config/app.php";
-include "layout/navbar.php";
-session_start();
+include "Layout/Navbar.php";
 include "admin/config/security.php";
 
 
@@ -18,12 +17,9 @@ if (!isset($_SESSION['cart']) && count($data_barang) < 1  ) {
     </script>";
 }
 
-$harga = (int)$data_barang['harga_barang'];
-$quantity = (int)$data_barang['quantity_barang'];
-
-$subtotal = $harga * $quantity; 
-
 if(isset($_POST["pesanKeranjang"])) {
+    $harga = (int)$data_barang['harga_barang'];
+    $quantity = (int)$data_barang['quantity_barang'];
     if(pesananKeranjang($_POST) > 0 ) {
         echo "<script>
             document.location.href = 'thankyou.php';
@@ -145,6 +141,7 @@ if(isset($_POST["pesan"])) {
                                 <?php endif; ?>
 
                                 <?php if(count($data_barang) > 0) : ?>
+                                <?php $subtotal = $data_barang["quantity_barang"] * $data_barang["harga_barang"] ?>
                                 <h1>Rp. <?=  number_format($subtotal,0,',','.') ?></h1>
                                 <?php endif; ?>
 

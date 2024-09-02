@@ -1,6 +1,6 @@
 <?php
 include "admin/config/app.php";
-include "layout/navbar.php";
+include "Layout/Navbar.php";
 session_start();
 
 
@@ -43,51 +43,51 @@ $data_akun = select("SELECT * FROM user WHERE email = '$email'")[0];
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
-    <div class="hero2">
-        <h1>My Account</h1>
-    </div>
+<div class="hero2">
+    <h1>My Account</h1>
+</div>
 
-    <div class="main">
-        <div class="fotoUser">
-            <img src="asset/img/admin.webp" alt="">
-            <h1><?= $data_akun["nama"] ?></h1>
-            <a href="logout.php">Logout</a>
-        </div>
-        <div class="dataUser">
-            <div class="bio">
-                <h1>Biodata Diri</h1>
-                <div class="containerBio">
-                    <div class="judulBio">
-                        <h2>Nama</h2>
-                        <h2>Tanggal Lahir</h2>
-                        <h2>Jenis Kelamin</h2>
-                    </div>
-                    <div class="deskripsiBio">
-                        <h2><?= $data_akun["nama"] ?></h2>
-                        <a href="">Tambah Tanggal Lahir</a>
-                        <a href="">Tambah Jenis Kelamin</a>
-                    </div>
+<div class="main">
+    <div class="fotoUser">
+        <img src="asset/img/admin.webp" alt="">
+        <h1><?= $data_akun["nama"] ?></h1>
+        <a href="logout.php">Logout</a>
+    </div>
+    <div class="dataUser">
+        <div class="bio">
+            <h1>Biodata Diri</h1>
+            <div class="containerBio">
+                <div class="judulBio">
+                    <h2>Nama</h2>
+                    <h2>Tanggal Lahir</h2>
+                    <h2>Jenis Kelamin</h2>
+                </div>
+                <div class="deskripsiBio">
+                    <h2><?= $data_akun["nama"] ?></h2>
+                    <a href="">Tambah Tanggal Lahir</a>
+                    <a href="">Tambah Jenis Kelamin</a>
                 </div>
             </div>
-            <div class="kontak">
-                <h1>Kontak</h1>
-                <div class="containerKontak">
-                    <div class="judulKontak">
-                        <h2>Email</h2>
-                        <h2>Nomor Telpon</h2>
-                    </div>
-                    <div class="deskripsiKontak">
-                        <h2><?= $data_akun["email"] ?></h2>
-                        <a href="">Tambah Nomor Telpon</a>
-                    </div>
+        </div>
+        <div class="kontak">
+            <h1>Kontak</h1>
+            <div class="containerKontak">
+                <div class="judulKontak">
+                    <h2>Email</h2>
+                    <h2>Nomor Telpon</h2>
+                </div>
+                <div class="deskripsiKontak">
+                    <h2><?= $data_akun["email"] ?></h2>
+                    <a href="">Tambah Nomor Telpon</a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="back">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        <a href="index.php">Kembali ke Halaman Depan</a>
-    </div>
+</div>
+<div class="back">
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    <a href="index.php">Kembali ke Halaman Depan</a>
+</div>
 
 
 </body>

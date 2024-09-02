@@ -2,7 +2,7 @@
 
 
 include "admin/config/app.php";
-include "layout/navbar.php";
+include "Layout/Navbar.php";
 
 $dataBarang = select("SELECT * FROM barang");
 

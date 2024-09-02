@@ -221,11 +221,10 @@ a.box-container {
   background-color: #e9e9e9;
   border-radius: 5px;
   padding-top: 0;
-  padding-bottom: 4rem;
   padding-right: 2rem;
   padding-left: 2rem;
   width: 280px;
-  height: 150px;
+  height: 130px;
   cursor: pointer;
   text-decoration: none;
   color: #242424;
@@ -239,15 +238,14 @@ a.box-container {
 
 .box-container h1 {
   font-size: 19px;
-  margin-bottom: 8px;
   font-weight: bold;
 }
-
+/* 
 .box-container p {
   margin-bottom: 1.2rem;
   color: #333;
   font-size: 15px;
-}
+} */
 
 .box-container:hover {
   background-color: #d4d4d4;

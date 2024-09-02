@@ -8,6 +8,10 @@ body {
   overflow-x: hidden;
 }
 
+button {
+  font-family: "Poppins", sans-serif;
+}
+
 nav {
   background-color: #242424;
   color: #fff;
@@ -21,7 +25,8 @@ nav {
   flex-direction: column;
 }
 
-.navbar .top-section, .navbar .top-section1 {
+.navbar .top-section,
+.navbar .top-section1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,7 +159,6 @@ nav .logo img {
   color: #dcdcdc;
   transition: 0.3s ease-in-out;
 }
-
 
 .menu-button {
   display: none;
@@ -620,31 +624,48 @@ nav .logo img {
   color: blue;
 }
 
+.deskripsibarangg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid black; */
+}
+
+.deskripsidetail {
+  padding-top: 1rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid black;
+  padding-right: 5rem;
+  margin-top: 3rem;
+}
+
 @media only screen and (max-width: 800px) {
   nav .logo img {
-      display: none;
+    display: none;
   }
 
   .search button {
-      display: none;
+    display: none;
   }
 
   .bottom-section .right-nav {
-      display: none;
+    display: none;
   }
 
   .nav-kiri .fa-user {
-      display: none;
+    display: none;
   }
 
   .nav-kiri ul {
-      gap: 15px;
-      margin-right: 3.5rem;
-      padding: 0;
+    gap: 15px;
+    margin-right: 3.5rem;
+    padding: 0;
   }
 
   .navbar .bottom-section {
-      display: none;
+    display: none;
   }
 
   .hideOnMobile {
@@ -657,72 +678,72 @@ nav .logo img {
 
   .nav-kiri ul {
     padding-top: 8px;
-    gap: 20px; 
+    gap: 20px;
   }
 
   nav {
-      background-color: #242424;
-      color: #fff;
-      flex-direction: column;
-      justify-content: center;
-      width: 100%;
+    background-color: #242424;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
   }
 
   .search {
-      width: 75%;
-      padding: 0 1rem;
-      float: left;
+    width: 75%;
+    padding: 0 1rem;
+    float: left;
   }
 
   .search form {
-      display: flex;
-      width: 75%;
+    display: flex;
+    width: 75%;
   }
 
   .search input[type="text"] {
-      flex: 1;
-      padding: 0.5em;
-      border: none;
-      border-radius: 0.3em;
-      height: 1rem;
-      transition: box-shadow 0.3s ease, border 0.3s ease, transform 0.3s ease;
+    flex: 1;
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.3em;
+    height: 1rem;
+    transition: box-shadow 0.3s ease, border 0.3s ease, transform 0.3s ease;
   }
 
   .search input[type="text"]:focus {
-      box-shadow: 0px 0px 15px 5px rgba(64, 64, 64, 0.7);
-      border: 1px solid #333333;
-      outline: none;
-      transform: scale(1.01);
+    box-shadow: 0px 0px 15px 5px rgba(64, 64, 64, 0.7);
+    border: 1px solid #333333;
+    outline: none;
+    transform: scale(1.01);
   }
 
   .search button {
-      padding: 0.5em 0.9em;
-      border: none;
-      border-radius: 0.3em;
-      background-color: gray;
-      color: #fff;
-      cursor: pointer;
-      margin-left: 0.5em;
-      height: 2rem;
+    padding: 0.5em 0.9em;
+    border: none;
+    border-radius: 0.3em;
+    background-color: gray;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 0.5em;
+    height: 2rem;
   }
 
   .search button i {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   .hamburger-menu {
-      display: block;
-      font-size: 1.5rem;
-      color: #fff;
-      cursor: pointer;
-      margin-top: 1rem;
+    display: block;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1rem;
   }
 
   #produk {
     padding: 0;
     margin: 2.5rem 0 1.5rem 0;
   }
-  
+
   #produk .pro-container {
     display: flex;
     flex-wrap: wrap;
@@ -730,7 +751,7 @@ nav .logo img {
     padding: 0;
     margin: 1rem;
   }
-  
+
   #produk .pro {
     flex: 1 1 calc(50% - 15px);
     box-sizing: border-box;
@@ -741,20 +762,20 @@ nav .logo img {
     padding: 0.8rem;
     transform: scale(0.95);
   }
-  
+
   #produk .pro img {
     width: 100%;
     height: auto;
   }
-  
+
   #produk .deskripsi {
     padding: 0.3rem 0;
   }
-  
+
   #produk .pro .deskripsi {
     padding: 0.5rem 0 0.1rem 0;
   }
-  
+
   #produk .pro .deskripsi h5 {
     font-size: 13px;
     white-space: nowrap;
@@ -763,29 +784,29 @@ nav .logo img {
     padding: 1px;
     margin: 0.2rem 0 0 0;
   }
-  
+
   #produk .pro .deskripsi p {
     display: none;
   }
-  
+
   #produk .pro .deskripsi span {
     font-size: 9px;
     padding: 1px;
     margin: 0;
   }
-  
+
   #produk .pro .harga {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
   #produk .pro .deskripsi h4 {
     font-size: 11px;
     color: #333;
     margin: 0;
   }
-  
+
   #produk .pro .harga .beli {
     background-color: #333;
     color: #fff;
@@ -800,7 +821,7 @@ nav .logo img {
   #produk h1 {
     padding: 0;
   }
-  
+
   .swiper {
     width: 100%;
     height: auto;
@@ -876,12 +897,12 @@ nav .logo img {
     align-items: center;
     justify-content: flex-start;
   }
-  
+
   .container2 .deskripsi .quantity h1 {
     font-size: 18px;
     margin: 0 1rem;
   }
-  
+
   .container2 .deskripsi .quantity button {
     width: 30px;
     height: 30px;
@@ -891,7 +912,7 @@ nav .logo img {
     justify-content: center;
     align-items: center;
   }
-  
+
   .container2 .deskripsi form button {
     width: 100%;
     font-size: 14px;
@@ -901,7 +922,7 @@ nav .logo img {
     border: none;
     padding: 0.7rem 0;
     border-radius: 0.6rem;
-  }  
+  }
 
   .main {
     flex-direction: column;
@@ -944,8 +965,7 @@ nav .logo img {
   .hero2 {
     height: 20vh;
   }
-  
-  
+
   .hero2 h1 {
     font-size: 30px;
   }
@@ -956,7 +976,7 @@ nav .logo img {
   }
 
   .main .fotoUser h1 {
-    padding:1rem 0 1rem 0;
+    padding: 1rem 0 1rem 0;
     font-size: 20px;
   }
 
@@ -966,7 +986,7 @@ nav .logo img {
   }
 
   .back {
-    padding:2rem 0 1.5rem 21px;
+    padding: 2rem 0 1.5rem 21px;
   }
 
   .main .dataUser .kontak .containerKontak {

@@ -63,15 +63,25 @@ if(isset($_POST["pesan"])) {
 
 <body>
 
+    <div class="hero4">
+        <div class="text">
+            <h1>CHECKOUT</h1>
+            <div class="">
+                <a href="index.php">Home</a>
+                <span> /Checkout</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Breadcrumbs -->
-    <div class="hero">
+    <!-- <div class="hero">
         <h1>
             Checkout <br>
         </h1>
         <div class="tombol">
             <a href="index.php">Home</a>
         </div>
-    </div>
+    </div> -->
 
 
     <section>
@@ -169,7 +179,8 @@ if(isset($_POST["pesan"])) {
 
     </section>
 
+</body>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>

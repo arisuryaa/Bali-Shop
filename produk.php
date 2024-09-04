@@ -38,11 +38,26 @@ $total = count($dataBarang);
     <section id="all" class="all-produk">
         <div class="container <?php echo $noResults ? 'no-results' : ''; ?>">
             <div class="sidebar">
-                <h3>BALI SHOP</h3><br>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae deserunt quae reiciendis at laborum
-                    dolore nam facere inventore repudiandae.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, atque earum? Maiores nisi maxime
-                    repudiandae assumenda facilis
+                <div class="">
+                    <div class="logo">
+                        <img src="asset/img/logo3.png" alt="">
+                    </div>
+                    <h2>Kategori Terlaris </h2>
+                    <div class="kategori">
+                        <li><a href="produk.php?submit=koeade&cari=monitor">Monitor</a></li>
+                        <li><a href="produk.php?submit=xasdahr&cari=mouse">Mouse</a></li>
+                        <li><a href="produk.php?submit=xasdahr&cari=Headset">Headset</a></li>
+                        <li><a href="produk.php?submit=xasdahr&cari=keyboard">Keyboard</a></li>
+                    </div>
+                </div>
+                <div class="contact">
+                    <h2>Contact</h2>
+                    <div class="icon">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
             </div>
 
             <div class="content">

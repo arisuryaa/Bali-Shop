@@ -20,6 +20,15 @@ $barangLain =select("SELECT * FROM barang LIMIT 6");
     <link rel="stylesheet" href="style2.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+    a#ok {
+        text-decoration: none;
+        background-color: #e52a53;
+        padding: 5px 15px;
+        border-radius: 10px;
+        color: white;
+    }
+    </style>
 
 </head>
 
@@ -75,7 +84,9 @@ $barangLain =select("SELECT * FROM barang LIMIT 6");
                 <?php endif; ?>
 
                 <?php if($dataBarang["stock_barang"] < 1) : ?>
-                <a href="">Stok Habis</a>
+                <div class="habis">
+                    <a href="index.php" id="ok">Stok Habis</a>
+                </div>
                 <?php endif; ?>
                 <?php ?>
             </div>

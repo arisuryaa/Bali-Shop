@@ -160,8 +160,32 @@ nav .logo img {
   display: none;
 }
 
+.hero4 {
+  margin-top: 5rem;
+  background-image: url(asset/img/bg3.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.hero4 .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero4 .text a {
+  text-decoration: none;
+  color: #0075ff;
+}
+
 .hero {
-  margin-top: 4.5rem;
+  margin-top: 8rem;
   background-image: url(asset/img/bg3.jpg);
   background-size: cover;
   background-position: center;
@@ -188,6 +212,7 @@ nav .logo img {
 .container-utama {
   display: flex;
   justify-content: space-between;
+  margin-top: 2rem;
 }
 
 .container-utama .container-kiri {

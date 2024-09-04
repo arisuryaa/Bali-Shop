@@ -1,7 +1,7 @@
 <?php
 include "admin/config/app.php";
 include "Layout/Navbar.php";
-session_start();
+// session_start();
 
 
 
@@ -49,7 +49,7 @@ $data_akun = select("SELECT * FROM user WHERE email = '$email'")[0];
 
 <div class="main">
     <div class="fotoUser">
-        <img src="asset/img/admin.webp" alt="">
+        <img src="asset/img/profile.webp" alt="">
         <h1><?= $data_akun["nama"] ?></h1>
         <a href="logout.php">Logout</a>
     </div>

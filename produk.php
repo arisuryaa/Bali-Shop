@@ -31,6 +31,66 @@ $total = count($dataBarang);
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Semua Produk</title>
+
+    <style>
+    .sidebar {
+        width: 25%;
+        background-color: #e9e9e9;
+        padding: 20px;
+        height: fit-content;
+        margin-top: 3.3rem;
+        margin-right: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .sidebar .logo {
+        width: 100%;
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid #dcdcdc;
+    }
+
+    .sidebar .logo img {
+        width: 40%;
+    }
+
+    .sidebar .kategori {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 10px;
+        margin-bottom: 3rem;
+    }
+
+    .sidebar .kategori a {
+        text-decoration: none;
+        color: #333333;
+        transition: ease 0.4s;
+    }
+
+    .sidebar .kategori a:hover {
+        background-color: #fefefe;
+        color: #e52b52;
+        padding: 0 0.5rem;
+        border-radius: 0.5rem;
+    }
+
+    .sidebar .contact a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .sidebar .contact .icon {
+        display: flex;
+        gap: 10px;
+    }
+
+    .sidebar h2 {
+        font-size: 20px;
+    }
+    </style>
 </head>
 
 <body>

@@ -4,7 +4,8 @@ Bali-Shop adalah sebuah platform e-commerce yang menjual berbagai barang elektro
 Website bisa diakses pada link berikut : https://kreatifindoweb.online/
 
 # Fitur Utama
-
+Untuk ke halaman admin ketikan admin pada akhir url : kreatifindoweb.online/admin
+------------------------------------------------------------------------------------------
 Pencarian Produk: Memungkinkan pengguna untuk mencari barang yang diinginkan dengan cepat dan mudah.
 Shopping Cart: Pengguna dapat menambahkan produk ke keranjang belanja dan melihat total belanja sebelum melakukan pembayaran.
 Sistem Pengelolaan Orderan untuk Admin: Admin dapat mengelola dan memproses orderan yang masuk melalui dashboard yang disediakan.
@@ -12,6 +13,8 @@ Teknologi yang Digunakan
 Backend: Native PHP
 Database: MySQL
 Frontend: JavaScript, CSS, Bootstrap, jQuery, Datatables
+
+
 
 # Instalasi
 
